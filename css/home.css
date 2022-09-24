@@ -422,15 +422,15 @@
 
 width:100%;
 margin:auto;
-padding:35px 0;
+padding:15px 0;
 display:flex;
 align-items:center;
 justify-content:space-between;
-background-color: deepskyblue;
+background-color: #FFB3B3;
 }
 .logo{
 margin-left : 30px;
-  width:120px;
+  width:100px;
   cursor:pointer;
 }
 

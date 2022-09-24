@@ -1,4 +1,6 @@
 var overlay = document.getElementById("overlay");
+var x;
+var y; 
 
 // Buttons to 'switch' the page
 var openSignUpButton = document.getElementById("slide-left-button");
@@ -105,3 +107,4 @@ openSignInButton.addEventListener("click", openSignIn, false);
 // When a 'switch' button is pressed, switch page in sign-up 
 babysitterButton.addEventListener("click", babysitterFun, false);
 parentButton.addEventListener("click", parentFun, false);
+

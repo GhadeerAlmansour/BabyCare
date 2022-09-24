@@ -1,6 +1,5 @@
 var overlay = document.getElementById("overlay");
-var x;
-var y; 
+
 
 // Buttons to 'switch' the page
 var openSignUpButton = document.getElementById("slide-left-button");

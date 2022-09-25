@@ -440,12 +440,12 @@ list-style:none;
 display:inline-block;
 margin: 0 20px;
 position: relative;
+
 }
 .header ul li a{
 text-decoration: none;
 color: white;
 text-transform: uppercase;
-
 }
 .header ul li ::after{
 content: '';
@@ -459,4 +459,12 @@ transition:0.5s ;
 }
 .header ul li :hover::after{
 width: 100%;
+}
+.image {
+  margin-right : 30px;
+  margin-left: 0px;
+  width:80px;
+  cursor:pointer;
+  border-radius: 20px;
+
 }

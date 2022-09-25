@@ -38,7 +38,15 @@
     border-radius: 10px;
     margin-top: 50px;
     margin-bottom: 50px;
-   
+
+    background-image: url(../images/background.JPG) ;
+    background-position:center ;
+    background-size: cover;
+
+    background-image: linear-gradient(WHITE, #ffdbc4);
+  
+
+ 
   }
   /* 
   ----------------------
@@ -487,7 +495,7 @@ width: 100%;
 	padding: 100px 0px;
 }
 .title h2{
-	color: white;
+	color: rgb(104, 104, 104);
 	font-size: 75px;
 	width: 1130px;
 	margin: 30px auto;
@@ -537,8 +545,8 @@ h5{
 
 }
 .card .button{
-	background-color:#f9004d;
-	color: white;
+	background-color:#fffef6;
+	color: rgb(104, 104, 104);;
 	text-decoration: none;
 	border: 2px solid transparent;
 	font-weight: bold;
@@ -548,6 +556,6 @@ h5{
 }
 .card .button:hover{
 	background-color: transparent;
-	border: 2px solid #f9004d;
+	border: 2px solid  rgb(104, 104, 104);
 	cursor: pointer;
 }

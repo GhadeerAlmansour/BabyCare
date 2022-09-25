@@ -500,35 +500,41 @@ width: 100%;
 	min-height: 400px;
 }
 .card{
-	height: 365px;
+	height: 300px;
 	width: 270px;
 	padding: 20px 35px;
-	background: #191919;
+	background: linear-gradient(to bottom right,#FFB3B3,#ffdede);
 	border-radius: 20px;
 	margin: 15px;
 	position: relative;
 	overflow: hidden;
 	text-align: center;
+  box-shadow: 2px 10px 40px rgba(8, 8, 8, 0.4);
+
 }
+
 .card i{
 	font-size: 50px;
 	display: block;
 	text-align: center;
 	margin: 25px 0px;
-	color: #f9004d;
-
+	color: #983b60;
 }
 
 h5{
-	color: white;
-	font-size: 23px;
+	color: rgb(104, 104, 104);
+	font-size: 30px;
 	margin-bottom: 15px;
+  font-family: 'Helvetica Neue', sans-serif;
+
 }
 .pra p{
-	color: #fcfc;
+	color: rgba(0, 0, 0, 0.8);
 	font-size: 16px;
 	line-height: 27px;
 	margin-bottom: 25px;
+  font-family: 'Helvetica Neue', sans-serif;
+
 }
 .card .button{
 	background-color:#f9004d;

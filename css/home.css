@@ -42,10 +42,8 @@
     background-position:center ;
     background-size: cover;
     background-image: linear-gradient(WHITE, #ffdbc4);
-    padding-top: 35px;
-    background-image: url(../images/background.png) ;
-    background-position:center ;
-    background-size: cover;
+    padding-top: 55px;
+
 
 
  
@@ -468,6 +466,9 @@ position: relative;
 text-decoration: none;
 color: white;
 text-transform: uppercase;
+font-family: 'Courier New', monospace;
+
+
 }
 .header ul li ::after{
 content: '';
@@ -498,10 +499,12 @@ width: 100%;
 }
 .title h2{
 	color: rgb(104, 104, 104);
-	font-size: 75px;
+	font-size: 65px;
 	width: 1130px;
 	margin: 30px auto;
 	text-align: center;
+  font-family: 'Courier New', monospace;
+
 }
 
 .box{
@@ -537,7 +540,7 @@ h5{
 	color: rgb(104, 104, 104);
 	font-size: 30px;
 	margin-bottom: 15px;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Courier New', monospace;
 
 }
 .pra p{
@@ -545,7 +548,7 @@ h5{
 	font-size: 16px;
 	line-height: 27px;
 	margin-bottom: 25px;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-family: 'Courier New', monospace;
 
 }
 .card .button{

@@ -452,10 +452,16 @@ background-image: linear-gradient(to bottom right,#f0a6a6, #f3d1c5);
 margin-left : 30px;
   width:100px;
   cursor:pointer;
-  border-radius: 20px;
-  
-  
+  border-radius: 20px; 
 }
+.logo:hover{
+  margin-left : 30px;
+    width:100px;
+    cursor:pointer;
+    border-radius: 20px; 
+    box-shadow: 2px 5px 12px rgba(8, 8, 8, 0.4);
+
+  }
 .header ul li{
 list-style:none;
 display:inline-block;
@@ -490,8 +496,14 @@ width: 100%;
   width:80px;
   cursor:pointer;
   border-radius: 20px;
-
-
+}
+.image:hover {
+  margin-right : 30px;
+  margin-left: 0px;
+  width:80px;
+  cursor:pointer;
+  border-radius: 200px;
+  box-shadow: 2px 5px 12px rgba(8, 8, 8, 0.4);
 }
 
 .service{
@@ -531,6 +543,7 @@ width: 100%;
 }
 .card:hover{
 	background: linear-gradient(to bottom right,#ff9f9f,#ffcdcd);
+	background: linear-gradient(to bottom right,#ffdede,#FFB3B3);
 
 }
 
@@ -568,6 +581,7 @@ h5{
 	border-radius: 30px;
 	transition: .4s; 
   margin-left: 3px;
+
 }
 
 .card .button:hover{

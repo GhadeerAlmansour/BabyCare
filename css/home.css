@@ -454,6 +454,7 @@ margin-left : 30px;
   cursor:pointer;
   border-radius: 20px;
   
+  
 }
 .header ul li{
 list-style:none;
@@ -489,6 +490,7 @@ width: 100%;
   width:80px;
   cursor:pointer;
   border-radius: 20px;
+
 
 }
 
@@ -527,6 +529,10 @@ width: 100%;
   
 
 }
+.card:hover{
+	background: linear-gradient(to bottom right,#ff9f9f,#ffcdcd);
+
+}
 
 .card i{
 	font-size: 50px;
@@ -535,6 +541,7 @@ width: 100%;
 	margin: 25px 0px;
 	color: #983b60;
 }
+
 
 h5{
 	color: rgb(104, 104, 104);
@@ -552,7 +559,7 @@ h5{
 
 }
 .card .button{
-	background-color:#fffef6;
+	background-color:#fbf6ff;
 	color: rgb(104, 104, 104);;
 	text-decoration: none;
 	border: 2px solid transparent;
@@ -560,6 +567,7 @@ h5{
 	padding: 9px 22px;
 	border-radius: 30px;
 	transition: .4s; 
+  margin-left: 3px;
 }
 
 .card .button:hover{

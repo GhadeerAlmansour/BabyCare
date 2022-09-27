@@ -657,7 +657,7 @@ h5{
 /* offer list */
 .cardOL{
 	height: 150px;
-	width: 900px;
+	width: 800px;
 	padding: 10px 15px;
 	background: linear-gradient(to bottom right,#fff7d3,#fcf6eb);
 	border-radius: 20px;
@@ -678,7 +678,7 @@ h5{
 
 
 h5{
-	color: rgb(104, 104, 104);
+	color: rgb(76, 76, 76);
 	font-size: 20px;
 	margin-left: 70px;
   font-family: 'Courier New', monospace;
@@ -732,6 +732,15 @@ h5{
   cursor:pointer;
   border-radius: 15px;
   box-shadow: 2px 5px 5px rgba(8, 8, 8, 0.4);
+}
+.price{
+  margin-left: 660px;
+  margin-top: -30px;
+  padding-bottom: 0px;
+  margin-bottom: -10px;
+  color: #212020;
+  padding-top: 10px;
+
+}
 
 /* offer list ends */
-}

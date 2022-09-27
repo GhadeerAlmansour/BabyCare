@@ -642,5 +642,69 @@ h5{
   margin-left: 70px;
 
 }
-
 /*about us ending*/
+
+/* offer list */
+.cardOL{
+	height: 80px;
+	width: 700px;
+	padding: 20px 35px;
+	background: linear-gradient(to bottom right,#fff7d3,#fcf6eb);
+	border-radius: 20px;
+	margin: 50px;
+	position: relative;
+	overflow: hidden;
+	text-align: left;
+  box-shadow: 2px 5px 20px rgba(210, 197, 197, 0.4);
+  
+
+}
+.cardOL:hover{
+	background: linear-gradient(to bottom right,#fffec0,#f6eeda);
+	background: linear-gradient(to bottom right,#fffec0,#f6eeda);
+
+}
+
+/*.cardOL i{
+	font-size: 20px;
+	display: block;
+	text-align: lefy;
+	margin: 25px 0px;
+	color: #f8f8cc;
+} */
+
+
+h5{
+	color: rgb(104, 104, 104);
+	font-size: 20px;
+	margin-left: 15px;
+  font-family: 'Courier New', monospace;
+
+}
+.praOL p{
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 16px;
+  width: 600px;
+	line-height: 215px;
+  font-family: 'Courier New', monospace;
+
+}
+.cardOL .button{
+	background-color:#fbf6ff;
+	color: rgb(104, 104, 104);;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+  margin-left: 3px;
+
+}
+
+.cardOL .button:hover{
+	background-color: transparent;
+	border: 2px solid  rgb(104, 104, 104);
+	cursor: pointer;
+}
+/* offer list ends */

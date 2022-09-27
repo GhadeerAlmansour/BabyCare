@@ -577,7 +577,7 @@ h5{
 	line-height: 27px;
 	margin-bottom: 25px;
   font-family: 'Courier New', monospace;
-
+  text-align: center;
 }
 .card .button{
 	background-color:#fbf6ff;

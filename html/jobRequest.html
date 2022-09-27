@@ -24,7 +24,16 @@ margin-bottom: 40px;
 	background: linear-gradient(to bottom right,#ffdede,#FFB3B3);
 transform: scale(1.01);
 }
+input{
+  background-color:#fbf6ff;color: rgb(104, 104, 104);;text-decoration: none;border: 2px solid transparent;font-weight: bold; border-radius: 30px;
+margin-bottom: 5px;
+}
 
+.card .button{
+	background-color:#ffe3e3;
+	color: rgb(104, 104, 104);;
+
+}
   </style>
 </head>
 
@@ -45,33 +54,90 @@ transform: scale(1.01);
   <!--------- Container -------->
 
   <div class="container2" style=height:450px;> 
-<a href="#newreq"> <img src="../images/addicon.png" style=" width: 80px; height: 80px;  position: absolute; padding-left: 50px;"/> </a>
+<a href="#newreq"> <img src="../images/addicon.png" style=" width: 60px; height: 60px;  position: absolute;padding: 20px 35px;
+  "/> </a>
       <div class=box style="	display: block;">
  
-      <div class="card"  >
-        <image src="../images/babysitter.png" alt="icon" class="icon">
-        <h5>Babysitter Request</h5>
-        <div class="pra">
-            <p>Request a babysitter for your child </p>
-
-            <p style="text-align: center;">
-                <a class="button" href="#">GO!</a>
-            </p>
-        </div>
-    </div>
 
 
-<div class="card"  >
-  <image src="../images/babysitter.png" alt="icon" class="icon">
-  <h5>Babysitter Request</h5>
-  <div class="pra">
-      <p>Request a babysitter for your child </p>
+        <div class="card" style="padding-top: 70px; text-align:left;"  >
+          <h5>Request Information : </h5>
+          <div class="pra" style="  font-family: 'Courier New', monospace;">
+  
+<form >
+  <lable> Name:
+    <input name="name" type="text" size="12" maxlength="20" value="Khalid" readonly >
+    <lable> Age:
+    <input name="age" type="text" size="3" maxlength="40" value="12"readonly >
+<br>
+<lable> Name:
+<input name="name" type="text" size="12" maxlength="20" value="Sara" readonly >
+<lable> Age:
+<input name="age" type="text" size="3" maxlength="40" value="8"readonly >
+<br>  
+<lable> Name: 
+ <input name="name" type="text" size="12" maxlength="20" value="Norah" readonly >
+<lable> Age:
+<input name="age" type="text" size="3" maxlength="40" value="3"readonly >
+<br><br><br>
+<lable> Type of Service: 
+<input name="service" type="text" size="12" maxlength="20" value="Night Care" readonly >
+ 
+<br><br><br>
+<lable> Duration:
+<input name="day" type="text" size="12" maxlength="20" value="Friday" readonly >
+<input name="Date" type="text" size="12" maxlength="20" value="20/10/2023" readonly >
+<input name="time" type="text" size="15" maxlength="20" value="8:00pm - 10:30pm" readonly >
 
-      <p style="text-align: center;">
-          <a class="button" href="#">GO!</a>
-      </p>
-    </div>
-  </div>
+<br><br>
+
+</form>
+              <p style="text-align: center;">
+                  <a class="button" href="#" style="color:#7b8fea;" >Edit</a>
+                  <a class="button" href="#" style="color:#ff5b5b;">Cancel</a>
+              </p>
+            </div>
+          </div>
+
+
+
+
+
+          <div class="card" style="padding-top: 70px; text-align:left;"  >
+            <h5>Request Information : </h5>
+            <div class="pra" style="  font-family: 'Courier New', monospace;">
+    
+  <form >
+    <lable> Name:
+      <input name="name" type="text" size="12" maxlength="20" value="Khalid" readonly >
+      <lable> Age:
+      <input name="age" type="text" size="3" maxlength="40" value="12"readonly >
+  <br>
+  <lable> Name:
+  <input name="name" type="text" size="12" maxlength="20" value="Sara" readonly >
+  <lable> Age:
+  <input name="age" type="text" size="3" maxlength="40" value="8"readonly >
+  <br>  
+   <br><br><br>
+  <lable> Type of Service: 
+  <input name="service" type="text" size="12" maxlength="20" value="Day Care" readonly >
+   
+  <br><br><br>
+  <lable> Duration:
+  <input name="day" type="text" size="12" maxlength="20" value="Monday" readonly >
+  <input name="Date" type="text" size="12" maxlength="20" value="22/10/2023" readonly >
+  <input name="time" type="text" size="15" maxlength="20" value="8:00am - 1:30pm" readonly >
+  
+  <br><br>
+  
+  </form>
+                <p style="text-align: center;">
+                    <a class="button" href="#" style="color:#6bbd5c;" >Booking Connfirmed - Click here to view your Booking</a>
+                </p>
+              </div>
+            </div>
+
+
   <div id="newreq" class="card" style="background: linear-gradient(to bottom right,#585858,#ffffff);" >
 
     <image src="../images/babysitter.png" alt="icon" class="icon">

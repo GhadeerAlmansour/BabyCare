@@ -41,11 +41,9 @@
     background-image: url(../images/background.JPG) ;
     background-position:center ;
     background-size: cover;
-    background-image: linear-gradient(WHITE, #ffdbc4);
+    background-image: linear-gradient(WHITE, #ffefe6);
     padding-top: 55px;
-
-
-
+overflow: scroll;
  
   }
   /* 
@@ -452,14 +450,14 @@ background-image: linear-gradient(to bottom right,#f0a6a6, #f3d1c5);
 margin-left : 30px;
   width:100px;
   cursor:pointer;
-  border-radius: 20px; 
+  border-radius: 10px; 
 }
 .logo:hover{
   margin-left : 30px;
     width:100px;
     cursor:pointer;
-    border-radius: 20px; 
-    box-shadow: 2px 5px 12px rgba(8, 8, 8, 0.4);
+    border-radius: 10px; 
+    box-shadow: 2px 5px 12px rgba(60, 53, 53, 0.4);
 
   }
 .header ul li{
@@ -518,6 +516,7 @@ width: 100%;
 	margin: 30px auto;
 	text-align: center;
   font-family: 'Courier New', monospace;
+
 
 }
 
@@ -589,3 +588,59 @@ h5{
 	border: 2px solid  rgb(104, 104, 104);
 	cursor: pointer;
 }
+/* About US */
+.about{
+	width: 100%;
+	padding: 100px 0px;
+}
+.about img{
+	height: auto;
+	width: 430px;
+}
+.about-text{
+	width: 550px;
+}
+.main{
+  border-top: 3px solid #bbb ;
+	width: 1000px;
+	max-width: 95%;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+  padding: 50px;
+  margin: 20px;
+  
+}
+.about-text h2{
+	color: #101010;
+	font-size: 75px;
+	text-transform: capitalize;
+	margin-bottom: -50px;
+  font-family: 'Courier New', monospace;
+  margin-left: 70px;
+
+}
+.about-text h5{
+	color: #FFB3B3;
+	letter-spacing: 2px;
+	font-size: 35px;
+	margin-bottom: 25px;
+	text-transform: capitalize;
+  font-family: 'Courier New', monospace;
+  margin-left: 70px;
+
+
+}
+.about-text p{
+	color: rgba(0, 0, 0, 0.8);
+	letter-spacing: 1px;
+	line-height: 28px;
+	font-size: 18px;
+	margin-bottom: 45px;
+  font-family: 'Courier New', monospace;
+  margin-left: 70px;
+
+}
+
+/*about us ending*/

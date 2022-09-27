@@ -1,0 +1,149 @@
+
+<head>
+    <title> Job Request</title>
+    <link rel = "stylesheet" href ="../css/home.css">
+  
+    <style>
+  
+
+  input{
+    background-color:#fbf6ff;color: rgb(104, 104, 104);;text-decoration: none;border: 2px solid transparent;font-weight: bold; border-radius: 30px;
+  margin-bottom: 5px;
+  }
+  
+  .card .button{
+      background-color:#ffe3e3;
+      color: rgb(104, 104, 104);;
+  
+  }
+  select{
+
+    background-color:#fbf6ff;color: rgb(104, 104, 104);;text-decoration: none;border: 2px solid transparent;font-weight: bold; border-radius: 30px;
+margin-bottom: 5px;
+  }
+
+.container2{
+
+    background-image: linear-gradient(#ffe3e3, #FFB3B3);
+  
+}
+
+.buttons{
+	background-color:#ddb2b2;
+	color: rgb(104, 104, 104);;
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+  margin-right: 3px;
+
+}
+
+.buttons:hover{
+	background-color: transparent;
+	border: 2px solid  rgb(104, 104, 104);
+	cursor: pointer;
+}
+    </style>
+  </head>
+  
+  <body>
+    <div class="header" >
+      <image src="../images/webLogo.jpeg" class="logo">
+  <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
+      <li><a href="#newreq">New Request</a></li>
+  
+  </ul>
+  <image src="../images/userIcon.png" class="image">
+  
+    </div> 
+  
+  
+    <!--------- Container -------->
+  
+    <div class="container2" style="height:450px; width: 800px; padding-left: 40px; "> 
+        <div class=box style="	display: block;">
+
+            <div class="pra" style="  font-family: 'Courier New', monospace;">            
+  <form method="post">
+<br><br>
+    <lable> Number of children:
+        <input name="numberchildren" type="number" size="1"  value="2"  style="max-width:50px">
+        <br>        <br>
+
+     
+    <lable> Name:
+      <input name="name" type="text" size="12" maxlength="20" value="Khalid"  >
+      <lable> Age:
+      <input name="age" type="text" size="3" maxlength="40" value="12" >
+  <br>
+  <lable> Name:
+  <input name="name" type="text" size="12" maxlength="20" value="Sara"  >
+  <lable> Age:
+  <input name="age" type="text" size="3" maxlength="40" value="8" >
+  <br>  
+   <br>
+  
+   <label for="Service">Choose Service Type:</label>
+   <select name="CareType" id="servicetype" style="max-width:150px ;max-height:55px;  ">
+   <option value="DayCare">DayCare</option>
+   <option value="Night Care">Night Care</option>
+   <option value="Full Day">Full Day</option>
+
+</select>
+<br><br>
+  <br>
+  <lable> 
+
+  <label for="day">Day:</label>
+  <select name="day" id="day" style="max-width:150px ;max-height:55px;  ">
+  <option value="Saturday">Saturday</option>
+  <option value="Sunday">Sunday</option>
+  <option value="Monday">Monday</option>
+  <option value="Tuesday">Tuesday</option>
+  <option value="Wednesday">Wednesday</option>
+  <option value="Thursday">Thursdayy</option>
+  <option value="Friday">Friday</option>
+
+</select>
+
+<label for="date">Date:</label>
+  <input name="Date" type="date" >
+  <label for="Time">    From:</label>
+  <input name="time" type="time"  >
+  
+  <label for="Time">To:</label>
+  <input name="time" type="time"  >
+  <br><br>
+
+  </lable>
+
+  <input class="Buttons" type="submit" value="Submit" style="  margin-left: 270px;
+  ">
+    <input class="Buttons" type="reset" value="Clear">
+  </form>
+   
+      </div>
+    </div>
+      </div>
+    </div>
+  
+  
+  
+  
+    <footer>
+      <p>Copyright &copy; 2022 BabyCare </p>
+      <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;"/>Contact Us</a></p>
+    </footer>  
+  
+  </body>
+  
+  
+  
+  
+  
+  </html>

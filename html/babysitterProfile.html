@@ -7,23 +7,38 @@
   
   <style>
     input{
-    background-color:#fbf6ff;color: rgb(104, 104, 104);;text-decoration: none;border: 2px solid transparent;font-weight: bold; border-radius: 30px;
+    background-color:transparent ;color: rgb(104, 104, 104);;text-decoration: none; border: 2px solid transparent; border-radius: 30px;
     margin-bottom: 5px;
+
     }
 
    .divForm{
-    margin-left: 50px;
-    margin-top: 50px;
+    margin-left: 60px;
+    margin-top: 80px;
    }
 
    .formLabel{
-    font-family: sans-serif;
+    font-family:'Courier New', Courier, monospace;
     font-size: 20px;
-   }
+    font-weight: bold;
+    color: rgb(87, 87, 87);  
+     }
    
    .formInput{
-    font-family: 'Courier New', Courier, monospace;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 20px;
+
    }
+   .imageiBig {
+    margin-top : 10px;
+    margin-left: 10px;
+    width: 40px;
+    cursor:pointer;
+    border-radius: 10px;
+    z-index: -5;
+   }
+
+    
   </style>
 
 
@@ -42,36 +57,50 @@
 
     <div class="container2"> 
 
-      <p style="background-color: white; color:  rgb(87, 86, 86); font-weight:bolder; font-size: 40px ; margin-left: 50px; font-family: 'Courier New', monospace; margin-top: -10px;">
+      <p style="background-color: white; color:  rgb(87, 86, 86); font-weight:bolder; font-size: 40px ; margin-left: 50px; font-family: 'Courier New', monospace; margin-top: -10px; text-align: center;">
        Personal Profile:    
        </p>
 
     <div class="cardPP" >
+
+    <div>
+      <image src="../images/userIcon.png" class="imageiBig" style= "margin-left:60px ; height:160px ; width:160px ; margin-top: 40px; hover:none"></image >
+
+    </div>
+
 <div class =" divForm">
-<form >
+<form style="height: 1000px" >
+
   <lable class="formLabel"> First Name:
-    <input class="formInput" name="Fname" type="text" size="12" maxlength="20" value="Sara" readonly >
-<br>
+    <input class="formInput" name="Fname" type="text" size="20" maxlength="20" value="Sara" readonly >
+<br><br>
+
   <lable class="formLabel"> Last Name:
-    <input name="Lname" type="text" size="3" maxlength="40" value="Alx"readonly >
-<br>
+    <input class="formInput"name="Lname" type="text" size="20" maxlength="40" value="Alx"readonly >
+<br><br>
+
   <lable class="formLabel"> ID:
-    <input name="id" type="text" size="12" maxlength="20" value="111558832" readonly >
-<br>   
+    <input class="formInput" name="id" type="text" size="10" maxlength="20" value="111558832" readonly >
+<br>  <br>
+ 
   <lable class="formLabel"> Age:
-    <input name="age" type="text" size="3" maxlength="40" value="24"readonly >
-<br>  
+    <input class="formInput" name="age" type="text" size="4" maxlength="40" value="24"readonly >
+<br>  <br>
+
   <lable class="formLabel" > Gender: 
-    <input name="gender" type="text" size="12" maxlength="20" value="Female" readonly >
-<br>
+    <input class="formInput" name="gender" type="text" size="20" maxlength="20" value="Female" readonly >
+<br><br>
+
   <lable class="formLabel" > Email:
-    <input name="email" type="text" size="3" maxlength="40" value="sara_Alx@gmail.com"readonly >
-<br>
+    <input class="formInput"  name="email" type="text" size="20" maxlength="40" value="sara_Alx@gmail.com"readonly >
+<br><br>
+
   <lable class="formLabel" > City: 
-    <input name="city" type="text" size="12" maxlength="20" value="Jeddah" readonly >
-<br>
+    <input class="formInput" name="city" type="text" size="20" maxlength="20" value="Jeddah" readonly >
+<br><br>
+
   <lable class="formLabel" > Bio: 
-    <input name="bio" type="text" size="130" maxlength="50" line-height="100px" value=" I have a bachelor degree of childhood education, i have worked in kindergarden as a teacher for 2 years,and i baby sit as a part time job."  readonly >
+    <input class="formInput" style=  "width:800px ; height:200px ; overflow: scroll; "  name="bio" type="textarea" size="130" maxlength="500"  value= " I have a bachelor degree of childhood education, i have worked in kindergarden as a teacher for 2 years,and i baby sit as a part time job."  readonly >
 
 
 </form>

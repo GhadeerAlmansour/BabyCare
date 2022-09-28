@@ -682,7 +682,7 @@ h5{
 	height: 150px;
 	width: 900px;
 	padding: 10px 15px;
-	background: linear-gradient(to bottom right,#fff7d3,#fcf6eb);
+	background: linear-gradient(#f5baba, #ffe3e3 );
 	border-radius: 20px;
 	margin: 50px;
 	position: relative;
@@ -692,11 +692,7 @@ h5{
   margin-top: -10px;
 
 }
-.cardOL:hover{
-	background: linear-gradient(to bottom right,#fffec0,#f6eeda);
-	background: linear-gradient(to bottom right,#fffec0,#f6eeda);
 
-}
 
 
 
@@ -724,10 +720,10 @@ h5{
 }
 
 .cardOL .button{
-	background-color:#f6fbe9;
+	background-color:#ffe3e3;
 	color: rgb(104, 104, 104);;
 	text-decoration: none;
-	border: 2px solid transparent;
+	border: 2px solid #e2c7c7;
 	font-weight: bold;
 	padding: 5px 10px;
 	border-radius: 15px;
@@ -841,15 +837,15 @@ button:active {
 
 /* Baby sitter profile */
 .cardPP{
-	height: 1000PX;
+	height: 900PX;
 	width: 1000px;
 	padding: 10px 15px;
-	background: linear-gradient(to bottom right,#fff7d3,#fcf6eb);
+	background: linear-gradient(#f5baba, #ffe3e3 );
 	border-radius: 20px;
 	margin: 50px;
   margin-left: 90px;
 	position: relative;
-	overflow: hidden;
+  overflow: hidden;
 	text-align: left;
   box-shadow: 2px 5px 20px rgba(210, 197, 197, 0.4);
   margin-top: -10px;

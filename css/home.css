@@ -735,6 +735,18 @@ h5{
   margin-right:20px;
 
 }
+.cardED{
+	background-color:#fed2d2;
+	color: rgb(104, 104, 104);;
+	text-decoration: none;
+	border: 4px solid transparent;
+	font-weight: bold;
+	padding: 7px 12px;
+	border-radius: 20px;
+	transition: .4s; 
+  margin-right:25px;
+
+}
 
 .cardOL .button:hover{
 	background-color: transparent;

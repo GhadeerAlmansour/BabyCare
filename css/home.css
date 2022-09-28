@@ -750,3 +750,21 @@ h5{
 }
 
 /* offer list ends */
+
+/* Baby sitter profile */
+.cardPP{
+	height: 1000PX;
+	width: 1000px;
+	padding: 10px 15px;
+	background: linear-gradient(to bottom right,#fff7d3,#fcf6eb);
+	border-radius: 20px;
+	margin: 50px;
+  margin-left: 90px;
+	position: relative;
+	overflow: hidden;
+	text-align: left;
+  box-shadow: 2px 5px 20px rgba(210, 197, 197, 0.4);
+  margin-top: -10px;
+
+}
+/* Baby sitter profile ends */

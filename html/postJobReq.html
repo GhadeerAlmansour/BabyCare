@@ -78,7 +78,7 @@ margin-left: -5px;
 margin-right: 30px;
 
 }
-
+/*
 .dropdown ul li  {
   color: black;
   padding: 12px 16px;
@@ -87,7 +87,7 @@ margin-right: 30px;
 }
 
 .dropdown ul li :hover {background-color: #f1f1f1}
-
+*/
     </style>
   </head>
   
@@ -100,8 +100,16 @@ margin-right: 30px;
       <li><a href="#newreq">New Request</a></li>
   
   </ul>
-  <image src="../images/userIcon.png" class="image">
   
+<div class="dropdown">
+  <image src="../images/userIcon.png" class="image">
+  <ul>
+  
+      <li><a href="#">View Profile</a></li><br>
+      <li><a href="#"><br></a></li>
+      <li><a href="#">Sign-Out</a></li>
+  </ul>
+  </div> 
     </div> 
   
   
@@ -133,10 +141,15 @@ margin-right: 30px;
    <br>
   
    <label for="Service">Choose Service Type:</label>
-   <select name="CareType" id="servicetype" style="max-width:150px ;max-height:55px;  ">
-   <option value="DayCare">DayCare</option>
-   <option value="Night Care">Night Care</option>
-   <option value="Full Day">Full Day</option>
+   <select name="CareType" id="servicetype" style="max-width:350px ;max-height:55px;  ">
+    <option value="DayCare">Daytime Babysitting</option>
+    <option value="DayCare">Night time Babysitting</option>
+    <option value="DayCare">Infant Care</option>
+   <option value="DayCare">Newborn care</option>
+   <option value="DayCare">Special needs care</option>
+   <option value="Full Day">Mother's helper</option>
+   <option value="DayCare">After-school Babysitting</option>
+   <option value="HelpinHomeWork">Help with HomeWork</option>
 
 </select>
 

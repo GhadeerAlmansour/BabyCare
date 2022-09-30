@@ -1,144 +1,150 @@
 <html>
 
-    <head>
-      <title> View Parent Profile</title>
-      <link rel = "stylesheet" href ="../css/home.css">
-    
-      <style>
-    
-    
-    .card{ width:800px; height:500px; margin-left: 215px;
-        padding: 20px 35px;
-        background: linear-gradient(to bottom right,#FFB3B3,#ffdede);
-        border-radius: 20px;
-        position: relative;
-        overflow: hidden;
-        text-align: center;
-      box-shadow: 2px 10px 40px rgba(8, 8, 8, 0.4);
-      transition: 0.5s ease;
-    cursor: pointer;
-    margin-bottom: 40px;
-    }
-    .card:hover{
-        background: linear-gradient(to bottom right,#ff9f9f,#ffcdcd);
-        background: linear-gradient(to bottom right,#ffdede,#FFB3B3);
-    transform: scale(1.01);
-    }
-    input{
-      background-color:#fbf6ff;color: rgb(104, 104, 104);;text-decoration: none;border: 2px solid transparent;font-weight: bold; border-radius: 30px;
-    margin-bottom: 5px;
-    }
-    
-    .card .button{
-        background-color:#ffe3e3;
-        color: rgb(104, 104, 104);;
-    
-    }
-    h5{
-        border-radius: 30px;
-      padding: 9px 22px;
-        background-color:#ffe3e3;
-    margin-left: -5px;
-    margin-top: -42px;
-    }
-    
-      </style>
-    </head>
-    
-    <body>
-    
-        <!--------- Header -------->
-    
-      <div class="header" >
-        <image src="../images/webLogo.jpeg" class="logo">
-    <ul>
-        <li><a href="HomeParent.html">Home</a></li>
-        <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
-        <li><a href="postJobReq.html">View babysitter</a></li>
-    
-    </ul>
-    
-    <div class="dropdown">
-        <image src="../images/userIcon.png" class="image">
-        <ul>
-        
-            <li><a href="ViewProfile.html">View Profile</a></li><br>
-            <li><a href="#"><br></a></li>
-            <li><a href="home.html">Sign-Out</a></li>
-        </ul>
-        </div> 
-      </div>
-    
-      <!--------- Container -------->
-    
-      <div class="container2" style=height:700px;> 
-        <!-- 
-    <a href="#newreq"> <img src="../images/newReqIcon.png" style=" width: 60px; height: 60px;  position: absolute;padding: 20px 35px;
-      "/> </a> -->
-          <div class=box style="	display: block;">
-     
-    
-      <!--------- Card 1 -------->
-    
-            <div class="card" style="padding-top: 70px; text-align:left;"  >
-              <h5>Edit My Profile:</h5>
-              <div class="pra" style="  font-family: 'Courier New', monospace;">
-      
-                <form id="sign-up-form-parent" class="parent">
-                    <h3>make sure all the information is correct:</h3>
-                    <input type="text" placeholder=" First Name" required/>
-                    <input type="text" placeholder=" Last Name" required/>
-                    <input type="email" placeholder="Email" required/>
-                    <input type="password" placeholder="Password" required/>
-                    <input type="text" placeholder=" ID" required/>
-                    <input type="number" placeholder=" Age" required/>
+<head>
+  <title> View babysitter Profile</title>
+  <link rel = "stylesheet" href ="../css/home.css">
 
+  <style>
+
+
+.card{ width:800px; height:730px; margin-left: 215px;
+	padding: 20px 35px;
+	background: linear-gradient(to bottom right,#FFB3B3,#ffdede);
+	border-radius: 20px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+  box-shadow: 2px 10px 40px rgba(8, 8, 8, 0.4);
+  transition: 0.5s ease;
+cursor: pointer;
+margin-bottom: 40px;
+}
+.card:hover{
+	background: linear-gradient(to bottom right,#ff9f9f,#ffcdcd);
+	background: linear-gradient(to bottom right,#ffdede,#FFB3B3);
+transform: scale(1.01);
+}
+input{
+  background-color:#fbf6ff;color: rgb(104, 104, 104);;text-decoration: none;border: 2px solid transparent;font-weight: bold; border-radius: 30px;
+margin-bottom: 5px;
+}
+
+.card .button{
+	background-color:#ffe3e3;
+	color: rgb(104, 104, 104);;
+
+}
+h5{
+	border-radius: 30px;
+  padding: 9px 22px;
+	background-color:#ffe3e3;
+margin-left: -5px;
+margin-top: -42px;
+}
+
+  </style>
+</head>
+
+<body>
+
+    <!--------- Header -------->
+
+  <div class="header" >
+    <image src="../images/webLogo.jpeg" class="logo">
+<ul>
+    <li><a href="HomeParent.html">Home</a></li>
+    <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
+
+</ul>
+<div class="dropdown">
+    <image src="../images/userIcon.png" class="image">
+    <ul>
+
+        <li><a href="home.html">Sign-Out</a></li>
+    </ul>
+    </div> 
+  </div>
+
+
+
+  <!--------- Container -------->
+
+  <div class="container2" style=height:700px;> 
+    <!-- 
+<a href="#newreq"> <img src="../images/newReqIcon.png" style=" width: 60px; height: 60px;  position: absolute;padding: 20px 35px;
+  "/> </a> -->
+      <div class=box style="	display: block; margin-left: -65px ;">
+ 
+
+  <!--------- Card 1 -------->
+
+        <div class="card" style="padding-top: 70px; text-align:left;"  >
+          <h5>My Profile:</h5>
+          <div class="pra" style="  font-family: 'Courier New', monospace;">
+        <br>
+            <img src="../images/userIcon.png" style="width:100px ; height: 100px; padding-left: 340px;">
+
+            <form id="sign-up-form-parent" class="parent" style="padding-left:100px ;">
+               
+                  
+                    <input type="text" placeholder="First Name"  value="sara" readonly required />
+                    <input type="text" placeholder=" Last Name"  value="Alx" readonly required/>
+                    <input type="email" placeholder="Email"  value="sara_Alx@gmail.com" readonly required/>
+                    <input type="password" placeholder="Password"  value="1234567" readonly required/>
+                    <input type="text" placeholder=" ID"  value="112345432" readonly required/>
+                    <input type="number" placeholder=" Age" value="26" readonly required/>
+            
                     <select name="gender" >
-                      <option value="none" selected >Gender</option>
+                      <option value="none" selected >Female</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                     </select>
+            
+                    <input type="text" placeholder="City"  value="Jeddah" readonly required/> <br>
+                   
+           
+            
+                    <textarea name="Bio" id="bio" cols="25" rows="10">I have a bachelor degree of childhood education, i have worked in kindergarten for 2 years ,and i baby sit as a part time job ,i am patience and i can communicate with kids with kindness and love.</textarea>
+                 
+                 
+            
+               <br><br><br>            
 
-                    <input type="text" placeholder="City" required/> <br>
-                    
-                    <label for="img" style="margin-right:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200;">
-                      Select your profile image: (optional)
-                    </label><br>
-                    <input type="file" id="img" name="img" accept="image/*">
+              </form>
+              <p style="text-align: center;">
+                  <a class="button" href="#" style="color:#7b8fea;" >Edit</a>
+                  <a class="button" href="#" style="color:#ff5b5b;">Delete Account!</a>
+                 
+
+              </p>
+            </div>
+          </div>
+
+
+
+
+ 
+
+
+    </div>
+  </div>
+
+
+
+  <!--------- footer -------->
+
+  <footer>
+    <p>Copyright &copy; 2022 BabyCare </p>
+    <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;"/>Contact Us</a></p>
+  </footer>  
+
+</body>
+
+
+
+
+
+</html>
+
+
    
-                    <input type="text" placeholder="Bio" required/>
-                  </form>
-                  <p style="text-align: center;">
-                      <a class="button" href="#" style="color:#7b8fea;" >Edit</a>
-                      <a class="button" href="#" style="color:#ff5b5b;">Delete Account!</a>
-                     
-    
-                  </p>
-                </div>
-              </div>
-    
-    
-    
-    
-     
-    
-    
-        </div>
-      </div>
-    
-    
-    
-      <!--------- footer -------->
-    
-      <footer>
-        <p>Copyright &copy; 2022 BabyCare </p>
-        <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;"/>Contact Us</a></p>
-      </footer>  
-    
-    </body>
-    
-    
-    
-    
-    
-    </html>

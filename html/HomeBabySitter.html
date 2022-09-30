@@ -1,30 +1,114 @@
+
 <html>
 
 <head>
-  <title> HomeBabySitter</title>
+  <title>BabySitter HomePage</title>
   <link rel = "stylesheet" href ="../css/home.css">
+
+  <style>
+
+.card h5{
+	line-height: 27px;
+	margin-bottom: 25px;
+    margin-top: 10px;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  }
+  
+
+
+
+
+</style>
+
+
 </head>
 
 <body>
-    <div class="header" >
-        <image src="../images/webLogo.jpeg" class="logo">
-    <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
+  <div class="header" >
+    <image src="../images/webLogo.jpeg" class="logo" alt="BabyCare Logo">
+<ul>
+    <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
+    <li><a href="#aboutus">About Us</a></li>
+</ul>
 
-    </ul>
-      </div> 
-    
-      <div class="container"> </div>
+<div class="dropdown">
+<image src="../images/userIcon.png" class="image" alt="User Icon">
+<ul>
+
+    <li><a href="ViewParentProfile.html">View Profile</a></li><br>
+    <li><a href="#"><br></a></li>
+    <li><a href="home.html">Sign-Out</a></li>
+
+</ul>
+
+</div>
+
+  </div> 
+  <div class="container2" style=" height: 1350px;"> 
+   <div class="option">
+
+    <div class="title">
+        <h2>Your Baby Is In Safe Hands </h2>
+    </div>
+
+    <div class="box">
+        <!------------  VIEW JOB OFFERS   ----------->
+        <div class="card">
+            <image src="..\images\job.png" alt="Request icon" class="icon">
+            <h5 style="margin-left: -10px;">View job offers</h5>
+            <div class="pra">
+                <p>view the new offers and see the status of it</p>
+
+                <p style="text-align: center;" >
+                    <a class="button" href="   " >view</a>
+                    <a class="button" href="   " >status</a>
+
+                </p>
+            </div>
+        </div>
+
+         <!------------  MY JOBS   ----------->
+       
+        <div class="card">
+            <image src="..\images\check-list.png" alt="job icon" class="icon">
+                <h5 style="    margin-left: -10px;">My jobs</h5>
+            <div class="pra">
+                <p>view current and previous joobs</p>
+
+                <p style="text-align: center;">
+                    <a class="button" href="      " >current </a>
+                    <a class="button" href="      ">previous</a>
+
+                </p>
+            </div>
+        </div>
+    </div>
+</div> 
+ 
+<!---- About us -->
+
+<section id="aboutus" class="about">
+    <div class="main">
+        <img src="../images/background.png"  style="border-radius:20px ;   box-shadow: 2px 5px 12px rgba(8, 8, 8, 0.4);
+        " alt="baby picture">
+        <div class="about-text">
+            <h2>About Us</h2>
+            <h5>BabyCare <span> </span></h5>
+            <p>Babysitting site that helps you select a safe babysitter for your child. Babysitting site that helps you select a safe babysitter for your child.Babysitting site that helps you select a safe babysitter for your child.</p>
+            <p> </p>
+        </div>
+    </div>
+</section>
+</div>
 
 
 
-
-    
-    <footer>
-        <p>Copyright &copy; 2022 BabyCare </p>
-        <p><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></p>
-    </footer>  
+<!-- Footer -->
+  <footer>
+    <p>Copyright &copy; 2022 BabyCare </p>
+    <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;">Contact Us</a></p>
+  </footer>  
 
 </body>
 

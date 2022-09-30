@@ -59,9 +59,7 @@ margin-top: -42px;
 <div class="dropdown">
     <image src="../images/userIcon.png" class="image">
     <ul>
-    
-        <li><a href="ViewProfile.html">View Profile</a></li><br>
-        <li><a href="#"><br></a></li>
+
         <li><a href="home.html">Sign-Out</a></li>
     </ul>
     </div> 
@@ -75,30 +73,35 @@ margin-top: -42px;
     <!-- 
 <a href="#newreq"> <img src="../images/newReqIcon.png" style=" width: 60px; height: 60px;  position: absolute;padding: 20px 35px;
   "/> </a> -->
-      <div class=box style="	display: block;">
+      <div class=box style="	display: block; margin-left: -65px ;">
  
 
   <!--------- Card 1 -------->
 
         <div class="card" style="padding-top: 70px; text-align:left;"  >
-          <h5>Edit My Profile:</h5>
+          <h5>My Profile:</h5>
           <div class="pra" style="  font-family: 'Courier New', monospace;">
-  
-            <form id="sign-up-form-parent" class="parent">
-                <h3>make sure all the information is correct:</h3>
-                <input type="text" placeholder="First Name" required/>
-                <input type="text" placeholder="Last Name" required/>
-                <input type="email" placeholder="Email" required/>
-                <input type="password" placeholder="Password" required/>
-                <input type="text" placeholder="City" required/> <br>
-                <input type="text" placeholder="Location" required/> <br>
+        <br>
+            <img src="../images/userIcon.png" style="width:100px ; height: 100px; padding-left: 340px;">
 
+            <form id="sign-up-form-parent" class="parent" style="padding-left:100px ;">
+              <br>
+             <!---   <h3>make sure all the information is correct:</h3> -->
+                <input type="text" placeholder="First Name"  value="Reema" readonly required />
+                <input type="text" placeholder="Last Name" value="Ahmad" readonly required/>
+                <input type="email" placeholder="Email" value="Reem123@gmail.com" readonly required/>
+                <input type="password" placeholder="Password" value="123456" readonly required/>
+                <input type="text" placeholder="City" value="Riyadh" readonly required/> 
+                <input type="text" placeholder="Location" value="AlMalga - House NO.12 " readonly required/> <br>
+
+                <!---
                 <label for="img" style="margin-right:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; " optional>   Select your profile image: (optional)   </label><br>    
                
 
                 <input type="file" id="img" name="img" accept="image/*">
+-->
+               <br><br><br>            
 
-               
               </form>
               <p style="text-align: center;">
                   <a class="button" href="#" style="color:#7b8fea;" >Edit</a>

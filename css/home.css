@@ -853,3 +853,7 @@ button:active {
 }
 /* Baby sitter profile ends */
 
+.checked {
+  color: orange;
+}
+

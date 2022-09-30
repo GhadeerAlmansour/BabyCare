@@ -443,6 +443,18 @@ overflow: scroll;
     letter-spacing: 1.5px;
     padding-left: 20px;
   }
+  #sign-up-form-parent textarea, #sign-up-form-babtsitter textarea{
+    margin: 12px;
+    font-size: 14px;
+    padding: 15px;
+    width: 260px;
+    font-weight: 300;
+    border: none;
+    background-color: #e4e4e494;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: 1.5px;
+    padding-left: 50px;
+  }
 
   h6 {
     margin-top: 30px;  
@@ -565,6 +577,16 @@ width: 100%;
 	align-items: center;
 	min-height: 400px;
 }
+
+
+.box2{
+	display: flex;
+	justify-content: center;
+	align-items: center ;
+	min-height: 120px;
+}
+
+
 .card{
 	height: 300px;
 	width: 270px;
@@ -905,5 +927,7 @@ text-transform: uppercase;
 font-family: 'Courier New', monospace;
 padding-bottom: 10px;
 }
+
+
 
 /* DROPDOWN MENU TO USER ICON ENDs*/

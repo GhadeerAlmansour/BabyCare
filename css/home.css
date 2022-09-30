@@ -453,7 +453,8 @@ overflow: scroll;
     background-color: #e4e4e494;
     font-family: 'Helvetica Neue', sans-serif;
     letter-spacing: 1.5px;
-    padding-left: 50px;
+    padding-right: 50px;
+    margin-right: 100;
   }
 
   h6 {
@@ -584,6 +585,9 @@ width: 100%;
 	justify-content: center;
 	align-items: center ;
 	min-height: 120px;
+  resize: none;
+  margin-right: 200px;
+  padding: 5px 10px;
 }
 
 
@@ -892,6 +896,12 @@ button:active {
 /* Baby sitter profile ends */
 
 
+.checked {
+  color: orange;
+}
+
+
+
 /* DROPDOWN MENU TO USER ICON */
 
 .dropdown {
@@ -931,3 +941,4 @@ padding-bottom: 10px;
 
 
 /* DROPDOWN MENU TO USER ICON ENDs*/
+>>>>>>> 278279b619d6efab2a098e9ab5148784df7d6cfd

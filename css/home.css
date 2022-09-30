@@ -63,6 +63,22 @@ overflow: scroll;
 overflow: scroll;
   }
 
+  .container4{
+    width: 800px;
+    height: 1200px;
+    position: relative;
+    margin: auto;
+    box-shadow: 2px 10px 40px rgba(8, 8, 8, 0.4);
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-image: url(../images/background.JPG) ;
+    background-position:center ;
+    background-size: cover;
+    background-image: linear-gradient(WHITE, #ffefe6);
+    padding-top: 55px;
+overflow: scroll;
+  }
   /* 
   ----------------------
         Overlay
@@ -427,6 +443,19 @@ overflow: scroll;
     letter-spacing: 1.5px;
     padding-left: 20px;
   }
+  #sign-up-form-parent textarea, #sign-up-form-babtsitter textarea{
+    margin: 12px;
+    font-size: 14px;
+    padding: 15px;
+    width: 260px;
+    font-weight: 300;
+    border: none;
+    background-color: #e4e4e494;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: 1.5px;
+    padding-right: 50px;
+    margin-right: 100;
+  }
 
   h6 {
     margin-top: 30px;  
@@ -549,6 +578,19 @@ width: 100%;
 	align-items: center;
 	min-height: 400px;
 }
+
+
+.box2{
+	display: flex;
+	justify-content: center;
+	align-items: center ;
+	min-height: 120px;
+  resize: none;
+  margin-right: 200px;
+  padding: 5px 10px;
+}
+
+
 .card{
 	height: 300px;
 	width: 270px;
@@ -853,7 +895,50 @@ button:active {
 }
 /* Baby sitter profile ends */
 
+<<<<<<< HEAD
 .checked {
   color: orange;
 }
 
+=======
+
+/* DROPDOWN MENU TO USER ICON */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+
+}
+.dropdown ul {
+    margin-left: -140px;
+  padding-right:40px;
+  margin-top: -1px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  margin-right: 5px;
+    display: none;
+  position: absolute;
+  background-color: #383535;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+
+}
+
+.dropdown:hover ul {
+  display: block;
+}
+.dropdown a{
+    text-decoration: none;
+color: rgb(0, 0, 0);
+text-transform: uppercase;
+font-family: 'Courier New', monospace;
+padding-bottom: 10px;
+}
+
+
+
+/* DROPDOWN MENU TO USER ICON ENDs*/
+>>>>>>> 278279b619d6efab2a098e9ab5148784df7d6cfd

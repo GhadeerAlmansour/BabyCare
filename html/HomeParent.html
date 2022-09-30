@@ -3,21 +3,48 @@
 <head>
   <title> Parent HomePage</title>
   <link rel = "stylesheet" href ="../css/home.css">
+
+  <style>
+
+.card h5{
+	line-height: 27px;
+	margin-bottom: 25px;
+    margin-top: 10px;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  }
+  
+
+
+
+
+</style>
+
+
 </head>
 
 <body>
   <div class="header" >
     <image src="../images/webLogo.jpeg" class="logo" alt="BabyCare Logo">
 <ul>
-    <li><a href="#">Home</a></li>
     <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
     <li><a href="#aboutus">About Us</a></li>
 </ul>
+
+<div class="dropdown">
 <image src="../images/userIcon.png" class="image">
+<ul>
+
+    <li><a href="ViewProfile.html">View Profile</a></li><br>
+    <li><a href="#"><br></a></li>
+    <li><a href="home.html">Sign-Out</a></li>
+
+</ul>
+
+</div>
 
   </div> 
-  <div class="container2" style=" height: 1350px;
-  "> 
+  <div class="container2" style=" height: 1350px;"> 
    <div class="option">
 
     <div class="title">
@@ -25,41 +52,46 @@
     </div>
 
     <div class="box">
+        <!------------  Job Request   ----------->
         <div class="card">
             <image src="../images/babysitter.png" alt="icon" class="icon">
-            <h5>Babysitter Request</h5>
+            <h5 style="margin-left: -10px;">Babysitter Request</h5>
             <div class="pra">
                 <p>Request a babysitter for your child </p>
 
-                <p style="text-align: center;">
-                    <a class="button" href="#">GO!</a>
+                <p style="text-align: center;" >
+                    <a class="button" href="jobRequest.html" >Previous</a>
+                    <a class="button" href="postJobReq.html" >New</a>
+
                 </p>
             </div>
         </div>
 
 
+        <!------------  OFFER LIST   ----------->
 
         <div class="card">
             <image src="../images/list.png" alt="icon" class="icon">
-                <h5>View offer list</h5>
+                <h5 style="    margin-left: -10px;">View offer list</h5>
             <div class="pra">
                 <p>select a babysitter</p>
 
                 <p style="text-align: center;">
-                    <a class="button" href="#">Go!</a>
+                    <a class="button" href="offerList.html" >Go!</a>
                 </p>
             </div>
         </div>
 
-        
+         <!------------  BOOKINGS   ----------->
+       
         <div class="card">
             <image src="../images/booking.png" alt="icon" class="icon">
-                <h5>View Booking</h5>
+                <h5 style="    margin-left: -10px;">View Booking</h5>
             <div class="pra">
                 <p>view current and previous bookings</p>
 
                 <p style="text-align: center;">
-                    <a class="button" href="#">current </a>
+                    <a class="button" href="ViewBooking.html" >current </a>
                     <a class="button" href="#">previous</a>
 
                 </p>

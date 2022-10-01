@@ -1,5 +1,5 @@
 :root{
-    --form-height:1000px;
+    --form-height:1050px;
     --form-width: 900px;
     
     --left-color:#FFB3B3;
@@ -118,25 +118,31 @@ overflow: scroll;
   
   .overlay .sign-in{
     float: left;
+   
   }
   
   .overlay-text-left-animation{
       animation: text-slide-in-left 1s linear;
+   
   }
   .overlay-text-left-animation-out{
       animation: text-slide-out-left 1s linear;
+      
   }
   
   .overlay .sign-up{
     float:right;
+    
   }
   
   .overlay-text-right-animation{
       animation: text-slide-in-right 1s linear;
+      
   }
   
   .overlay-text-right-animation-out{
       animation: text-slide-out-right 1s linear;
+     
   }
   
   

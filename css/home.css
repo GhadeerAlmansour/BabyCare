@@ -301,6 +301,7 @@ overflow: scroll;
     font-family: 'Helvetica Neue', sans-serif;
     letter-spacing: 1.5px;
     padding-left: 20px;
+    border-radius: 30px;
   }
   
   #sign-in-form input::placeholder{

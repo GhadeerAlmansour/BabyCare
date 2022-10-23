@@ -30,7 +30,7 @@
   }
 
   .container2{
-    width: 1200px;
+    width: 1300px;
     height: var(--form-height);
     position: relative;
     margin: auto;
@@ -168,7 +168,6 @@ overflow: scroll;
     width: 140px;
     height: 40px;
     font-size: 14px;
-    text-transform: uppercase;
     background: none;
     border-radius: 20px;
     color: white;
@@ -207,7 +206,6 @@ overflow: scroll;
     width: 140px;
     height: 40px;
     font-size: 14px;
-    text-transform: uppercase;
     background: none;
     border-radius: 20px;
     color: white;
@@ -525,10 +523,10 @@ position: relative;
 }
 .header ul li a{
 text-decoration: none;
-color: white;
-text-transform: uppercase;
+color: rgb(104, 104, 104);
 font-family: 'Courier New', monospace;
-
+font-weight: 800;
+margin-left: -8px;
 
 }
 .header ul li ::after{

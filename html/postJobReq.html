@@ -3,6 +3,35 @@
     <title> Post Job Request</title>
     <link rel = "stylesheet" href ="../css/home.css">
   
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+
+    <script>
+
+$(document).ready(function() {
+    var max_fields = 10;
+    var wrapper = $(".cont1");
+    var add_button = $(".add_form_field");
+
+    var x = 1;
+    $(add_button).click(function(e) {
+        e.preventDefault();
+        if (x < max_fields) { 
+            x++;
+            
+            $(wrapper).append('<div>Name:<input type="text" name="name[]" size="12" maxlength="20" value="" required /> Age: <input type="number" name="age[]" size="4" maxlength="10" value="" style="max-width:50px" required/> <a href="#" class="delete"><image src="../images/xicon.png"" alt="X" style="width:20px; margin-left:10px;" ></image></a></div>'); //add input box
+        } else {
+            alert('You Reached the limits')
+        }
+    });
+
+    $(wrapper).on("click", ".delete", function(e) {
+        e.preventDefault();
+        $(this).parent('div').remove();
+        x--;
+    })
+});
+
+    </script>
     <style>
   
 
@@ -24,7 +53,7 @@ padding-bottom: 20px;
 
 .container2:hover{
 
-transform: scale(1.03);
+transform: scale(1.01);
 }
   
   .card .button{
@@ -32,6 +61,26 @@ transform: scale(1.03);
       color: rgb(104, 104, 104);;
   
   }
+
+  .add_form_field{
+    background-color:#ffe3e3;
+	color: rgb(104, 104, 104);;
+	text-decoration: none;
+	font-weight: bold;
+  border: 1px solid #e2c7c7;
+	padding: 5px 10px;
+	border-radius: 15px;
+	transition: .4s; 
+  margin-right:800px;
+
+  font-family: 'Courier New', Courier, monospace;
+  }
+  .add_form_field:hover{
+
+  margin-bottom: 20px;
+  
+  }
+
   select{
 
     background-color:#fbf6ff;color:
@@ -104,7 +153,7 @@ margin-right: 30px;
     <image src="../images/userIcon.png" class="image" alt="User Icon">
     <ul>
     
-        <li><a href="ViewParentProfile.html">View Profile</a></li><br>
+        <li style="margin-bottom:14px ;" ><a href="ViewParentProfile.html" >View Profile</a></li><br>
         <li><a href="#"><br></a></li>
         <li><a href="home.html">Sign-Out</a></li>
     
@@ -123,7 +172,26 @@ margin-right: 30px;
             <div class="pra" style="  font-family: 'Courier New', monospace;"> 
            
   <form method="post">
-<br><br>
+
+
+
+<div class="cont1" style="margin-top:40px ;">
+
+
+  <div> 
+    <button class="add_form_field">Add Child &nbsp; 
+      <span style="font-size:16px; font-weight:bold;">+ </span>
+     </button>
+    <lable> Name:<input type="text" name="name[]" size="12" maxlength="20" value="" required>
+    <lable> Age:
+      <input name="age" type="number" size="4" maxlength="40" value="" style="max-width:50px" required>
+     </div>
+
+</div>
+
+
+
+<!--   
     <lable> Number of children:    
         <input name="numberchildren" type="number" size="1"  value="2"  style="max-width:50px">
         <br> <br>      
@@ -138,9 +206,9 @@ margin-right: 30px;
   <input name="name" type="text" size="12" maxlength="20" value=""  >
   <lable> Age:
   <input name="age" type="text" size="3" maxlength="40" value="" >
-  <br>  
-   <br>
-  
+  -->
+   <br>   <br>
+
    <label for="Service">Choose Service Type:</label>
    <select name="CareType" id="servicetype" style="max-width:350px ;max-height:55px;  ">
     <option value="DayCare">Daytime Babysitting</option>
@@ -169,12 +237,12 @@ margin-right: 30px;
 </select>
 <br><br><br>
 <label for="date">Date:</label>
-  <input name="Date" type="date" >
+  <input name="Date" type="date" required>
   <label for="Time">   -   From:</label>
-  <input name="time" type="time"  >
+  <input name="time" type="time"  required>
   
   <label for="Time">   -   To:</label>
-  <input name="time" type="time"  >
+  <input name="time" type="time" required >
   <br><br> <br><br>
 
   </lable>

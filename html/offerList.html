@@ -27,16 +27,98 @@ a1:hover + div1 {
   z-index: 999999999999999999999999999999999999999999999999999;
 
 }
+
+#demo , #demo1 {
+
+  font-size: 20px;
+  
+}
 </style>
+
+
+ <script>
+var start = new Date().getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    var end = new Date().getTime();
+    var distance = end - start;
+  
+    // Time calculations for days, hours, minutes and seconds
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000)-1;
+    
+    var Seconds = 59;
+    Seconds = Seconds - seconds;
+    if (Seconds < 10) { Seconds = "0"+Seconds; }
+    var Minutes = 59;
+    Minutes = Minutes - minutes;
+    if (Minutes < 10) { Minutes = "0"+Minutes; }
+    var Hours = 0;
+  
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = "0" + hours + ":"
+    + Minutes + ":" + Seconds;
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "00:00:00";
+    }
+}, 1000);
+
+////////////////////
+var start = new Date().getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    var end = new Date().getTime();
+    var distance = end - start;
+  
+    // Time calculations for days, hours, minutes and seconds
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000)-1;
+    
+    var Seconds = 59;
+    Seconds = Seconds - seconds;
+    if (Seconds < 10) { Seconds = "0"+Seconds; }
+    var Minutes = 59;
+    Minutes = Minutes - minutes;
+    if (Minutes < 10) { Minutes = "0"+Minutes; }
+    var Hours = 0;
+  
+    // Output the result in an element with id="demo"
+    document.getElementById("demo1").innerHTML = "0" + hours + ":"
+    + Minutes + ":" + Seconds;
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo1").innerHTML = "00:00:00";
+    }
+}, 1000);
+ </script>
+
+
+ 
 </head>
 
 <body>
     <div class="header" >
       <image src="../images/webLogo.jpeg" class="logo">
-       <ul>
-         <li><a href="HomeParent.html">Home</a></li>
-         <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
-       </ul>
+        <ul>
+          <li ><a href="../html/HomeParent.html">Home</a></li>
+          <li><a href="../html/jobRequest.html">Job Request</a></li>
+          <li><a href="../html/postJobReq.html">New Request</a></li>
+          <li style="text-decoration:underline ;" ><a href="../html/offerList.html">Offer List</a></li>
+          <li><a href="../html/PreviousBookingPP.html">Previous Booking</a></li>
+          <li><a href="../html/CurrentBookingPP.html">Current Booking</a></li>
+      </ul>
+
        <div class="dropdown">
         <image src="../images/userIcon.png" class="image" alt="User Icon">
         <ul>
@@ -67,18 +149,18 @@ a1:hover + div1 {
         
        
         <div class="praOL" >
-            <p style="font-size: 17px">sents an offer!<br>
-              view details for more information.<br>
-              view the babysitter's profile to view reviews and contact the sitter.<br>
-              <p style="font-size: 15px">the over is valid for 3 hours.</p>
+            <p style="font-size: 17px">
+              i am available 8:00 - 10:00<br> looking forward to take care of your kids!
+              <p style="font-size: 15px">the over is valid for 1 hour.</p>
+              <p id="demo"></p>
+
+            
+    
             </p>
 
             <p style="text-align: right;">
                 <a style="color: #6bbd5c;" class="button" href="#">accept </a>
                 <a style="color: #ff5b5b;" class="button" href="#">reject</a>
-               <a1><a class="button" href="#">view details</a></a1>
-               <div1  >i am available 8:00 - 10:00<br> looking forward to take care of your kids!</div1>
-
             </p>
         </div>
 
@@ -96,17 +178,16 @@ a1:hover + div1 {
         
        
         <div class="praOL">
-            <p style="font-size: 17px">sents an offer!<br>
-              view details for more information.<br>
-              view the babysitter's profile to view reviews and contact the sitter.<br>
-              <p style="font-size: 15px">the offer is valid for 3 hours.</p>
+            <p style="font-size: 17px">
+              i am available 8:00 - 10:30<br>looking forward to take care of your kids!
+              <p style="font-size: 15px">the offer is valid for 1 hour.</p>
+              <p id="demo1"></p>
+
             </p>
 
             <p style="text-align: right;">
                 <a style="color: #6bbd5c;" class="button" href="#">accept </a>
                 <a style="color: #ff5b5b;"class="button" href="#">reject</a>
-                <a1><a class="button" href="#">view details</a></a1>
-                <div1  >i am available 8:00 - 10:30<br> Riyadh <br>looking forward to take care of your kids!</div1>
             </p>
         </div>
     </div>

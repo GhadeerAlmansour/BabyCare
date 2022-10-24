@@ -8,7 +8,7 @@
     <script>
 
 $(document).ready(function() {
-    var max_fields = 10;
+    var max_fields = 100;
     var wrapper = $(".cont1");
     var add_button = $(".add_form_field");
 
@@ -30,6 +30,23 @@ $(document).ready(function() {
         x--;
     })
 });
+
+$(function(){
+    var dtToday = new Date();
+
+    var month = dtToday.getMonth() + 1;
+    var day = dtToday.getDate();
+    var year = dtToday.getFullYear();
+    if(month < 10)
+        month = '0' + month.toString();
+    if(day < 10)
+        day = '0' + day.toString();
+
+    var minDate= year + '-' + month + '-' + day;
+
+    $('#ReqDate').attr('min', minDate);
+});
+
 
     </script>
     <style>
@@ -241,7 +258,7 @@ margin-right: 30px;
 </select>
 <br><br><br>
 <label for="date">Date:</label>
-  <input name="Date" type="date" required>
+  <input name="Date" type="date" id="ReqDate" required>
   <label for="Time">   -   From:</label>
   <input name="time" type="time"  required>
   

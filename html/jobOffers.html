@@ -8,9 +8,45 @@
   
   
   body{
-
 background-color: rgb(255, 247, 237);
 }
+
+
+
+
+.cardOL .button{
+	background-color:#ffe3e3;
+	color: rgb(104, 104, 104);;
+	text-decoration: none;
+	font-weight: bold;
+  border: 1px solid #e2c7c7;
+	padding: 6px 10px;
+	border-radius: 15px;
+	transition: .4s; 
+  position: relative;
+  margin-right:290px  ;
+  bottom: 220;
+
+
+}
+
+
+.cardOL{
+	height: 300px;
+	width: 550px;
+	padding: 10px 15px;
+	background: linear-gradient(#f5baba, #ffe3e3 );
+	border-radius: 20px;
+	margin: 50px;
+	position: relative;
+	overflow: hidden;
+	text-align: left;
+  box-shadow: 2px 5px 20px rgba(210, 197, 197, 0.4);
+  margin-top: -10px;
+
+}
+
+
  
  div1 {
     display: none;
@@ -78,7 +114,8 @@ input{
        Jobs you received:    
        </p>
   
-    <div class="cardOL">
+    <div style= float:left;
+    class="cardOL">
     <image src="../images/userIcon.png" class="imagei" alt="userIcon"></image>
         
 
@@ -90,8 +127,8 @@ input{
              <br>
 
               <strong>Name:</strong>Khalid <strong>Age:</strong>12<strong>| Name:</strong>Sara <strong>Age:</strong> 8
-              <strong>| Name:</strong>Noura <strong>Age:</strong> 3 <br><strong>Type of Service:</strong> Night time Babysitting <br>
-                <strong>Time: </strong>Friday| 20/10/2023| 8:00pm - 10:30pm 
+              <br><strong>Name:</strong>Noura <strong>Age:</strong> 3 <br><br><strong>Type of Service:</strong> Night time Babysitting <br>
+                <strong>Time: </strong>Friday| 20/10/2023| 8:00pm - 10:30pm <br><br>
             </p>
             <p style="text-align: right;">
               <a class="button" href="#">send offer </a>
@@ -109,28 +146,28 @@ input{
         </div>
 
     </div>
-
-
-    <div class="cardOL">
+    
+    <div style= float:rigth; 
+    class="cardOL">
     <image src="../images/userIcon.png" class="imagei" alt="userIcon"></image>
       
       <h5>Saud Alx</h5>
         <div class="praOL" >
-          <p style="font-size: 17px ; margin-top: 30px; ;">you received a job!<br>
-            click on details for more information.<br><br><br>
+          <p style="font-size: 17px ; margin-top: 30px; ;"><strong>you received a job!</strong> <br> <br>
+            <strong>Name:</strong>Yara <strong>Age:</strong>12<strong> | Name:</strong>Nouf <strong>Age:</strong> 9
+            <br><strong>Name:</strong>Ahmad <strong>Age:</strong> 5 <br><br><strong>Type of Service:</strong> Night time Babysitting <br>
+            <strong>Time: </strong>Monday | 22/10/2023 | 8:00pm - 10:30pm<br><br>
           </p>
 
             <p style="text-align: right;">
               <a class="button" href="#">send offer </a>
-                <a1><a class="button" href="#">view details</a></a1>
-               <div1><strong>Name:</strong>Yara <strong>Age:</strong>12<strong> | Name:</strong>Nouf <strong>Age:</strong> 9
-                <strong> | Name:</strong>Ahmad <strong>Age:</strong> 5 <br><strong>Type of Service:</strong> Night time Babysitting <br>
-                <strong>Time: </strong>Monday | 22/10/2023 | 8:00pm - 10:30pm </div1>
-                
             </p>
+
+          
             <p style="font-family: 'Courier New', Courier, monospace; width: 300px; margin-left: 10px; margin-bottom: 400px; margin-top: -30px; font-size: larger;"class="price">   
               <lable style="color:rgb(93, 91, 91)"><strong>Price:</strong>
-              <input price="price:" type="text" size="17" maxlength="20" value="enter your price" style="font-family:'Courier New', Courier, monospace;font-size: 10px; padding: 6px; " >
+              <input price="price:" type="text" size="17" maxlength="20" value="enter your price" 
+              style="font-family:'Courier New', Courier, monospace;font-size: 10px; padding: 6px; " >
                 <small><strong>per hr</strong></small>
               </p>
         </div>

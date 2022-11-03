@@ -182,7 +182,7 @@ margin-left : 0;
                 </div>
 
                 <!------- BABY SITTER SIGNUP ---------->
-                  <form id="sign-up-form-babtsitter" class="babysitter"  >  
+                  <form id="sign-up-form-babtsitter" class="babysitter" action="BabySitterSignup.php" method="post" enctype="multipart/form-data" >  
                     <h3>sign up as babysitter</h3>
                     <input type="text" placeholder=" First Name" name="First_Name" required/>
                     <input type="text" placeholder=" Last Name" name="Last_Name" required/>
@@ -207,7 +207,7 @@ margin-left : 0;
                        <!------- PARENT SIGNUP ---------->
 
                   
-                  <form id="sign-up-form-parent" class="parent"  action="home.php" method="post" enctype="multipart/form-data">
+                  <form id="sign-up-form-parent" class="parent"  action="ParentSignup.php" method="post" enctype="multipart/form-data">
                       <h3>sign up as parent</h3>
 <!--  <<<<<<< HEAD:html/home.php -->
                       <input type="text" placeholder="First Name" required name="First_Name"/>

@@ -83,7 +83,7 @@ margin-left : 0;
     --right-color: #FFDBA4;
   }
   
-
+ 
 
         </style>
 
@@ -101,11 +101,12 @@ margin-left : 0;
 
       <div class="header" >
         <image src="../images/webLogo.jpeg" class="logo" alt="BabyCare Logo">
-    <ul>
-        <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
-        
+    <ul  >
+        <li style="text-decoration:underline ; text-align: left; " ><a href="../html/home.html">Home</a></li>
+      <li><a href="mailto:BabyCareInfo.sa@gmail.com" >Contact Us</a></li> 
         <li><a href="#sign-in">Sign-in & Sign-up</a></li>
-
+       
+<li style="margin-left: 510px;"></li>
     </ul>
 
       </div> 
@@ -175,13 +176,14 @@ margin-left : 0;
                       <option value="female">Female</option>
                     </select>
 
-                    <input type="text" placeholder="City" required/> <br>
+                    <input type="text"  placeholder="City" required/> <br>
                     
-                    <label for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200;">
+                    <label  for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; ">
+                      
                       Select your profile image: (optional)
                     </label><br>
-                    <input type="file" id="img" name="img" accept="image/*">
-   
+                    <input type="image" id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)" name="img" style="width: 200px; height:50px;" optional >
+                    
                     <input type="text" placeholder="Bio" required/>
 
                     <button class="control-button up">Sign Up</button>
@@ -192,6 +194,7 @@ margin-left : 0;
                   
                   <form id="sign-up-form-parent" class="parent"  action="home.php" method="post" enctype="multipart/form-data">
                       <h3>sign up as parent</h3>
+<<<<<<< HEAD:html/home.php
                       <input type="text" placeholder="First Name" required name="First_Name"/>
                       <input type="text" placeholder="Last Name" required name="Last_Name"/>
                       <input type="email" placeholder="Email" required name="Email"/>
@@ -200,10 +203,21 @@ margin-left : 0;
                       <input type="text" placeholder="Location" required name="location"/> <br>
 
                       <label for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; " optional name="image">
+=======
+                      <input type="text" placeholder="First Name" required/>
+                      <input type="text" placeholder="Last Name" required/>
+                      <input type="email" placeholder="Email" required/>
+                      <input type="password" placeholder="Password" required/>
+                      <input type="text" placeholder="City" required/> <br>
+                      <input type="text" placeholder="Location" required/> <br>
+
+                      <label for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; " optional>
+                        
+>>>>>>> 8520cfde2be92a9a4ddaa216e9ca36ee1de3f9f8:html/home.html
                         Select your profile image: (optional)
                       </label><br>
 
-                      <input type="file" id="img" name="img" accept="image/*">
+                      <input type="image" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" name="img" style="width: 200px; height:50px;" optional name="img"  accept="image/*">
 
                       <button class="control-button up" type="submit">Sign Up</button>
                     </form>
@@ -223,7 +237,7 @@ margin-left : 0;
     </a>
                            
                             </footer>   
-           
+                           
       </body>
       <script src="../js/home.js"></script>
   

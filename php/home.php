@@ -1,11 +1,8 @@
 
 <?php
-<<<<<<< HEAD:html/home.php
     session_start();
     
-=======
->>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+/*if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
     
   $First_Name = $_POST['First_Name'];
@@ -16,14 +13,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $location = $_POST['location'];  
   //$filename =$_File["image"]['tmp_name'] ;  
  //$filetmpname = $_FILES['image']['name']; 
-<<<<<<< HEAD:html/home.php
 
  //$folder = 'image/';
  //move_uploaded_file($filetmpname, $folder.$filename);
   $query = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
 
   $result = mysqli_query($conn, $query);
-=======
  //move_uploaded_file($filetmpname, $folder.$filename);
  $folder = 'image/';
 
@@ -42,7 +37,6 @@ $Bio = $_POST['Bio'];
   $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, Image	, Bio)	
            values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $folder' , '$Bio')";
   $result = mysqli_query($conn, $sql);
->>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
  /*
 if($conn->connect_error){
   echo "$conn->connect_error";
@@ -59,8 +53,8 @@ if($conn->connect_error){
 */
 
 
-}
 ?>
+
 
 <!doctype html>
 <html>

@@ -1,12 +1,14 @@
 <?php
+    session_start();
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
     
-  $First_Name = $_POST['First_Name'];
-  $Last_Name = $_POST['Last_Name'];
-  $Email = $_POST['Email'];
-  $password = $_POST['password'];
-  $city = $_POST['city'];  
+  $First_Name = $_POST['first_Name'];
+  $Last_Name = $_POST['last_Name'];
+  $Email = $_POST['email'];
+  $password = $_POST['Password'];
+  $city = $_POST['City'];  
   $location = $_POST['location'];  
   //$filename =$_File["image"]['tmp_name'] ;  
  //$filetmpname = $_FILES['image']['name']; 
@@ -172,11 +174,11 @@ margin-left : 0;
                 <!------- BABY SITTER SIGNUP ---------->
                   <form id="sign-up-form-babtsitter" class="babysitter" action="BabySitterSignup.php" method="post" enctype="multipart/form-data" >  
                     <h3>sign up as babysitter</h3>
-                    <input type="text" placeholder=" First Name" name="First_Name" required/>
-                    <input type="text" placeholder=" Last Name" name="Last_Name" required/>
-                    <input type="email" placeholder="Email" name="Email" required/>
+                    <input type="text" placeholder=" First Name" name="first_Name" required/>
+                    <input type="text" placeholder=" Last Name" name="last_Name" required/>
+                    <input type="email" placeholder="Email" name="email" required/>
                     <input type="text" placeholder="Phone" name="phone" required/>
-                    <input type="password" placeholder="Password"  name="password" required/>
+                    <input type="password" placeholder="password"  name="Password" required/>
                     <input type="text" placeholder=" ID" name="ID" required/>
                     <input type="number" placeholder=" Age" name="Age" required/>
                     <select name="gender" >
@@ -184,9 +186,9 @@ margin-left : 0;
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                     </select>
-                    <input type="text"  placeholder="City" name="city" required/> <br>
+                    <input type="text"  placeholder="City" name="City" required/> <br>
                     <label  for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; ">Select your profile image: (optional) </label><br>
-                    <input type="image" id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 200px; height:50px;" name="image"  optional >
+                    <input type="image" id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 200px; height:50px;" name="imageB"  optional >
                     <input type="text" placeholder="Bio" name="Bio" required/>
 
                     <button class="control-button up" type="submit">Sign Up</button>

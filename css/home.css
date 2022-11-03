@@ -30,7 +30,7 @@
   }
 
   .container2{
-    width: 1200px;
+    width: 1300px;
     height: var(--form-height);
     position: relative;
     margin: auto;
@@ -64,8 +64,8 @@ overflow: scroll;
   }
 
   .container4{
-    width: 800px;
-    height: 1200px;
+    width: 1000px;
+    height: 1000px;
     position: relative;
     margin: auto;
     box-shadow: 2px 10px 40px rgba(8, 8, 8, 0.4);
@@ -118,25 +118,31 @@ overflow: scroll;
   
   .overlay .sign-in{
     float: left;
+   
   }
   
   .overlay-text-left-animation{
       animation: text-slide-in-left 1s linear;
+   
   }
   .overlay-text-left-animation-out{
       animation: text-slide-out-left 1s linear;
+      
   }
   
   .overlay .sign-up{
     float:right;
+    
   }
   
   .overlay-text-right-animation{
       animation: text-slide-in-right 1s linear;
+      
   }
   
   .overlay-text-right-animation-out{
       animation: text-slide-out-right 1s linear;
+     
   }
   
   
@@ -162,7 +168,6 @@ overflow: scroll;
     width: 140px;
     height: 40px;
     font-size: 14px;
-    text-transform: uppercase;
     background: none;
     border-radius: 20px;
     color: white;
@@ -201,7 +206,6 @@ overflow: scroll;
     width: 140px;
     height: 40px;
     font-size: 14px;
-    text-transform: uppercase;
     background: none;
     border-radius: 20px;
     color: white;
@@ -301,6 +305,7 @@ overflow: scroll;
     font-family: 'Helvetica Neue', sans-serif;
     letter-spacing: 1.5px;
     padding-left: 20px;
+    border-radius: 30px;
   }
   
   #sign-in-form input::placeholder{
@@ -443,6 +448,19 @@ overflow: scroll;
     letter-spacing: 1.5px;
     padding-left: 20px;
   }
+  #sign-up-form-parent textarea, #sign-up-form-babtsitter textarea{
+    margin: 12px;
+    font-size: 14px;
+    padding: 15px;
+    width: 260px;
+    font-weight: 300;
+    border: none;
+    background-color: #e4e4e494;
+    font-family: 'Helvetica Neue', sans-serif;
+    letter-spacing: 1.5px;
+    padding-right: 50px;
+    margin-right: 100;
+  }
 
   h6 {
     margin-top: 30px;  
@@ -505,10 +523,10 @@ position: relative;
 }
 .header ul li a{
 text-decoration: none;
-color: white;
-text-transform: uppercase;
+color: rgb(104, 104, 104);
 font-family: 'Courier New', monospace;
-
+font-weight: 800;
+margin-left: -8px;
 
 }
 .header ul li ::after{
@@ -565,6 +583,19 @@ width: 100%;
 	align-items: center;
 	min-height: 400px;
 }
+
+
+.box2{
+	display: flex;
+	justify-content: center;
+	align-items: center ;
+	min-height: 120px;
+  resize: none;
+  margin-right: 200px;
+  padding: 5px 10px;
+}
+
+
 .card{
 	height: 300px;
 	width: 270px;
@@ -619,8 +650,8 @@ h5{
   text-align: center;
 }
 .card .button{
-	background-color:#fbf6ff;
-	color: rgb(104, 104, 104);;
+	background-color:#ffe3e3;
+	color: rgb(104, 104, 104);
 	text-decoration: none;
 	border: 2px solid transparent;
 	font-weight: bold;
@@ -695,7 +726,22 @@ h5{
 
 /* offer list */
 .cardOL{
-	height: 150px;
+	height: 210px;
+	width: 950px;
+	padding: 10px 15px;
+	background: linear-gradient(#f5baba, #ffe3e3 );
+	border-radius: 20px;
+	margin: 50px;
+	position: relative;
+	overflow: hidden;
+	text-align: left;
+  box-shadow: 2px 5px 20px rgba(210, 197, 197, 0.4);
+  margin-top: -10px;
+
+}
+
+.cardOL1{
+	height: px;
 	width: 900px;
 	padding: 10px 15px;
 	background: linear-gradient(#f5baba, #ffe3e3 );
@@ -739,13 +785,22 @@ h5{
 	background-color:#ffe3e3;
 	color: rgb(104, 104, 104);;
 	text-decoration: none;
-	border: 2px solid #e2c7c7;
 	font-weight: bold;
+  border: 1px solid #e2c7c7;
 	padding: 5px 10px;
 	border-radius: 15px;
 	transition: .4s; 
   margin-right:20px;
 
+}
+ .button{
+	background-color:#ffe3e3;
+	color: rgb(104, 104, 104);
+}
+ .button:hover{
+	background-color: transparent;
+	border: 2px solid  rgb(104, 104, 104);
+	cursor: pointer;
 }
 .cardED{
 	background-color:#fed2d2;
@@ -781,7 +836,18 @@ h5{
   box-shadow: 2px 5px 5px rgba(8, 8, 8, 0.4);
 }
 .price{
-  margin-left: 660px;
+  margin-left: 780px;
+  margin-top: -30px;
+  padding-bottom: 0px;
+  margin-bottom: -10px;
+  color: #212020;
+  padding-top: 10px;
+
+}
+
+
+.price2{
+  margin-right: 660px;
   margin-top: -30px;
   padding-bottom: 0px;
   margin-bottom: -10px;
@@ -868,4 +934,51 @@ button:active {
 
 }
 /* Baby sitter profile ends */
+
+
+.checked {
+  color: orange;
+}
+
+
+
+/* DROPDOWN MENU TO USER ICON */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  
+
+}
+.dropdown ul {
+    margin-left: -140px;
+  padding-right:40px;
+  margin-top: -1px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  margin-right: 5px;
+    display: none;
+  position: absolute;
+  background-color: #383535;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+
+
+}
+
+.dropdown:hover ul {
+  display: block;
+}
+.dropdown a{
+    text-decoration: none;
+color: rgb(0, 0, 0);
+text-transform: uppercase;
+font-family: 'Courier New', monospace;
+padding-bottom: 10px;
+}
+
+
+
+/* DROPDOWN MENU TO USER ICON ENDs*/
 

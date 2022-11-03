@@ -1,13 +1,32 @@
 <html>
 
 <head>
-  <title> Job Request</title>
+  <title> Previous Booking</title>
   <link rel = "stylesheet" href ="../css/home.css">
 
   <style>
 
+.backicon{
+margin-left : 30px;
+  width:40px;
+  cursor:pointer;
+  border-radius: 10px; 
+  transition: 0.5s ease;
+  cursor: pointer;
+}
 
-.card{ width:720px; height:300px; margin-left: 215px;
+
+.ToTop{
+margin-left : 0;
+  width:30px;
+  cursor:pointer;
+  border-radius: 10px; 
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+
+.card{ width:720px; height:450px; margin-left: 215px;
 	padding: 20px 35px;
 	background: linear-gradient(to bottom right,#FFB3B3,#ffdede);
 	border-radius: 20px;
@@ -34,6 +53,7 @@ margin-bottom: 5px;
 	color: rgb(104, 104, 104);;
 
 }
+
 h5{
 	border-radius: 30px;
   padding: 9px 22px;
@@ -41,7 +61,7 @@ h5{
 margin-left: -5px;
 margin-top: -42px;
 }
-
+  
   </style>
 </head>
 
@@ -49,45 +69,58 @@ margin-top: -42px;
   <div class="header" >
     <image src="../images/webLogo.jpeg" class="logo">
 <ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
-    <li><a href="#newreq">New Request</a></li>
+  <li ><a href="../html/HomeParent.html">Home</a></li>
+  <li ><a href="../html/jobRequest.html">Job Request</a></li>
+  <li><a href="../html/postJobReq.html">New Request</a></li>
+  <li><a href="../html/offerList.html">Offer List</a></li>
+  <li style="text-decoration:underline ;" ><a href="../html/PreviousBookingPP.html">Previous Booking</a></li>
+  <li><a href="../html/CurrentBookingPP.html">Current Booking</a></li>
 
+    
 </ul>
-<image src="../images/userIcon.png" class="image">
-
+  
+<div class="dropdown">
+  <image src="../images/userIcon.png" class="image">
+  <ul>
+  
+    <li><a href="ViewParentProfile.html">View Profile</a></li><br>
+    <li><a href="#"><br></a></li>
+    <li><a href="home.html">Sign-Out</a></li>
+  </ul>
+  </div> 
   </div> 
 
 
   <!--------- Container -------->
 
-  <div class="container2" style=height:450px;> 
-<a href="#newreq"> <img src="../images/newReqIcon.png" style=" width: 60px; height: 60px;  position: absolute;padding: 20px 35px;
-  "/> </a>
+  <div class="container2" style=height:1300px;> 
+
       <div class=box style="	display: block;">
  
 
   <!--------- Card 1 -------->
 
         <div class="card" style="padding-top: 70px; text-align:left;"  >
-          <h5>View Current Booking</h5>
+          <h5>Previous Booking</h5>
           <div class="pra" style="  font-family: 'Courier New', monospace;">
   
 <form >
-<br>
-  <lable> Name:
+  <lable> Baby Sitter Name:
+    <input name="name" type="text" size="12" maxlength="20" value="Sara Alx" readonly>
+<br><br>
+  <lable> Kid Name:
     <input name="name" type="text" size="12" maxlength="20" value="Khalid" readonly >
     <lable> Age:
     <input name="age" type="text" size="3" maxlength="40" value="12"readonly >
 <br>
 
-<lable> Name:
+<lable> Kid Name:
 <input name="name" type="text" size="12" maxlength="20" value="Sara" readonly >
 <lable> Age:
 <input name="age" type="text" size="3" maxlength="40" value="8"readonly >
 <br>  
 
-<lable> Name: 
+<lable> Kid  Name: 
  <input name="name" type="text" size="12" maxlength="20" value="Norah" readonly >
 <lable> Age:
 <input name="age" type="text" size="3" maxlength="40" value="3"readonly >
@@ -105,12 +138,21 @@ margin-top: -42px;
 <br><br>
 
 </form>
-              <p style="text-align: center;">
-                  <a class="button" href="#" style="color:#7b8fea;" >Edit</a>
-                  <a class="button" href="#" style="color:#ff5b5b;">Cancel</a>
-                  <a class="button" href="#" style="color:#ff8529;">View Offers</a>
-
-              </p>
+<p style="text-align: center;">
+  <a class="button" href="#" style="color: #f7f7f7;;" ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <span class="fa fa-star checked" ></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span>
+    <span class="fa fa-star checked"></span></a>
+</p>
+ 
+<p style="text-align: below;">
+      <textarea id="w3review" name="w3review" rows="4" cols="50"  style="text-align:left ; resize:none; " resize="none" >the kids LOVED HER!!!!!!</textarea></p>
+    
+     <p style="text-align: below;">
+     <a class="button" href="#" style="color:#9a0000;" >Post</a> 
+     </p>
             </div>
           </div>
 
@@ -120,16 +162,19 @@ margin-top: -42px;
   <!--------- Card 2 -------->
 
           <div class="card" style="padding-top: 70px; text-align:left;"  >
-            <h5>Previous Booking: </h5>
+            <h5>Previous Booking </h5>
             <div class="pra" style="  font-family: 'Courier New', monospace;">
    <br> 
   <form >
-    <lable> Name:
+    <lable> Baby Sitter Name:
+      <input name="name" type="text" size="12" maxlength="20" value="Norah Alx" readonly >
+      <br><br>
+    <lable> Kid Name:
       <input name="name" type="text" size="12" maxlength="20" value="Khalid" readonly >
       <lable> Age:
       <input name="age" type="text" size="3" maxlength="40" value="12"readonly >
   <br>
-  <lable> Name:
+  <lable> Kid Name:
   <input name="name" type="text" size="12" maxlength="20" value="Sara" readonly >
   <lable> Age:
   <input name="age" type="text" size="3" maxlength="40" value="8"readonly >
@@ -147,13 +192,26 @@ margin-top: -42px;
   
   </form>
                 <p style="text-align: center;">
-                    <a class="button" href="#" style="color:#6bbd5c;" >Booking Connfirmed - Click here to view your Booking</a>
+                    <a class="button" href="#" style="color: #f7f7f7;;" ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star checked"></span>
+                      <span class="fa fa-star"></span>
+                      <span class="fa fa-star"></span></a>
                 </p>
+                   
+                <p style="text-align: below;">
+                        <textarea id="w3review" name="review" rows="4" cols="50"  style="text-align:left ; resize:none;" resize="none" > She was an absolutely amazing Babysiter.</textarea></p>
+                      
+                       <p style="text-align: below;">
+                       <a class="button" href="#" style="color:#9a0000;" >Post</a> 
+                       </p>
+                    
               </div>
             </div>
 
 
-  
+ 
     </div>
   </div>
 
@@ -163,8 +221,12 @@ margin-top: -42px;
 
   <footer>
     <p>Copyright &copy; 2022 BabyCare </p>
-    <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;"/>Contact Us</a></p>
-  </footer>  
+    <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;">Contact Us</a></p>
+      <!------------  BACK TO TOP   ----------->
+      <a href="#" class="to-top">
+        <image src="..\images\to top.png" class="ToTop" alt="toTop"></image>
+      </a>
+  </footer>   
 
 </body>
 

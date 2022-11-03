@@ -6,6 +6,25 @@
 
   <style>
 
+.backicon{
+margin-left : 30px;
+  width:40px;
+  cursor:pointer;
+  border-radius: 10px; 
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+
+.ToTop{
+margin-left : 0;
+  width:30px;
+  cursor:pointer;
+  border-radius: 10px; 
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
 
 .card{ width:720px; height:300px; margin-left: 215px;
 	padding: 20px 35px;
@@ -46,24 +65,41 @@ margin-top: -42px;
 </head>
 
 <body>
+
+    <!--------- Header -------->
+
   <div class="header" >
-    <image src="../images/webLogo.jpeg" class="logo">
-<ul>
-    <li><a href="#">Home</a></li>
-    <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
-    <li><a href="#newreq">New Request</a></li>
+    <image src="../images/webLogo.jpeg" class="logo" alt="BABYCARE Logo">
+      <ul>
+        <li ><a href="../html/HomeParent.html">Home</a></li>
+        <li  style="text-decoration:underline ;" ><a href="../html/jobRequest.html">Job Request</a></li>
+        <li><a href="../html/postJobReq.html">New Request</a></li>
+        <li><a href="../html/offerList.html">Offer List</a></li>
+        <li><a href="../html/PreviousBookingPP.html">Previous Booking</a></li>
+        <li><a href="../html/CurrentBookingPP.html">Current Booking</a></li>
+    
+    </ul>
 
-</ul>
-<image src="../images/userIcon.png" class="image">
 
-  </div> 
-
+<div class="dropdown">
+  <image src="../images/userIcon.png" class="image" alt="User Icon">
+  <ul>
+  
+      <li><a href="ViewParentProfile.html">View Profile</a></li><br>
+      <li><a href="#"><br></a></li>
+      <li><a href="home.html">Sign-Out</a></li>
+  
+  </ul>
+  
+  </div>
+</div>
 
   <!--------- Container -------->
 
-  <div class="container2" style=height:450px;> 
+  <div class="container2" style=height:1200px;> 
+    <!-- 
 <a href="#newreq"> <img src="../images/newReqIcon.png" style=" width: 60px; height: 60px;  position: absolute;padding: 20px 35px;
-  "/> </a>
+  "/> </a> -->
       <div class=box style="	display: block;">
  
 
@@ -94,10 +130,10 @@ margin-top: -42px;
 <br><br>
 
 <lable> Type of Service: 
-<input name="service" type="text" size="12" maxlength="20" value="Night Care" readonly >
+<input name="service" type="text" size="22" maxlength="30" value="Night time Babysitting" readonly >
  
 <br><br>
-<lable> Duration:
+<lable> Time:
 <input name="day" type="text" size="12" maxlength="20" value="Friday" readonly >
 <input name="Date" type="text" size="12" maxlength="20" value="20/10/2023" readonly >
 <input name="time" type="text" size="15" maxlength="20" value="8:00pm - 10:30pm" readonly >
@@ -106,9 +142,9 @@ margin-top: -42px;
 
 </form>
               <p style="text-align: center;">
-                  <a class="button" href="#" style="color:#7b8fea;" >Edit</a>
-                  <a class="button" href="#" style="color:#ff5b5b;">Cancel</a>
-                  <a class="button" href="#" style="color:#ff8529;">View Offers</a>
+                  <a class="button" href="#" style="color:rgb(87, 86, 86);" >Edit</a>
+                  <a class="button" href="#" style="color:rgb(87, 86, 86)">Cancel</a>
+                  <a class="button" href="offerList.html" style="color:rgb(87, 86, 86);">View Offers</a>
 
               </p>
             </div>
@@ -125,20 +161,27 @@ margin-top: -42px;
    <br> 
   <form >
     <lable> Name:
-      <input name="name" type="text" size="12" maxlength="20" value="Khalid" readonly >
+      <input name="name" type="text" size="12" maxlength="20" value="Yara" readonly >
       <lable> Age:
       <input name="age" type="text" size="3" maxlength="40" value="12"readonly >
   <br>
+  
   <lable> Name:
-  <input name="name" type="text" size="12" maxlength="20" value="Sara" readonly >
+  <input name="name" type="text" size="12" maxlength="20" value="Nouf" readonly >
   <lable> Age:
-  <input name="age" type="text" size="3" maxlength="40" value="8"readonly >
-<br><br>
+  <input name="age" type="text" size="3" maxlength="40" value="5"readonly >
+  <br>  
+  
+  <lable> Name: 
+   <input name="name" type="text" size="12" maxlength="20" value="Ahmed" readonly >
+  <lable> Age:
+  <input name="age" type="text" size="3" maxlength="40" value="9"readonly >
+  <br><br>
   <lable> Type of Service: 
-  <input name="service" type="text" size="12" maxlength="20" value="Day Care" readonly >
+  <input name="service" type="text" size="22" maxlength="30" value="Daytime Babysitting" readonly >
    
   <br><br><br>
-  <lable> Duration:
+  <lable> Time:
   <input name="day" type="text" size="12" maxlength="20" value="Monday" readonly >
   <input name="Date" type="text" size="12" maxlength="20" value="22/10/2023" readonly >
   <input name="time" type="text" size="15" maxlength="20" value="8:00am - 1:30pm" readonly >
@@ -147,22 +190,30 @@ margin-top: -42px;
   
   </form>
                 <p style="text-align: center;">
-                    <a class="button" href="#" style="color:#6bbd5c;" >Booking Connfirmed - Click here to view your Booking</a>
+                    <a class="button" href="CurrentBookingPP.html" style="color:rgb(87, 86, 86);" >Booking Connfirmed - Click here to view your Booking</a>
                 </p>
               </div>
             </div>
 
   <!--------- Card 3 NEW REQ -------->
 
+  <!-- <a href="postJobReq.html" style="text-decoration: none;">-->
   <div id="newreq" class="card" style="background: linear-gradient(to bottom right,#93b7cd,#ffffff); height: 150px;" >
-
+<!---
     <h5 style=" padding-top: 70px; text-align: left; font-size: 35px; border: none; margin-right: 50px; margin-left: -20px; background: none;">
-      Post A New Babysitting Request</h5>
+      Post A New Babysitting Request</h5>   --> <br><br>
+      <a class="button" href="postJobReq.html" style="color: rgb(104, 104, 104); background-color: transparent;
+       margin-top: 100px; font-size: 33px;   font-family: 'Courier New', monospace; font-weight: 700; margin-left: -12px;" >Post A New Babysitting Request</a>
+
     <div class="pra">
-  
+    </a>
 
     </div>
   </div>
+
+
+
+
     </div>
   </div>
 
@@ -172,8 +223,12 @@ margin-top: -42px;
 
   <footer>
     <p>Copyright &copy; 2022 BabyCare </p>
-    <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;"/>Contact Us</a></p>
-  </footer>  
+    <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;">Contact Us</a></p>
+      <!------------  BACK TO TOP   ----------->
+      <a href="#" class="to-top">
+        <image src="..\images\to top.png" class="ToTop" alt="toTop"></image>
+      </a>
+  </footer>    
 
 </body>
 

@@ -10,6 +10,26 @@
     display: none;
     
 }
+
+.backicon{
+margin-left : 30px;
+  width:40px;
+  cursor:pointer;
+  border-radius: 10px; 
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+
+.ToTop{
+margin-left : 0;
+  width:30px;
+  cursor:pointer;
+  border-radius: 10px; 
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
     
 a1:hover + div1 {
     display: block;
@@ -27,18 +47,109 @@ a1:hover + div1 {
   z-index: 999999999999999999999999999999999999999999999999999;
 
 }
+
+#demo , #demo1 {
+
+  font-size: 20px;
+  
+}
 </style>
+
+
+ <script>
+var start = new Date().getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    var end = new Date().getTime();
+    var distance = end - start;
+  
+    // Time calculations for days, hours, minutes and seconds
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000)-1;
+    
+    var Seconds = 59;
+    Seconds = Seconds - seconds;
+    if (Seconds < 10) { Seconds = "0"+Seconds; }
+    var Minutes = 59;
+    Minutes = Minutes - minutes;
+    if (Minutes < 10) { Minutes = "0"+Minutes; }
+    var Hours = 0;
+  
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML = "0" + hours + ":"
+    + Minutes + ":" + Seconds;
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "00:00:00";
+    }
+}, 1000);
+
+////////////////////
+var start = new Date().getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    var end = new Date().getTime();
+    var distance = end - start;
+  
+    // Time calculations for days, hours, minutes and seconds
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000)-1;
+    
+    var Seconds = 59;
+    Seconds = Seconds - seconds;
+    if (Seconds < 10) { Seconds = "0"+Seconds; }
+    var Minutes = 59;
+    Minutes = Minutes - minutes;
+    if (Minutes < 10) { Minutes = "0"+Minutes; }
+    var Hours = 0;
+  
+    // Output the result in an element with id="demo"
+    document.getElementById("demo1").innerHTML = "0" + hours + ":"
+    + Minutes + ":" + Seconds;
+    
+    // If the count down is over, write some text 
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo1").innerHTML = "00:00:00";
+    }
+}, 1000);
+ </script>
+
+
+ 
 </head>
 
 <body>
     <div class="header" >
       <image src="../images/webLogo.jpeg" class="logo">
-       <ul>
-         <li><a href="#">Home</a></li>
-         <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
-       </ul>
-     <image src="../images/userIcon.png" class="image">
-   </div> 
+        <ul>
+          <li ><a href="../html/HomeParent.html">Home</a></li>
+          <li><a href="../html/jobRequest.html">Job Request</a></li>
+          <li><a href="../html/postJobReq.html">New Request</a></li>
+          <li style="text-decoration:underline ;" ><a href="../html/offerList.html">Offer List</a></li>
+          <li><a href="../html/PreviousBookingPP.html">Previous Booking</a></li>
+          <li><a href="../html/CurrentBookingPP.html">Current Booking</a></li>
+      </ul>
+
+       <div class="dropdown">
+        <image src="../images/userIcon.png" class="image" alt="User Icon">
+        <ul>
+        
+            <li><a href="ViewParentProfile.html">View Profile</a></li><br>
+            <li><a href="#"><br></a></li>
+            <li><a href="home.html">Sign-Out</a></li>
+        
+        </ul>
+        
+        </div>   </div> 
 
     <div class="container2"> 
 
@@ -47,7 +158,7 @@ a1:hover + div1 {
        </p>
   
     <div class="cardOL">
-      <image src="../images/userIcon.png" class="imagei"></image>
+      <a href ="babysitterProfile1.html"> <image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;" ></image></a>
         
 
       
@@ -58,17 +169,18 @@ a1:hover + div1 {
         
        
         <div class="praOL" >
-            <p>Sara sents an offer!<br>
-              view details for more information.<br>
-              view the babysitter's profile to view reviews and contact the sitter.
+            <p style="font-size: 17px">
+              i am available 8:00 - 10:00<br> looking forward to take care of your kids!
+              <p style="font-size: 15px">the over is valid for 1 hour.</p>
+              <p id="demo"></p>
+
+            
+    
             </p>
 
             <p style="text-align: right;">
-                <a class="button" href="#">accept </a>
-                <a class="button" href="#">reject</a>
-               <a1><a class="button" href="#">view details</a></a1>
-               <div1  >i am available 8:00 - 10:00<br> looking forward to take care of your kids!</div1>
-
+                <a style="color: #6bbd5c;" class="button" href="#">accept </a>
+                <a style="color: #ff5b5b;" class="button" href="#">reject</a>
             </p>
         </div>
 
@@ -76,26 +188,26 @@ a1:hover + div1 {
 
 
     <div class="cardOL">
-      <image src="../images/userIcon.png" class="imagei"></image>
+      <a href ="babysitterProfile2.html"> <image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;"></image></a>
        
       
-      <h5>Nora Alx</h5>
+      <h5>Norah Alx</h5>
         <p class="price">
           <strong>450SR</strong> <i class="fa fa-money" style="font-size:24px"></i> <small> per hr</small>
         </p>
         
        
         <div class="praOL">
-            <p>Nora sents an offer!<br>
-              view details for more information.<br>
-              view the babysitter's profile to view reviews and contact the sitter.
+            <p style="font-size: 17px">
+              i am available 8:00 - 10:30<br>looking forward to take care of your kids!
+              <p style="font-size: 15px">the offer is valid for 1 hour.</p>
+              <p id="demo1"></p>
+
             </p>
 
             <p style="text-align: right;">
-                <a class="button" href="#">accept </a>
-                <a class="button" href="#">reject</a>
-                <a1><a class="button" href="#">view details</a></a1>
-                <div1  >i am available 8:00 - 10:30<br> Riyadh <br>looking forward to take care of your kids!</div1>
+                <a style="color: #6bbd5c;" class="button" href="#">accept </a>
+                <a style="color: #ff5b5b;"class="button" href="#">reject</a>
             </p>
         </div>
     </div>
@@ -108,8 +220,12 @@ a1:hover + div1 {
    
     <footer>
       <p>Copyright &copy; 2022 BabyCare </p>
-      <p><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></p>
-    </footer>  
+      <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;">Contact Us</a></p>
+        <!------------  BACK TO TOP   ----------->
+        <a href="#" class="to-top">
+          <image src="..\images\to top.png" class="ToTop" alt="toTop"></image>
+        </a>
+    </footer>   
   
   </body>
 

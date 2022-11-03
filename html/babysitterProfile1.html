@@ -11,12 +11,29 @@
     margin-bottom: 5px;
 
     }
+  .button {
+  background-color:#ffe3e3;
+  color: rgb(104, 104, 104);
+	text-decoration: none;
+  border: 1px solid #e2c7c7;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+  margin:auto;
+  text-align: center;
+  margin-bottom: -100px;
+  display: flex;
+  display: grid;
+  width: 100px;
+  margin-top: 100px;
+} 
 
-   .divForm{
+  .divForm{
     margin-left: 60px;
     margin-top: 50px;
-   }
-
+   } 
+ 
    .formLabel{
     font-family:'Courier New', Courier, monospace;
     font-size: 20px;
@@ -52,7 +69,7 @@
   width: 800px;
   height: 150px;
   padding: 20px 10px;
-
+  position: absolute;
   box-sizing: border-box;
   border: 2px ;
   border: 2px solid #ccc;
@@ -63,8 +80,17 @@
    font-size: 20px;
    background-color:transparent ;color: rgb(104, 104, 104);;text-decoration: none; border: 2px solid transparent; border-radius: 30px;
    margin-bottom: 5px;
-   margin-left: 5px;
+   margin-left: 8px;
 }
+
+.buttonR{
+  background-color:#ffe3e3;
+	color: rgb(104, 104, 104);;
+  border-radius: 30px; 
+  padding:5px;
+}
+
+
   </style>
 
 
@@ -75,11 +101,21 @@
     <div class="header" >
       <image src="../images/webLogo.jpeg" class="logo">
        <ul>
-         <li><a href="#">Home</a></li>
+         <li><a href="HomeParent.html">Home</a></li>
          <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
        </ul>
-     <image src="../images/userIcon.png" class="image">
-   </div> 
+
+       <div class="dropdown">
+        <image src="../images/userIcon.png" class="image" alt="User Icon">
+        <ul>
+        
+            <li><a href="ViewParentProfile.html">View Profile</a></li><br>
+            <li><a href="#"><br></a></li>
+            <li><a href="home.html">Sign-Out</a></li>
+        
+        </ul>
+        
+        </div>   </div> 
 
     <div class="container2"> 
 
@@ -95,7 +131,20 @@
     </div>
 
 <div class =" divForm">
-<form style="height: 1000px" >
+<form style="height: 1000px"readonly >
+
+  <!--RateAndRev-->
+  <p style="text-align: center; margin-right: -100px; " readonly>
+    <a class="buttonR" href="#" style="color: #f7f7f7;;" ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <span class="fa fa-star checked"readonly></span>
+      <span class="fa fa-star checked"readonly></span>
+      <span class="fa fa-star checked"readonly></span>
+      <span class="fa fa-star checked"readonly></span>
+      <span class="fa fa-star checked"readonly></span></a>
+  </p>                
+  <p style="text-align: below;"readonly>
+    <textarea id="w3review" name="w3review" rows="4" cols="50"  style= "text-align:left; resize:none; width:300px; margin-left: 450px; background-color:#ffe3e3;"readonly>the kids LOVED HER!!!!!!</textarea></p>        
+  <!--RateAndRev Ends-->
 
   <lable class="formLabel"> First Name:
     <input class="formInput" name="Fname" type="text" size="20" maxlength="20" value="Sara" readonly >
@@ -105,9 +154,7 @@
     <input class="formInput"name="Lname" type="text" size="20" maxlength="40" value="Alx"readonly >
 <br><br>
 
-  <lable class="formLabel"> ID:
-    <input class="formInput" name="id" type="text" size="10" maxlength="20" value="111558832" readonly >
-<br> <br> 
+
  
   <lable class="formLabel"> Age:
     <input class="formInput" name="age" type="text" size="4" maxlength="40" value="26"readonly >
@@ -123,15 +170,21 @@
 
   <lable class="formLabel" > City: 
     <input class="formInput" name="city" type="text" size="20" maxlength="20" value="Jeddah" readonly >
-    <br>
-  <lable class="formLabel"  > Bio: 
-    <textarea name="Bio" id="BioText" cols="25" rows="10">I have a bachelor degree of childhood education, i have worked in kindergarten as a teacher for 2 years ,and i baby sit as a part time job.</textarea>
+   <br>
+   <br>
+  <lable class="formLabel" readonly > Bio: 
+    <textarea name="Bio" id="BioText" cols="25" rows="10"readonly>I have a bachelor degree of childhood education, i have worked in kindergarten for 2 years ,and i baby sit as a part time job, i am patience and i can communicate with kids with kindness and love.</textarea>
    <!-- <input class="formInputBio"  name="bio" type="textarea" size="200" maxlength="500"  value= " I have a bachelor degree of childhood education, i have worked in kindergarden as a teacher for 2 years,and i baby sit as a part time job."  readonly > -->
 
-
+  
 </form>
+<br>
+<br>
+<br>
+<a class="button"   href="mailto:sara_Alx@gmail.com">Contact</a>
+
 </div><!--div inside card-->      
-      
+
        
     </div><!--card-->
 
@@ -140,7 +193,7 @@
    
     <footer>
       <p>Copyright &copy; 2022 BabyCare </p>
-      <p><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></p>
+      <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;">Contact Us</a></p>
     </footer>  
   
   </body>

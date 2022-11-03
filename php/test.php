@@ -16,8 +16,9 @@ if($conn) {
 	echo "success"; 
 } 
 else {
-	die("Error". mysqli_connect_error()); 
+	die("Fail to connect to database". mysqli_connect_error()); 
 } 
+
 
 
 /*

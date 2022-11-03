@@ -1,7 +1,10 @@
 
 <?php
+<<<<<<< HEAD:html/home.php
     session_start();
     
+=======
+>>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
     
@@ -11,14 +14,35 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST['password'];
   $city = $_POST['city'];  
   $location = $_POST['location'];  
- //$filename =$_File["image"]['tmp_name'] ;  
+  //$filename =$_File["image"]['tmp_name'] ;  
  //$filetmpname = $_FILES['image']['name']; 
+<<<<<<< HEAD:html/home.php
 
  //$folder = 'image/';
  //move_uploaded_file($filetmpname, $folder.$filename);
   $query = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
 
   $result = mysqli_query($conn, $query);
+=======
+ //move_uploaded_file($filetmpname, $folder.$filename);
+ $folder = 'image/';
+
+  //extra feilds for babysitter
+$phone = $_POST['phone'];
+$ID = $_POST['ID'];
+$Age = $_POST['Age'];
+$gender = $_POST['gender'];
+$Bio = $_POST['Bio'];
+
+
+
+  
+
+  $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
+  $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, Image	, Bio)	
+           values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $folder' , '$Bio')";
+  $result = mysqli_query($conn, $sql);
+>>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
  /*
 if($conn->connect_error){
   echo "$conn->connect_error";
@@ -164,31 +188,24 @@ margin-left : 0;
                 <!------- BABY SITTER SIGNUP ---------->
                   <form id="sign-up-form-babtsitter" class="babysitter"  >  
                     <h3>sign up as babysitter</h3>
-                    <input type="text" placeholder=" First Name" required/>
-                    <input type="text" placeholder=" Last Name" required/>
-                    <input type="email" placeholder="Email" required/>
-                    <input type="text" placeholder="Phone" required/>
-                    <input type="password" placeholder="Password" required/>
-                    <input type="text" placeholder=" ID" required/>
-                    <input type="number" placeholder=" Age" required/>
-
+                    <input type="text" placeholder=" First Name" name="First_Name" required/>
+                    <input type="text" placeholder=" Last Name" name="Last_Name" required/>
+                    <input type="email" placeholder="Email" name="Email" required/>
+                    <input type="text" placeholder="Phone" name="phone" required/>
+                    <input type="password" placeholder="Password"  name="password" required/>
+                    <input type="text" placeholder=" ID" name="ID" required/>
+                    <input type="number" placeholder=" Age" name="Age" required/>
                     <select name="gender" >
                       <option value="none" selected >Gender</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                     </select>
+                    <input type="text"  placeholder="City" name="city" required/> <br>
+                    <label  for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; ">Select your profile image: (optional) </label><br>
+                    <input type="image" id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 200px; height:50px;" name="image"  optional >
+                    <input type="text" placeholder="Bio" name="Bio" required/>
 
-                    <input type="text"  placeholder="City" required/> <br>
-                    
-                    <label  for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; ">
-                      
-                      Select your profile image: (optional)
-                    </label><br>
-                    <input type="image" id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)" name="img" style="width: 200px; height:50px;" optional >
-                    
-                    <input type="text" placeholder="Bio" required/>
-
-                    <button class="control-button up">Sign Up</button>
+                    <button class="control-button up" type="submit">Sign Up</button>
                   </form>
                  
                        <!------- PARENT SIGNUP ---------->

@@ -1,7 +1,7 @@
 
 <?php
 //<<<<<<< HEAD:html/home.php
-    session_start();
+ session_start();
     
 //=======
 //>>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
@@ -130,18 +130,14 @@ margin-left : 0;
  
 
         </style>
+        
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 
     </head>
+
+
     <body>
-
-<div>
-
-</div>
-
-
-
 
 
 
@@ -161,8 +157,7 @@ margin-left : 0;
 
         <section id="aboutus" class="about">
           <div class="main" style="border-top:0px ; margin-top: -70px; width: 1300px;">
-              <img src="../images/babysitterHomepic.jpeg" alt="Baby and Babysitter Image" style="border-radius:20px ;   box-shadow: 2px 5px 12px rgba(8, 8, 8, 0.4);  height: 500px; width: 700px;
-              " alt="baby picture">
+              <img src="../images/babysitterHomepic.jpeg" alt="Baby and Babysitter Image" style="border-radius:20px ;   box-shadow: 2px 5px 12px rgba(8, 8, 8, 0.4);  height: 500px; width: 700px;" alt="baby picture">
               <div class="about-text">
                   <h2>BabyCare</h2>
                   <h5>BabyCare <span> </span></h5>
@@ -189,7 +184,7 @@ margin-left : 0;
             <div class="form">
               <div class="sign-in" id="sign-in-info" method="post">
                 <h1>Sign In</h1>
-            <!-- LOGIN    -->    
+             <!-- LOGIN    -->    
             
                 <form id="sign-in-form"  action="../php/checklogin.php" method="post">   
                 <?php
@@ -288,8 +283,9 @@ margin-left : 0;
     </a>
                            
                             </footer>   
-                           
+                          
       </body>
       <script src="../js/home.js"></script>
   
-  </html>
+
+      </html>

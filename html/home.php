@@ -1,6 +1,7 @@
 
 <?php
-
+    session_start();
+    
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
     
@@ -13,11 +14,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
  //$filename =$_File["image"]['tmp_name'] ;  
  //$filetmpname = $_FILES['image']['name']; 
 
- $folder = 'image/';
+ //$folder = 'image/';
  //move_uploaded_file($filetmpname, $folder.$filename);
-  $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
+  $query = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
 
-  $result = mysqli_query($conn, $sql);
+  $result = mysqli_query($conn, $query);
  /*
 if($conn->connect_error){
   echo "$conn->connect_error";
@@ -141,14 +142,15 @@ margin-left : 0;
               </div>
             </div>
             <div class="form">
-              <div class="sign-in" id="sign-in-info">
+              <div class="sign-in" id="sign-in-info" method="post">
                 <h1>Sign In</h1>
-                
-                <form id="sign-in-form">      
-                  <input type="email" placeholder="Email" required/>
-                  <input type="password" placeholder="Password" required/>
+            <!-- LOGIN    -->    
+                <form id="sign-in-form"  action="../php/checklogin.php" method="post">   
+          
+                  <input type="email" placeholder="Email" id="inputEmail" name="email_singIn" required/>
+                  <input type="password" placeholder="Password" id="inputPassword" name="password_signIn" required/>
                   
-                  <button class="control-button in">Sign In</button>
+                  <button class="control-button in" type="submit" >Sign In</button>
                 </form>
               </div>
               <div class="sign-up" id="sign-up-info" >
@@ -217,7 +219,8 @@ margin-left : 0;
                         Select your profile image: (optional)
                       </label><br>
 
-                      <input type="image" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" name="img" style="width: 200px; height:50px;" optional name="img"  accept="image/*">
+                    <!--  <input type="image" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" name="img" style="width: 200px; height:50px;" optional name="img"  accept="image/*"> -->
+                    <input type="file" id="img" name="img" accept="image/*">
 
                       <button class="control-button up" type="submit">Sign Up</button>
                     </form>

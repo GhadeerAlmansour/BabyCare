@@ -1,10 +1,10 @@
 
 <?php
-<<<<<<< HEAD:html/home.php
+//<<<<<<< HEAD:html/home.php
     session_start();
     
-=======
->>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
+//=======
+//>>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
     
@@ -16,14 +16,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $location = $_POST['location'];  
   //$filename =$_File["image"]['tmp_name'] ;  
  //$filetmpname = $_FILES['image']['name']; 
-<<<<<<< HEAD:html/home.php
 
  //$folder = 'image/';
  //move_uploaded_file($filetmpname, $folder.$filename);
   $query = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
 
   $result = mysqli_query($conn, $query);
-=======
  //move_uploaded_file($filetmpname, $folder.$filename);
  $folder = 'image/';
 
@@ -42,7 +40,6 @@ $Bio = $_POST['Bio'];
   $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, Image	, Bio)	
            values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $folder' , '$Bio')";
   $result = mysqli_query($conn, $sql);
->>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
  /*
 if($conn->connect_error){
   echo "$conn->connect_error";
@@ -67,6 +64,8 @@ if($conn->connect_error){
   
         
         <link rel = "stylesheet" href ="../css/home.css">
+ <script src="bootstrap/js/ie-emulation-modes-warning.js"></script> 
+
         <style>
 
 .backicon{
@@ -108,10 +107,44 @@ margin-left : 0;
     --right-color: #FFDBA4;
   }
   
+  .alert1{
+
+    background-color:#ffe3e3;
+	color: rgb(104, 104, 104);
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+  margin-right: 3px;
+
+  margin-top:15px;  margin-bottom:15px;
+
+  }
  
 
         </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+<script>
+$("#submit-login").click( function() {
+ 
+   $.post( $("#sign-in-form").attr("action"),
+           $("#sign-in-form :input").serializeArray(),
+       function(info) {
+ 
+         $("#sign-in-info").empty();
+         $("#sign-in-info").html(info);
+    
+       });
+ 
+  $("#sign-in-form").submit( function() {
+     return false;  
+  });
+});
+ 
+</script>
     </head>
     <body>
 
@@ -169,12 +202,18 @@ margin-left : 0;
               <div class="sign-in" id="sign-in-info" method="post">
                 <h1>Sign In</h1>
             <!-- LOGIN    -->    
+            
                 <form id="sign-in-form"  action="../php/checklogin.php" method="post">   
-          
+                <?php
+                            if(isset($_GET['error']))
+                              //  echo "<div class='alert alert-danger' role='alert'>".$_GET['error']."</div>";
+                              echo "<div class='alert alert-danger' role='alert'>".$_GET['error']."</div>";
+
+                        ?>
                   <input type="email" placeholder="Email" id="inputEmail" name="email_singIn" required/>
                   <input type="password" placeholder="Password" id="inputPassword" name="password_signIn" required/>
                   
-                  <button class="control-button in" type="submit" >Sign In</button>
+                  <button class="control-button in" type="submit" id="submit-login" >Sign In</button>
                 </form>
               </div>
               <div class="sign-up" id="sign-up-info" >
@@ -184,9 +223,13 @@ margin-left : 0;
                     <button id="babysitterButton" class="switch-buttonin-signUp">Babysitter</button>
                     <button id="parentButton" class="switch-buttonin-signUp">Parent</button>
                 </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
 
                 <!------- BABY SITTER SIGNUP ---------->
-                  <form id="sign-up-form-babtsitter" class="babysitter"  >  
+                  <form id="sign-up-form-babtsitter" class="babysitter" method="post" action="home.php" >  
                     <h3>sign up as babysitter</h3>
                     <input type="text" placeholder=" First Name" name="First_Name" required/>
                     <input type="text" placeholder=" Last Name" name="Last_Name" required/>

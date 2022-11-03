@@ -1,14 +1,7 @@
-
 <?php
-//<<<<<<< HEAD:html/home.php
     session_start();
-    
-//=======
-//>>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
+
 if($_SERVER["REQUEST_METHOD"] == "POST") {
-    session_start();
-    
-/*if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
     
   $First_Name = $_POST['First_Name'];
@@ -19,29 +12,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $location = $_POST['location'];  
   //$filename =$_File["image"]['tmp_name'] ;  
  //$filetmpname = $_FILES['image']['name']; 
-
- //$folder = 'image/';
- //move_uploaded_file($filetmpname, $folder.$filename);
-  $query = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
-
-  $result = mysqli_query($conn, $query);
  //move_uploaded_file($filetmpname, $folder.$filename);
  $folder = 'image/';
-
-  //extra feilds for babysitter
-$phone = $_POST['phone'];
-$ID = $_POST['ID'];
-$Age = $_POST['Age'];
-$gender = $_POST['gender'];
-$Bio = $_POST['Bio'];
 
 
 
   
 
   $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
-  $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, Image	, Bio)	
-           values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $folder' , '$Bio')";
   $result = mysqli_query($conn, $sql);
  /*
 if($conn->connect_error){
@@ -57,10 +35,8 @@ if($conn->connect_error){
   $conn->close();
 }
 */
-
-
+}
 ?>
-
 
 <!doctype html>
 <html>
@@ -69,8 +45,6 @@ if($conn->connect_error){
   
         
         <link rel = "stylesheet" href ="../css/home.css">
- <script src="bootstrap/js/ie-emulation-modes-warning.js"></script> 
-
         <style>
 
 .backicon{
@@ -112,26 +86,9 @@ margin-left : 0;
     --right-color: #FFDBA4;
   }
   
-  .alert1{
-
-    background-color:#ffe3e3;
-	color: rgb(104, 104, 104);
-	text-decoration: none;
-	border: 2px solid transparent;
-	font-weight: bold;
-	padding: 9px 22px;
-	border-radius: 30px;
-	transition: .4s; 
-  margin-right: 3px;
-
-  margin-top:15px;  margin-bottom:15px;
-
-  }
  
 
         </style>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 
     </head>
     <body>
@@ -187,21 +144,14 @@ margin-left : 0;
               </div>
             </div>
             <div class="form">
-              <div class="sign-in" id="sign-in-info" method="post">
+              <div class="sign-in" id="sign-in-info">
                 <h1>Sign In</h1>
-            <!-- LOGIN    -->    
-            
-                <form id="sign-in-form"  action="../php/checklogin.php" method="post">   
-                <?php
-                            if(isset($_GET['error']))
-                              //  echo "<div class='alert alert-danger' role='alert'>".$_GET['error']."</div>";
-                              echo "<div class='alert alert-danger' role='alert'>".$_GET['error']."</div>";
-
-                        ?>
-                  <input type="email" placeholder="Email" id="inputEmail" name="email_singIn" required/>
-                  <input type="password" placeholder="Password" id="inputPassword" name="password_signIn" required/>
+                
+                <form id="sign-in-form">      
+                  <input type="email" placeholder="Email" required/>
+                  <input type="password" placeholder="Password" required/>
                   
-                  <button class="control-button in" type="submit" id="submit-login" >Sign In</button>
+                  <button class="control-button in">Sign In</button>
                 </form>
               </div>
               <div class="sign-up" id="sign-up-info" >
@@ -211,19 +161,15 @@ margin-left : 0;
                     <button id="babysitterButton" class="switch-buttonin-signUp">Babysitter</button>
                     <button id="parentButton" class="switch-buttonin-signUp">Parent</button>
                 </div>
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-                <script src="bootstrap/js/bootstrap.min.js"></script>
-
-
 
                 <!------- BABY SITTER SIGNUP ---------->
                   <form id="sign-up-form-babtsitter" class="babysitter" action="BabySitterSignup.php" method="post" enctype="multipart/form-data" >  
                     <h3>sign up as babysitter</h3>
-                    <input type="text" placeholder=" First Name" name="First_Name" required/>
-                    <input type="text" placeholder=" Last Name" name="Last_Name" required/>
-                    <input type="email" placeholder="Email" name="Email" required/>
+                    <input type="text" placeholder=" First Name" name="first_Name" required/>
+                    <input type="text" placeholder=" Last Name" name="last_Name" required/>
+                    <input type="email" placeholder="Email" name="email" required/>
                     <input type="text" placeholder="Phone" name="phone" required/>
-                    <input type="password" placeholder="Password"  name="password" required/>
+                    <input type="password" placeholder="password"  name="password" required/>
                     <input type="text" placeholder=" ID" name="ID" required/>
                     <input type="number" placeholder=" Age" name="Age" required/>
                     <select name="gender" >
@@ -231,10 +177,11 @@ margin-left : 0;
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                     </select>
-                    <input type="text"  placeholder="City" name="city" required/> <br>
+                    <input type="text"  placeholder="City" name="City" required/> <br>
                     <label  for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; ">Select your profile image: (optional) </label><br>
-                    <input type="image" id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 200px; height:50px;" name="image"  optional >
+                    <input type="image" id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 200px; height:50px;" name="imageB"  optional >
                     <input type="text" placeholder="Bio" name="Bio" required/>
+
 
                     <button class="control-button up" type="submit">Sign Up</button>
                   </form>
@@ -267,8 +214,7 @@ margin-left : 0;
                         Select your profile image: (optional)
                       </label><br>
 
-                    <!--  <input type="image" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" name="img" style="width: 200px; height:50px;" optional name="img"  accept="image/*"> -->
-                    <input type="file" id="img" name="img" accept="image/*">
+                      <input type="image" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" name="img" style="width: 200px; height:50px;" optional name="img"  accept="image/*">
 
                       <button class="control-button up" type="submit">Sign Up</button>
                     </form>
@@ -293,3 +239,4 @@ margin-left : 0;
       <script src="../js/home.js"></script>
   
   </html>
+  

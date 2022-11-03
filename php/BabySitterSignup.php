@@ -1,4 +1,3 @@
-
 <?php
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
@@ -23,13 +22,13 @@ $Bio = $_POST['Bio'];
 
 
 
-  
 
-  $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
   $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, Image	, Bio)	
            values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $folder' , '$Bio')";
   $result = mysqli_query($conn, $sql);
- /*
+ 
+ 
+  /*
 if($conn->connect_error){
   echo "$conn->connect_error";
   die("Connection Failed : ". $conn->connect_error);
@@ -43,8 +42,6 @@ if($conn->connect_error){
   $conn->close();
 }
 */
-
-
 }
 ?>
 
@@ -173,7 +170,7 @@ margin-left : 0;
                 </div>
 
                 <!------- BABY SITTER SIGNUP ---------->
-                  <form id="sign-up-form-babtsitter" class="babysitter"  >  
+                  <form id="sign-up-form-babtsitter" class="babysitter" action="BabySitterSignup.php" method="post" enctype="multipart/form-data" >  
                     <h3>sign up as babysitter</h3>
                     <input type="text" placeholder=" First Name" name="First_Name" required/>
                     <input type="text" placeholder=" Last Name" name="Last_Name" required/>
@@ -198,7 +195,7 @@ margin-left : 0;
                        <!------- PARENT SIGNUP ---------->
 
                   
-                  <form id="sign-up-form-parent" class="parent"  action="home.php" method="post" enctype="multipart/form-data">
+                  <form id="sign-up-form-parent" class="parent"  action="ParentSignup.php" method="post" enctype="multipart/form-data" >
                       <h3>sign up as parent</h3>
 <!--  <<<<<<< HEAD:html/home.php -->
                       <input type="text" placeholder="First Name" required name="First_Name"/>
@@ -248,4 +245,3 @@ margin-left : 0;
       <script src="../js/home.js"></script>
   
   </html>
-  

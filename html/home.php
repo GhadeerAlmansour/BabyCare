@@ -1,4 +1,41 @@
 
+<?php
+
+if($_SERVER["REQUEST_METHOD"] == "POST") {
+  include '../php/test.php';   
+    
+  $First_Name = $_POST['First_Name'];
+  $Last_Name = $_POST['Last_Name'];
+  $Email = $_POST['Email'];
+  $password = $_POST['password'];
+  $city = $_POST['city'];  
+  $location = $_POST['location'];  
+ $filename =$_File["image"]['tmp_name'] ;  
+ $filetmpname = $_FILES['image']['name']; 
+
+ $folder = 'image/';
+ move_uploaded_file($filetmpname, $folder.$filename);
+  $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location , image) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location' ,'$image')";
+
+  $result = mysqli_query($conn, $sql);
+ /*
+if($conn->connect_error){
+  echo "$conn->connect_error";
+  die("Connection Failed : ". $conn->connect_error);
+} else {
+  $stmt = $conn->prepare("INSERT INTO Parent(First_Name, Last_Name, Email, password, city , location , image) values(?, ?, ?, ?, ?, ?,?)");
+  $stmt->bind_param("sssssss", $First_Name, $Last_Name, $Email, $password, $city, $location ,$image);
+  $execval = $stmt->execute();
+  echo $execval;
+  echo "Registration successfully...";
+  $stmt->close();
+  $conn->close();
+}
+*/
+}
+?>
+
+<!doctype html>
 <html>
     <head>
         <title> Baby Care</title>
@@ -52,6 +89,15 @@ margin-left : 0;
 
     </head>
     <body>
+
+<div>
+
+</div>
+
+
+
+
+
 
       <div class="header" >
         <image src="../images/webLogo.jpeg" class="logo" alt="BabyCare Logo">
@@ -144,22 +190,22 @@ margin-left : 0;
                        <!------- PARENT SIGNUP ---------->
 
                   
-                  <form id="sign-up-form-parent" class="parent">
+                  <form id="sign-up-form-parent" class="parent"  action="home.php" method="post" enctype="multipart/form-data">
                       <h3>sign up as parent</h3>
-                      <input type="text" placeholder="First Name" required/>
-                      <input type="text" placeholder="Last Name" required/>
-                      <input type="email" placeholder="Email" required/>
-                      <input type="password" placeholder="Password" required/>
-                      <input type="text" placeholder="City" required/> <br>
-                      <input type="text" placeholder="Location" required/> <br>
+                      <input type="text" placeholder="First Name" required name="First_Name"/>
+                      <input type="text" placeholder="Last Name" required name="Last_Name"/>
+                      <input type="email" placeholder="Email" required name="Email"/>
+                      <input type="password" placeholder="Password" required name="password"/>
+                      <input type="text" placeholder="City" required name="city"/> <br>
+                      <input type="text" placeholder="Location" required name="location"/> <br>
 
-                      <label for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; " optional>
+                      <label for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; " optional name="image">
                         Select your profile image: (optional)
                       </label><br>
 
                       <input type="file" id="img" name="img" accept="image/*">
 
-                      <button class="control-button up">Sign Up</button>
+                      <button class="control-button up" type="submit">Sign Up</button>
                     </form>
                 </div>
               </div>
@@ -182,5 +228,4 @@ margin-left : 0;
       <script src="../js/home.js"></script>
   
   </html>
-  
   

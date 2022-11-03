@@ -1,5 +1,11 @@
 
 <?php
+//<<<<<<< HEAD:html/home.php
+    session_start();
+    
+//=======
+//>>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
+if($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
     
 /*if($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -64,6 +70,8 @@ if($conn->connect_error){
   
         
         <link rel = "stylesheet" href ="../css/home.css">
+ <script src="bootstrap/js/ie-emulation-modes-warning.js"></script> 
+
         <style>
 
 .backicon{
@@ -105,9 +113,26 @@ margin-left : 0;
     --right-color: #FFDBA4;
   }
   
+  .alert1{
+
+    background-color:#ffe3e3;
+	color: rgb(104, 104, 104);
+	text-decoration: none;
+	border: 2px solid transparent;
+	font-weight: bold;
+	padding: 9px 22px;
+	border-radius: 30px;
+	transition: .4s; 
+  margin-right: 3px;
+
+  margin-top:15px;  margin-bottom:15px;
+
+  }
  
 
         </style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
     </head>
     <body>
@@ -166,12 +191,18 @@ margin-left : 0;
               <div class="sign-in" id="sign-in-info" method="post">
                 <h1>Sign In</h1>
             <!-- LOGIN    -->    
+            
                 <form id="sign-in-form"  action="../php/checklogin.php" method="post">   
-          
+                <?php
+                            if(isset($_GET['error']))
+                              //  echo "<div class='alert alert-danger' role='alert'>".$_GET['error']."</div>";
+                              echo "<div class='alert alert-danger' role='alert'>".$_GET['error']."</div>";
+
+                        ?>
                   <input type="email" placeholder="Email" id="inputEmail" name="email_singIn" required/>
                   <input type="password" placeholder="Password" id="inputPassword" name="password_signIn" required/>
                   
-                  <button class="control-button in" type="submit" >Sign In</button>
+                  <button class="control-button in" type="submit" id="submit-login" >Sign In</button>
                 </form>
               </div>
               <div class="sign-up" id="sign-up-info" >
@@ -181,6 +212,10 @@ margin-left : 0;
                     <button id="babysitterButton" class="switch-buttonin-signUp">Babysitter</button>
                     <button id="parentButton" class="switch-buttonin-signUp">Parent</button>
                 </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                <script src="bootstrap/js/bootstrap.min.js"></script>
+
+
 
                 <!------- BABY SITTER SIGNUP ---------->
                   <form id="sign-up-form-babtsitter" class="babysitter" action="BabySitterSignup.php" method="post" enctype="multipart/form-data" >  
@@ -259,5 +294,3 @@ margin-left : 0;
       <script src="../js/home.js"></script>
   
   </html>
-  
-  

@@ -10,12 +10,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST['password'];
   $city = $_POST['city'];  
   $location = $_POST['location'];  
- $filename =$_File["image"]['tmp_name'] ;  
- $filetmpname = $_FILES['image']['name']; 
+ //$filename =$_File["image"]['tmp_name'] ;  
+ //$filetmpname = $_FILES['image']['name']; 
 
  $folder = 'image/';
- move_uploaded_file($filetmpname, $folder.$filename);
-  $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location , image) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location' ,'$image')";
+ //move_uploaded_file($filetmpname, $folder.$filename);
+  $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
 
   $result = mysqli_query($conn, $sql);
  /*
@@ -194,7 +194,7 @@ margin-left : 0;
                   
                   <form id="sign-up-form-parent" class="parent"  action="home.php" method="post" enctype="multipart/form-data">
                       <h3>sign up as parent</h3>
-<<<<<<< HEAD:html/home.php
+<!--  <<<<<<< HEAD:html/home.php -->
                       <input type="text" placeholder="First Name" required name="First_Name"/>
                       <input type="text" placeholder="Last Name" required name="Last_Name"/>
                       <input type="email" placeholder="Email" required name="Email"/>
@@ -203,7 +203,7 @@ margin-left : 0;
                       <input type="text" placeholder="Location" required name="location"/> <br>
 
                       <label for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; " optional name="image">
-=======
+<!--- =======
                       <input type="text" placeholder="First Name" required/>
                       <input type="text" placeholder="Last Name" required/>
                       <input type="email" placeholder="Email" required/>
@@ -213,7 +213,7 @@ margin-left : 0;
 
                       <label for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; " optional>
                         
->>>>>>> 8520cfde2be92a9a4ddaa216e9ca36ee1de3f9f8:html/home.html
+>>>>>>> 8520cfde2be92a9a4ddaa216e9ca36ee1de3f9f8:html/home.html -->
                         Select your profile image: (optional)
                       </label><br>
 

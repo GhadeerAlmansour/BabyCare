@@ -1,52 +1,48 @@
-<?php 
-    session_start();
-    // require_once() function can be used to include a PHP file in another one, when you may need to include the called file more than once. If it is found that the file has already been included, calling script is going to ignore further inclusions.
-   // require_once("CONFIG-DB.php");
-   //include '../php/test.php'; 
-   //require_once("../php/test.php");   
-  //  $con = mysqli_connect(DBHOST,DBUSER,DBPWD,DBNAME);
-$conn=  mysqli_connect('localhost','root','','BabyCare');
 
+<?php
+
+ session_start();
+
+ include '../php/test.php'; 
+ require_once("Connection.php");
+
+  $con = mysqli_connect(host,Username,Password,db);
+
+// If not connected to the DataBase
     if(mysqli_connect_errno($conn))
-        die("Fail to connect to database :" . mysqli_connect_error());
+    die("Fail to connect to database :" . mysqli_connect_error());
 
     $email = $_POST['email_singIn'];
     $password = $_POST['password_signIn'];
 
-    $sql = "SELECT * FROM Parent WHERE Email= '$email' AND password= '$password'";
-   
+    $query_parent = "SELECT * FROM Parent WHERE Email= '$email' AND password= '$password'";
+    $query_Babysitter = "SELECT * FROM Baby_Sitter WHERE Email= '$email' AND password= '$password'";
+  
+    $result_parent = mysqli_query($conn,$query_parent);
+    $result_Babysitter = mysqli_query($conn,$query_Babysitter);
 
-    $result = mysqli_query($conn,$sql);
 
-    if(mysqli_num_rows($result) ==1 ){
-      echo "LoGIN";
+     // Check if it is a parent    
+if(mysqli_num_rows($result_parent) >0 ){
         $_SESSION['email_singIn'] = $Email;
-        mysqli_close();
-        echo "HI";
+   mysqli_close();
    header("Location: ../html/HomeParent.html"); //../html/HomeParent.html
     }
-    else { //IF NOT PARENT
-      //  mysqli_close();
-     // header("Location: home.php?error=Wrong Username/Password");
-     $sql = "SELECT * FROM Baby_Sitter WHERE Email= '$email' AND password= '$password'";
 
 
-     $result = mysqli_query($conn,$sql);
+     // Check if it is a BabySitter    
+else if (mysqli_num_rows($result_Babysitter) >0 ){
+  $_SESSION['email_singIn'] = $Email;
+$con -> close();
+header("Location: ../html/HomeBabySitter.html");}
 
-     if(mysqli_num_rows($result) ==1 ){ //IF BabySitter
-       echo "LoGIN";
-         $_SESSION['email_singIn'] = $Email;
-         mysqli_close();
-    header("Location: ../html/HomeBabySitter.html"); //../html/HomeParent.html
-     }
-     else { //IF NOT PARENT-BABYSITTER
-       mysqli_close();
+// If not Parent-BabySitter
+else{
+  $con -> close();
+  session_start();
+  $_SESSION['error'] = "Wrong Email/Password";
+    header("Location: home.php");
+}
 
-   header("Location: home.php?error=Wrong Username/Password");
-
-
-     }
-
-    }
 ?>
 

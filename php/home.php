@@ -5,8 +5,9 @@
     
 //=======
 //>>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    session_start();
+
+//if($_SERVER["REQUEST_METHOD"] == "POST") {
+//    session_start();
     
 /*if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
@@ -69,7 +70,13 @@ if($conn->connect_error){
   
         
         <link rel = "stylesheet" href ="../css/home.css">
- <script src="bootstrap/js/ie-emulation-modes-warning.js"></script> 
+                <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+                <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+    }
+</script>
+
 
         <style>
 
@@ -112,10 +119,10 @@ margin-left : 0;
     --right-color: #FFDBA4;
   }
   
-  .alert1{
+#alert1{
 
-    background-color:#ffe3e3;
-	color: rgb(104, 104, 104);
+background-color: #ff9d9d;
+	color: white;
 	text-decoration: none;
 	border: 2px solid transparent;
 	font-weight: bold;
@@ -123,15 +130,16 @@ margin-left : 0;
 	border-radius: 30px;
 	transition: .4s; 
   margin-right: 3px;
-
-  margin-top:15px;  margin-bottom:15px;
-
+  margin-top:15px;  
+  margin-bottom:15px;
+  font-family: 'Courier New', monospace;
   }
  
 
         </style>
         
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
 
 
     </head>
@@ -184,21 +192,27 @@ margin-left : 0;
             <div class="form">
               <div class="sign-in" id="sign-in-info" method="post">
                 <h1>Sign In</h1>
-             <!-- LOGIN    -->    
+
+
+                     <!--    LOGIN    -->    
             
                 <form id="sign-in-form"  action="../php/checklogin.php" method="post">   
-                <?php
-                            if(isset($_GET['error']))
-                              //  echo "<div class='alert alert-danger' role='alert'>".$_GET['error']."</div>";
-                              echo "<div class='alert alert-danger' role='alert'>".$_GET['error']."</div>";
 
-                        ?>
+                     <?php if(isset($_SESSION['error'])){ //if an error is found
+                        echo "<div class='alert alert-danger' id='alert1'  role='alert'>".$_SESSION['error']."</div>";
+                        unset($_SESSION['error']);}
+                    ?>      
+
                   <input type="email" placeholder="Email" id="inputEmail" name="email_singIn" required/>
                   <input type="password" placeholder="Password" id="inputPassword" name="password_signIn" required/>
-                  
                   <button class="control-button in" type="submit" id="submit-login" >Sign In</button>
+
                 </form>
               </div>
+
+
+
+
               <div class="sign-up" id="sign-up-info" >
                 <h1>Create Account</h1>
                 
@@ -206,6 +220,7 @@ margin-left : 0;
                     <button id="babysitterButton" class="switch-buttonin-signUp">Babysitter</button>
                     <button id="parentButton" class="switch-buttonin-signUp">Parent</button>
                 </div>
+                
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
                 <script src="bootstrap/js/bootstrap.min.js"></script>
 
@@ -221,14 +236,14 @@ margin-left : 0;
                     <input type="password" placeholder="Password"  name="password" required/>
                     <input type="text" placeholder=" ID" name="ID" required/>
                     <input type="number" placeholder=" Age" name="Age" required/>
-                    <select name="gender" >
+                    <select name="gender"  >
                       <option value="none" selected >Gender</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                     </select>
                     <input type="text"  placeholder="City" name="city" required/> <br>
                     <label  for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; ">Select your profile image: (optional) </label><br>
-                    <input type="image" id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 200px; height:50px;" name="image"  optional >
+                    <input type="file" id="img" name="img" accept="image/*">
                     <input type="text" placeholder="Bio" name="Bio" required/>
 
                     <button class="control-button up" type="submit">Sign Up</button>
@@ -245,7 +260,8 @@ margin-left : 0;
                       <input type="email" placeholder="Email" required name="Email"/>
                       <input type="password" placeholder="Password" required name="password"/>
                       <input type="text" placeholder="City" required name="city"/> <br>
-                      <input type="text" placeholder="Location" required name="location"/> <br>
+                      <input type="text" placeholder="Neighborhood " required name="Neighborhood"/> <br>
+                      <input type="text" placeholder="Street" required name="street"/> <br>
 
                       <label for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; " optional name="image">
 <!--- =======

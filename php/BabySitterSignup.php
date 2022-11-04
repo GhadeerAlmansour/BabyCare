@@ -1,15 +1,15 @@
 <?php
     session_start();
-
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
-    
+ echo 'bs php'
+
   $First_Name = $_POST['first_Name'];
   $Last_Name = $_POST['last_Name'];
   $Email = $_POST['email'];
   $password = $_POST['Password'];
   $city = $_POST['City'];  
-  $location = $_POST['location'];  
+  
   //$filename =$_File["image"]['tmp_name'] ;  
  //$filetmpname = $_FILES['image']['name']; 
  //move_uploaded_file($filetmpname, $folder.$filename);
@@ -190,8 +190,8 @@ margin-left : 0;
                     <label  for="img" style="margin-left:-50px; font-size: 13px;color: rgb(56, 56, 56); font-weight: 200; ">Select your profile image: (optional) </label><br>
                     <input type="image" id="div1"  ondrop="drop(event)" ondragover="allowDrop(event)" style="width: 200px; height:50px;" name="imageB"  optional >
                     <input type="text" placeholder="Bio" name="Bio" required/>
-
                     <button class="control-button up" type="submit">Sign Up</button>
+
                   </form>
                  
                        <!------- PARENT SIGNUP ---------->
@@ -223,8 +223,8 @@ margin-left : 0;
                       </label><br>
 
                       <input type="image" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)" name="img" style="width: 200px; height:50px;" optional name="img"  accept="image/*">
-
                       <button class="control-button up" type="submit">Sign Up</button>
+
                     </form>
                 </div>
               </div>

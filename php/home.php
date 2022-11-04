@@ -7,7 +7,8 @@
 //>>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
 if($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
-    
+ echo 'hii before dsumbiy buttoni';
+
 /*if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
     

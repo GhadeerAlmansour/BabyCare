@@ -119,7 +119,7 @@ margin-left : 0;
 	text-decoration: none;
 	border: 2px solid transparent;
 	font-weight: bold;
-	padding: 9px 22px;
+	padding: 9px 22px;  
 	border-radius: 30px;
 	transition: .4s; 
   margin-right: 3px;

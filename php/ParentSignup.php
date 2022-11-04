@@ -2,8 +2,14 @@
     session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
+<<<<<<< HEAD
   include 'test.php';   
     
+=======
+  include '../php/test.php';   
+  echo 'p php';
+
+>>>>>>> 50ca18743e95d9dfc38d5391fb32b4599877ec62
   $First_Name = $_POST['First_Name'];
   $Last_Name = $_POST['Last_Name'];
   $Email = $_POST['Email'];

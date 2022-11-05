@@ -2,15 +2,22 @@
     session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST") {
+<<<<<<< HEAD
+  include 'test.php';   
+    
+=======
   include '../php/test.php';   
   echo 'p php';
 
+>>>>>>> 50ca18743e95d9dfc38d5391fb32b4599877ec62
   $First_Name = $_POST['First_Name'];
   $Last_Name = $_POST['Last_Name'];
   $Email = $_POST['Email'];
   $password = $_POST['password'];
   $city = $_POST['city'];  
-  $location = $_POST['location'];  
+  $Neighborhood = $_POST['Neighborhood'];  
+  $street = $_POST['street'];  
+
   //$filename =$_File["image"]['tmp_name'] ;  
  //$filetmpname = $_FILES['image']['name']; 
  //move_uploaded_file($filetmpname, $folder.$filename);
@@ -20,7 +27,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
   
 
-  $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
+  $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , Neighborhood ,street ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$Neighborhood' ,'$street')";
   $result = mysqli_query($conn, $sql);
  /*
 if($conn->connect_error){

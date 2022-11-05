@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             data-dismiss="alert" aria-label="Close"> 
             <span aria-hidden="true">×</span> 
         </button>
-       </div> ' ; 
+       </div> '; 
 
 }
 else if (! preg_match('/^[0-9]{10}+$/', $phone)  {
@@ -48,6 +48,7 @@ else if (! preg_match('/^[0-9]{10}+$/', $phone)  {
     <span aria-hidden="true">×</span> 
 </button>
 </div> ';
+
 }
 else{
   $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , Neighborhood ,street ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$Neighborhood' ,'$street')";
@@ -62,6 +63,7 @@ else{
       <span aria-hidden="true">×</span> 
   </button> 
 </div> '; 
+
 }
   
 

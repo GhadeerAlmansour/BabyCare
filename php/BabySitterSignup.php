@@ -29,7 +29,7 @@ $Bio = $_POST['Bio'];
            values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $folder' , '$Bio')";
   $result = mysqli_query($conn, $sql);
  
- 
+  $con -> close();
   
 ?>
 

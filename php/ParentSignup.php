@@ -1,11 +1,11 @@
 <?php
     session_start();
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {        
+//if($_SERVER["REQUEST_METHOD"] == "POST") {        
   include '../php/test.php'; 
  require_once("Connection.php");
 
-  $con = mysqli_connect('localhost','root','BabyCare');
+  $con = mysqli_connect('localhost','root','','BabyCare');
 
   if(mysqli_connect_errno())
       die("Fail to connect to database :" . mysqli_connect_error());
@@ -19,9 +19,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   $password = $_POST['password'];
   $city = $_POST['city'];  
   $Neighborhood = $_POST['Neighborhood'];  
-  $street = $_POST['street'];  
-  if($_FILES['profile-img']['size'] > 0){
-    $img = $_FILES['profile-img']['tmp_name'];
+  $street = $_POST['street']; 
+
+  if($_FILES['img']['size'] > 0){
+    $img = $_FILES['img']['tmp_name'];
     $img = addslashes(file_get_contents($img));
   }
   else{
@@ -30,27 +31,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
   
    $validateEmail = preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $Email);
-        $specialChars = preg_match('@[^\w]@', $Password);
+        $specialChars = preg_match('@[^\w]@', $password);
         if(!$validateEmail){
             $_SESSION['Sign_up_error'] = "Invalid email address.";
-            header("Location: ../signup.php"); 
-                exit;
-        }
-        if( !$specialChars && strlen($Password) < 8) {
-            $_SESSION['Sign_up_error'] = 'Password must be at leat 8 characters and contain at least one special character #,&,..';
-            header("Location: ../signup.php"); 
+            header("Location: home.php?1");
             exit;
         }
-        if(strlen($Password) < 8){
+        if( !$specialChars && strlen($password) < 8) {
+            $_SESSION['Sign_up_error'] = 'Password must be at leat 8 characters and contain at least one special character #,&,..';
+            header("Location: home.php?2");
+            exit;
+        }
+        if(strlen($password) < 8){
             $_SESSION['Sign_up_error'] = 'Password should be at leat 8 characters!';
-            header("Location: ../signup.php"); 
+            header("Location: home.php?3");
             exit;
         }
        
         
         if( !$specialChars ) {
             $_SESSION['Sign_up_error'] = 'Password must contain at least one special character #,&,..';
-            header("Location: ../signup.php"); 
+            header("Location: home.php?4");
             exit;
         }
         
@@ -62,7 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_num_rows($Parent_result)>0)
         {
             $_SESSION['Sign_up_error'] = 'Email exists!';
-            header("Location: ../signup.php"); 
+            header("Location: home.php");
             $con -> close();
             exit;
         }
@@ -75,7 +76,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if (mysqli_query($con, $query)) {
             echo "New record created successfully !";
             $_SESSION['email'] = $Email ; //!sure if email
-            header("Location: ../HomeParent.html");
+            header("Location: ../html/HomeParent.html");
             $con -> close();
             exit;
         } else {
@@ -168,11 +169,4 @@ $con -> close();
 =======
 } */
 
-<<<<<<< HEAD
 ?>
->>>>>>> c66cd2ce6fa4ebd5b8c0924bcf7fc21b8ce2159e
-
-
-=======
-?>
->>>>>>> 1ea9856a2292588824997af2ba1d8cd4b5f59131

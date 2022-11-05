@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
             data-dismiss="alert" aria-label="Close"> 
             <span aria-hidden="true">×</span> 
         </button>
-       </div> '; 
+       </div> ' ; 
 
 }
 else if (! preg_match('/^[0-9]{10}+$/', $phone)  {
@@ -65,6 +65,7 @@ else{
 }
   
 
+$con -> close();
 
 
 ?>

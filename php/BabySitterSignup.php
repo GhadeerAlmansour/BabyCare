@@ -2,7 +2,7 @@
     session_start();
 if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
- echo 'bs php'
+ echo 'bs - php';
 
   $First_Name = $_POST['first_Name'];
   $Last_Name = $_POST['last_Name'];

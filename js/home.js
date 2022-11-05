@@ -174,4 +174,8 @@ function allowDrop(ev) {
     
     });
   window.initMap = initMap;
-  
+
+
+  function update(){
+    document.getElementById("input").value = "This is an auto-generated value";
+   }

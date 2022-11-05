@@ -5,17 +5,10 @@
     
 //=======
 //>>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php
-<<<<<<< HEAD
-
-//if($_SERVER["REQUEST_METHOD"] == "POST") {
-//    session_start();
-    
-=======
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+/*if($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
- echo 'hii before dsumbiy buttoni';
+ echo 'hii before dsumbiy buttoni'; */
 
->>>>>>> 50ca18743e95d9dfc38d5391fb32b4599877ec62
 /*if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
     

@@ -9,9 +9,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     session_start();
  echo 'hii before dsumbiy buttoni';
 
+
 /*if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
     
+  
   $First_Name = $_POST['First_Name'];
   $Last_Name = $_POST['Last_Name'];
   $Email = $_POST['Email'];

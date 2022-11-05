@@ -1,72 +1,10 @@
+<?php 
+session_start();
 
-<?php
-//<<<<<<< HEAD:html/home.php
- session_start();
-    
-//=======
-//>>>>>>> f9631b81176ab40896820b53c9d95509403c7180:php/home.php <<< HEAD
+session_destroy();
 
-//if($_SERVER["REQUEST_METHOD"] == "POST") {
-//    session_start();
-    
-/*
-if($_SERVER["REQUEST_METHOD"] == "POST") {
-    session_start();*/
-
-/*if($_SERVER["REQUEST_METHOD"] == "POST") {
-  include '../php/test.php';   
-    
-  
-  $First_Name = $_POST['First_Name'];
-  $Last_Name = $_POST['Last_Name'];
-  $Email = $_POST['Email'];
-  $password = $_POST['password'];
-  $city = $_POST['city'];  
-  $location = $_POST['location'];  
-  //$filename =$_File["image"]['tmp_name'] ;  
- //$filetmpname = $_FILES['image']['name']; 
-
- //$folder = 'image/';
- //move_uploaded_file($filetmpname, $folder.$filename);
-  $query = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
-
-  $result = mysqli_query($conn, $query);
- //move_uploaded_file($filetmpname, $folder.$filename);
- $folder = 'image/';
-
-  //extra feilds for babysitter
-$phone = $_POST['phone'];
-$ID = $_POST['ID'];
-$Age = $_POST['Age'];
-$gender = $_POST['gender'];
-$Bio = $_POST['Bio'];
-
-
-
-  
-
-  $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , location ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$location')";
-  $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, Image	, Bio)	
-           values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $folder' , '$Bio')";
-  $result = mysqli_query($conn, $sql);
- /*
-if($conn->connect_error){
-  echo "$conn->connect_error";
-  die("Connection Failed : ". $conn->connect_error);
-} else {
-  $stmt = $conn->prepare("INSERT INTO Parent(First_Name, Last_Name, Email, password, city , location , image) values(?, ?, ?, ?, ?, ?,?)");
-  $stmt->bind_param("sssssss", $First_Name, $Last_Name, $Email, $password, $city, $location ,$image);
-  $execval = $stmt->execute();
-  echo $execval;
-  echo "Registration successfully...";
-  $stmt->close();
-  $conn->close();
-}
-*/
-
-
+header("Location: home.php");
 ?>
-
 
 <!doctype html>
 <html>

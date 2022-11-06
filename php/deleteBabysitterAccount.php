@@ -3,7 +3,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "381 project";
+$dbname = "babycare";
 
 //get the value from the form:
     $email = $_POST['deleted_email'];

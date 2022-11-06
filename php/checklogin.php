@@ -39,9 +39,9 @@ header("Location: ../html/HomeBabySitter.html");}
 // If not Parent-BabySitter
 else{
   $con -> close();
-  session_start();
+session_start();
   $_SESSION['error'] = "Wrong Email/Password";
-    header("Location: home.php");
+header("Location: home.php");
 }
 
 ?>

@@ -4,7 +4,7 @@
 
 
 //$email_singIn = $_SESSION['email_singIn'];
-$email_singIn = "nouf@gmail.com";
+$email_singIn = "NorahX@outlook.com";
 
 
 //------------------------------------------------------

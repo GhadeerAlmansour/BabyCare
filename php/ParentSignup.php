@@ -70,9 +70,9 @@
         
         
         if($img == null)
-  $query = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , Neighborhood ,street ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$Neighborhood' ,'$street')";
+  $query = "INSERT INTO `Parent` (First_Name, Last_Name, Email, passwordd, city , Neighborhood ,street ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$Neighborhood' ,'$street')";
         else
-        $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, password, city , Neighborhood ,street , image) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$Neighborhood' ,'$street' , '$img' )";
+        $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, passwordd, city , Neighborhood ,street , imagee) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$Neighborhood' ,'$street' , '$img' )";
         if (mysqli_query($con, $query)) {
             echo "New record created successfully !";
             $_SESSION['email'] = $Email ; //!sure if email

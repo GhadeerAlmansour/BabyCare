@@ -70,10 +70,10 @@ if (mysqli_num_rows($BabySitter_result)>0)
 
 
 if($img == null)
-$sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	Cit, Bio)	
+$sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Passwordd	, ID_B	, Age	, Gender, 	Cit, Bio)	
 values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , '$Bio')";
 else{
-  $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, image	, Bio)	
+  $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Passwordd	, ID_B	, Age	, Gender, 	City	, imagee	, Bio)	
            values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $img' , '$Bio')";
 }
 

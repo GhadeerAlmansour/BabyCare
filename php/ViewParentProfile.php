@@ -64,7 +64,7 @@ if (!$conn) {
 <html>
 
 <head>
-  <title> View babysitter Profile</title>
+  <title> View Parent Profile</title>
   <link rel = "stylesheet" href ="../css/home.css">
   <script src="../js/ViewParentProfile.js"></script>
   <style>

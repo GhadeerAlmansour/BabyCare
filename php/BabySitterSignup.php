@@ -1,6 +1,6 @@
 <?php
     session_start();
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+//if($_SERVER["REQUEST_METHOD"] == "POST") {
   include '../php/test.php';   
   require_once("Connection.php");
 
@@ -10,18 +10,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
       die("Fail to connect to database :" . mysqli_connect_error());
 
 
- $First_Name = $_POST['first_Name'];
- $Last_Name = $_POST['last_Name'];
- $Email = $_POST['email'];
- $password = $_POST['Password'];
- $city = $_POST['City'];  
+ $First_Name = $_POST['First_Name'];
+ $Last_Name = $_POST['Last_Name'];
+ $Email = $_POST['Email'];
+ $password = $_POST['password'];
+ $city = $_POST['city'];  
  $phone = $_POST['phone'];
  $ID = $_POST['ID'];
  $Age = $_POST['Age'];
  $gender = $_POST['gender'];
  $Bio = $_POST['Bio']; 
- if($_FILES['profile-img']['size'] > 0){
-  $img = $_FILES['profile-img']['tmp_name'];
+ if($_FILES['img']['size'] > 0){
+  $img = $_FILES['img']['tmp_name'];
   $img = addslashes(file_get_contents($img));
 }
 else{
@@ -70,10 +70,10 @@ if (mysqli_num_rows($BabySitter_result)>0)
 
 
 if($img == null)
-$sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, 	, Bio)	
+$sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	Cit, Bio)	
 values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , '$Bio')";else
 else{
-  $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, Image	, Bio)	
+  $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, image	, Bio)	
            values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $img' , '$Bio')";
 }
 
@@ -89,8 +89,7 @@ if (mysqli_query($con, $query)) {
 
 
  
-           values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $folder' , '$Bio')";
-  $result = mysqli_query($conn, $sql);
+           
  
   $con -> close();
   

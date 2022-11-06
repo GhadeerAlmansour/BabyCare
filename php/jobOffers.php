@@ -1,3 +1,11 @@
+
+<!DOCTYPE html> 
+<?php 
+session_start();
+
+?>
+
+
 <html>
 
 <head>
@@ -130,16 +138,115 @@ input{
   </a>
     <div class="container2"> 
 
-    <?php
-
-include '../php/offerCard.php';
-
-
-?>
+    
       <p style="background-color: white; color:  rgb(87, 86, 86); font-weight:bolder; font-size: 40px ; margin-left: 50px; font-family: 'Courier New', monospace; margin-top: -10px;">
        Jobs you received:    
        </p>
   
+       <div class = "req" id="here">
+        <?php
+       
+       error_reporting(E_ERROR | E_WARNING | E_PARSE);
+       Define("host","localhost");
+       Define("Username", "root");
+       Define("Password", "");
+       Define("db", "Baby Care");
+       
+       echo "12";
+       echo "ws";
+
+       $conn= mysql_connect("localhost", "root" , "", "Baby Care");
+       echo "yarb";
+       echo "23";
+
+
+      if(!$conn) {
+      die();
+    } 
+   
+    
+     
+      echo "12";
+
+      echo "34567";
+
+      echo "34";
+
+
+                   
+                    echo "56";
+                    
+               
+                    $query = "SELECT * FROM Request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND status = 'NULL' ; 
+                    
+                     AND NOT EXISTS (SELECT 1 FROM Offers WHERE Offers.babysitterOfferID =".$_SESSION['babysitterID']." AND Offers.requestID = jobRequests.ID);"; //only requests without babysitter AND requetss i have not previously sent offers to -->
+                    $result = mysqli_query($conn, $query);
+
+                    if(mysqli_num_rows($result)> 0){
+                      
+              while($row = mysqli_fetch_array($result)){
+                if(time() > $row['To_Time']){
+                $query = "SELECT  Email, First_Name, Last_Name, image FROM 'Parent' WHERE Email=".$row['Email'].";"; 
+                $a = mysqli_fetch_array(mysqli_query($conn, $query));
+                echo "<article id='".$row['ID']."'> <img class='requestPicture' src=".$a['photo']." alt='Profile Picture'>
+                <div class='information'>
+                <h4 class='requestName'><strong>Parent's name: </strong>".$a['First_Name']." ".$a['Last_Name']."</h4>
+                <p><strong>Kid's names: </strong>".$row['Child1_name']."<br>
+                <strong>Type of service: </strong>".$row['Service']."<br>
+                <strong> Start date - End date: </strong>".$row['datee']."<br>
+                <strong>Duration: </strong>".$row['Time1']." - ".$row['To_Time']." <br>
+                <a class='btn btn-outline-secondary' href='#' role='button' id='show".$row['ID']."' style='width: 190px;'>Send an Offer</a>
+                <div id='hide".$row['ID']."' style='display: none;'>
+
+                <form method='post' action='PHP/sendOffer.php'>
+                    <input type='text'  placeholder='Price in SR/hour' name='priceoffer' style='border: 1px; color: #555; border-style:solid;'>
+                    <input type='hidden' value='".$row['ID']."' name='rowval'>
+                    <input type ='submit' value='Send Offer' class='btn btn-outline-secondary'>
+                  </form>
+                </div>
+                </div>
+            </article>
+            
+            <script>
+            $(document).ready(function() {
+                  $('#show".$row['ID']."').click(function() {
+                    $('#hide".$row['ID']."').fadeIn('slow');
+                    $('#show".$row['ID']."').fadeOut();
+                  });
+                });
+          </script>";
+              }
+              }
+             }
+             else {
+              echo "<p style='color: grey; text-align: center;'>No Current Requests...</p>
+              <img style='position: static; margin-left: 30%; width: 400px; margin-bottom: 5%;' src='css/images/undraw_searching_re_3ra9.svg'>";
+             } 
+           ?>
+           </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
     <div style= float:left;
     class="cardOL">
     <image src="../images/userIcon.png" class="imagei" alt="userIcon"></image>
@@ -203,12 +310,11 @@ include '../php/offerCard.php';
   
   
       
-    </div>
-   
+    </div>  -   
     <footer>
       <p>Copyright &copy; 2022 BabyCare </p>
       <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;">Contact Us</a></p>
-
+            -->
         <!------------  BACK TO TOP   ----------->
     <a href="#" class="to-top">
       <image src="..\images\to top.png" class="ToTop" alt="toTop"></image>

@@ -174,24 +174,25 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
     } 
    
                     
-               
-                    $query = "SELECT * FROM Request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND status = 'NULL' "; 
-                    
+
+                    $query = "SELECT * FROM request WHERE /*CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND */ status = 'NULL' "; 
+                         echo "yarb";
+
                     $result = mysqli_query($conn, $query);
 
                     if($result -> num_rows > 0){
                       
               while($row = mysqli_fetch_array($result)){
                 if(time() > $row['To_Time']){
-                $query = "SELECT  Email, First_Name, Last_Name, image FROM 'Parent' WHERE Email=".$row['Email'].";"; 
+                $query = "SELECT  Email, First_Name, Last_Name, imagee FROM 'Parent' WHERE Email=".$row['Email'].";"; 
                 $a = mysqli_fetch_array(mysqli_query($conn, $query));
-                echo "<article id='".$row['ID']."'> <img class='requestPicture' src=".$a['photo']." alt='Profile Picture'>
+                echo "<article id='".$row['ID']."'> <img class='requestPicture' src=".$a['imagee']." alt='Profile Picture'>
                 <div class='information'>
                 <h4 class='requestName'><strong>Parent's name: </strong>".$a['First_Name']." ".$a['Last_Name']."</h4>
                 <p><strong>Kid's names: </strong>".$row['Child1_name']."<br>
                 <strong>Type of service: </strong>".$row['Service']."<br>
                 <strong> Start date - End date: </strong>".$row['datee']."<br>
-                <strong>Duration: </strong>".$row['Time1']." - ".$row['To_Time']." <br>
+                <strong>Duration: </strong>".$row['From_Time']." - ".$row['To_Time']." <br>
                 <a class='btn btn-outline-secondary' href='#' role='button' id='show".$row['ID']."' style='width: 190px;'>Send an Offer</a>
                 <div id='hide".$row['ID']."' style='display: none;'>
 

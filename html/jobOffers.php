@@ -139,6 +139,11 @@ input{
         
 <?php
 
+include '../php/offerCard.php';
+
+
+?>
+
       <h5>Reema Alx</h5>
 
         <div class="praOL" >

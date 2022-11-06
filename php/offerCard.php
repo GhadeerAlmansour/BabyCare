@@ -34,8 +34,8 @@ if($result){
            
             //$query = "SELECT * FROM 'Requests' WHERE status = 'Pending';";
             //$pet_result = mysqli_fetch_array(mysqli_query($connection,$query));   
-            //echo "<script> document.getElementById('appointments').innerHTML +='";
-            echo "<tr name= ".$row['Parent_name']."\'>";
+            echo "<script> document.getElementById('jobs').innerHTML +='" ;
+            echo "<tr name= ".$row['Parent_name']."\'>" ;
             //echo "<td><button class=\'btns\' onclick=\'showPetProfile(this)\'><img class=\'t-img\' src=\'data:image/png;charset=utf8;base64,".base64_encode($pet_result['Photo'])."\' alt=\'Pet Photo\'></button></td>";
             echo "<td>".$row['Child1_name1'].$row['Age1']"</td>";
             echo "<td>".$row['Child1_name2'].$row['Age2']"</td>";
@@ -45,14 +45,14 @@ if($result){
             echo "<td>".dateFormat($row['Date'])."</td>";
             echo "<td>".$row['Time1']."</td>";      
             echo "<td>".$row['Time2']."</td>";
-            echo "<td> <input price = "price" type="text" size="17" maxlength="20" placeholder="price SR" >"
+            echo "<td> <input price = "price" type="text" size="17" maxlength="20" placeholder="price SR" >";
             echo "<td><a class="button" href="" >send offer</a></td>";
 
             //echo "<td><button class=\'btns\' onclick=\'showNote(this)\'>";
            // echo "<i class=\'bi bi-chat-square-dots-fill noteIcon\'></button></td>";          
           //  echo "<td><i class=\'bi bi-check-circle-fill accept\'></i><i class=\'bi bi-x-circle-fill decline\'></i></td>";
             echo "</tr>'";           
-            //echo "</script>";      
+            echo "</script>";      
          }
    }
    else{

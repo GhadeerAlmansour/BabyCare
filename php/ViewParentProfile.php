@@ -11,7 +11,7 @@ $email_singIn = "gg@gmail.com";
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "381 project";
+$dbname = "babycare";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$dbname);

@@ -4,7 +4,7 @@
   include '../php/test.php';   
   require_once("Connection.php");
 
-  $con = mysqli_connect('localhost','root','BabyCare');
+  $con = mysqli_connect('localhost','root','','BabyCare');
 
   if(mysqli_connect_errno())
       die("Fail to connect to database :" . mysqli_connect_error());
@@ -34,24 +34,24 @@ $validateEmail = preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\
 $specialChars = preg_match('@[^\w]@', $password);
 if(!$validateEmail){
     $_SESSION['Sign_up_error'] = "Invalid email address.";
-    header("Location: ../signup.php"); 
-        exit;
+    header("Location: home.php?1");
+    exit;
 }
 if( !$specialChars && strlen($password) < 8) {
     $_SESSION['Sign_up_error'] = 'Password must be at leat 8 characters and contain at least one special character #,&,..';
-    header("Location: ../signup.php"); 
+    header("Location: home.php?2");
     exit;
 }
 if(strlen($password) < 8){
     $_SESSION['Sign_up_error'] = 'Password should be at leat 8 characters!';
-    header("Location: ../signup.php"); 
+    header("Location: home.php?3");
     exit;
 }
 
 
 if( !$specialChars ) {
     $_SESSION['Sign_up_error'] = 'Password must contain at least one special character #,&,..';
-    header("Location: ../signup.php"); 
+    header("Location: home.php?1");
     exit;
 }
 
@@ -63,7 +63,7 @@ $BabySitter_result = mysqli_query($con,$query);
 if (mysqli_num_rows($BabySitter_result)>0)
 {
     $_SESSION['Sign_up_error'] = 'Email exists!';
-    header("Location: ../signup.php"); 
+    header("Location: home.php?4");
     $con -> close();
     exit;
 }
@@ -71,7 +71,7 @@ if (mysqli_num_rows($BabySitter_result)>0)
 
 if($img == null)
 $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	Cit, Bio)	
-values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , '$Bio')";else
+values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , '$Bio')";
 else{
   $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Password	, ID_B	, Age	, Gender, 	City	, image	, Bio)	
            values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $img' , '$Bio')";
@@ -80,18 +80,18 @@ else{
 if (mysqli_query($con, $query)) {
     echo "New record created successfully !";
     $_SESSION['email'] = $Email ; //!sure if email
-    header("Location: ../HomeBabySitter.html");
+    header("Location: ../html/HomeBabySitter.html");
     $con -> close();
     exit;
 } else {
     echo "Error: ".mysqli_error($con);
 }
 
-
+/*
  
            
  
-  $con -> close();
-  
+  $con -> close();*/
+
 ?>
 

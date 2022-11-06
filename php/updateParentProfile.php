@@ -6,7 +6,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "381 project";
+$dbname = "babycare";
 
 //get the value from the form:
     $first_Name = $_POST['firstName'];

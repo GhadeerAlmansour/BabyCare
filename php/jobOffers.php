@@ -124,11 +124,18 @@ input{
         
         </div>
    </div> 
+   
    <a href="#" class="back">
     <image src="..\images\back.png" class="back" alt="back" style="width:40px ; margin-left: 30px; margin-top: 30px;" onclick="history.go(-1);"></image>
   </a>
     <div class="container2"> 
 
+    <?php
+
+include '../php/offerCard.php';
+
+
+?>
       <p style="background-color: white; color:  rgb(87, 86, 86); font-weight:bolder; font-size: 40px ; margin-left: 50px; font-family: 'Courier New', monospace; margin-top: -10px;">
        Jobs you received:    
        </p>
@@ -137,12 +144,7 @@ input{
     class="cardOL">
     <image src="../images/userIcon.png" class="imagei" alt="userIcon"></image>
         
-<?php
 
-include '../php/offerCard.php';
-
-
-?>
 
       <h5>Reema Alx</h5>
 

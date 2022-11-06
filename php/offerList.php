@@ -1,3 +1,18 @@
+<?php
+
+
+session_start();
+
+include '../php/test.php'; 
+
+
+
+
+
+?>
+
+
+
 <html>
 
 <head>
@@ -158,7 +173,7 @@ var x = setInterval(function() {
       <p style="background-color: white; color:  rgb(87, 86, 86); font-weight:bolder; font-size: 40px ; margin-left: 50px; font-family: 'Courier New', monospace; margin-top: -10px;">
        Offers List:    
        </p>
-  
+
     <div class="cardOL">
       <a href ="babysitterProfile1.html"> <image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;" ></image></a>
         
@@ -215,9 +230,97 @@ var x = setInterval(function() {
     </div>
   
   
-  
-  
-      
+
+
+<?php
+echo "hi";
+
+include '../php/test.php'; 
+require_once("Connection.php");
+
+ $con = mysqli_connect(host,Username,Password,db);
+
+if(!$con)
+   die();
+
+$parent = 'Saud_Alx@gmail.com'; //change to session 
+
+$query2 = "SELECT * FROM request WHERE Email LIKE '$parent' AND Status LIKE 'PINDING';";
+$result2 = mysqli_query($con,$query2);
+
+//$query = "SELECT * FROM offers WHERE Email LIKE 'NorahX@outlook.com' ;";
+//$result = mysqli_query($con,$query);
+echo($result2 -> num_rows);
+if($result2){  
+  if($result2 -> num_rows > 0){    
+
+ while($row = mysqli_fetch_array($result2)){ 
+
+$Request_Id = $row['Request_Id']; 
+echo('--  '.$Request_Id.' --') ;
+
+$query3 = "SELECT * FROM offers WHERE Request_Id = $Request_Id ;";
+$result3 = mysqli_query($con,$query3);
+echo($result3 -> num_rows);
+while($row2 = mysqli_fetch_array($result3)){  
+$BSoffer_Id = $row2['BSoffer_Id'];
+$babysitter = $row2['Email'];
+$parent = $row['Email'];
+$price=$row2['Price'];
+//$number=$row['number'];
+$start = $row['From_Time'];
+$end = $row['To_Time'];
+
+
+$query1 = "SELECT * FROM `Baby_Sitter` WHERE `Email` = '$babysitter' ;"; 
+$result1 = mysqli_query($con,$query1);
+$row1 = mysqli_fetch_array($result1);
+$image = $row1['image'];
+$firstName = $row1['First_Name'];
+$lastName = $row1['Last_Name'];
+
+
+print( '<div class="cardOL">');
+print('<a href ="babysitterProfile1.html"> <image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;" ></image></a>');
+print('<h5>'.$firstName.' '.$lastName.'</h5>');
+print(
+  '<p class="price">'.
+  '<strong>'. $price  .'SR</strong> <i class="fa fa-money" style="font-size:24px"></i> <small> per hr</small>
+</p>');
+print( '<div class="praOL">
+<p style="font-size: 17px">i am available '.$start.' - '.$end.'<br>looking forward to take care of your kids!
+  <p style="font-size: 15px">the offer is valid for 1 hour.</p>
+  <p id="demo1"></p>
+</p>');
+print(
+  '<p style="text-align: right;">
+      <a style="color: #6bbd5c;" class="button" href="#">accept </a>
+     <!-- <a style="color: #ff5b5b;"class="button" href="#">reject</a>-->
+  </p>
+</div>');
+
+print(
+              '<form class="" action="rejectOffer.php" method="post" >'.
+                            '<input type="hidden" name="rejectedOffer" value='.$BSoffer_Id.'>'.
+                            '<button class="button"   type="submit" style="color:#ff5b5b; margin-left: 300px;" >'."Reject Offer".'</button>'.
+             ' </form> '
+);
+print('</div>');
+
+}
+  }}
+
+  else
+  echo('NO OFFERS YET');
+}
+
+
+
+
+
+
+?>
+     
     </div>
    
     <footer>

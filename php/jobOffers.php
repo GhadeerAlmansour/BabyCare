@@ -1,5 +1,5 @@
 
-<!DOCTYPE html> 
+
 <?php 
 session_start();
 
@@ -150,39 +150,36 @@ input{
        Define("host","localhost");
        Define("Username", "root");
        Define("Password", "");
-       Define("db", "Baby Care");
+       Define("db", "BabyCare");
        
-       echo "12";
-       echo "ws";
+  //     echo "12";
+  //     echo "ws";
 
-       $conn= mysql_connect("localhost", "root" , "", "Baby Care");
-       echo "yarb";
-       echo "23";
+ //$conn= mysql_connect("localhost", "root" ,'', "BabyCare");
+  //     echo "yarb";
+   //    echo "23";
+
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "BabyCare";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 
       if(!$conn) {
       die();
     } 
    
-    
-     
-      echo "12";
-
-      echo "34567";
-
-      echo "34";
-
-
-                   
-                    echo "56";
                     
                
-                    $query = "SELECT * FROM Request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND status = 'NULL' ; 
+                    $query = "SELECT * FROM Request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND status = 'NULL' "; 
                     
-                     AND NOT EXISTS (SELECT 1 FROM Offers WHERE Offers.babysitterOfferID =".$_SESSION['babysitterID']." AND Offers.requestID = jobRequests.ID);"; //only requests without babysitter AND requetss i have not previously sent offers to -->
                     $result = mysqli_query($conn, $query);
 
-                    if(mysqli_num_rows($result)> 0){
+                    if($result -> num_rows > 0){
                       
               while($row = mysqli_fetch_array($result)){
                 if(time() > $row['To_Time']){

@@ -1,5 +1,5 @@
 
-<!DOCTYPE html> 
+
 <?php 
 session_start();
 
@@ -150,12 +150,12 @@ input{
        Define("host","localhost");
        Define("Username", "root");
        Define("Password", "");
-       Define("db", "Baby Care");
+       Define("db", "BabyCare");
        
        echo "12";
        echo "ws";
 
-       $conn= mysql_connect("localhost", "root" , "", "Baby Care");
+       $conn= mysql_connect("localhost", "root" , "", "BabyCare");
        echo "yarb";
        echo "23";
 
@@ -177,9 +177,8 @@ input{
                     echo "56";
                     
                
-                    $query = "SELECT * FROM Request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND status = 'NULL' ; 
+                    $query = "SELECT * FROM Request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND status = 'NULL' "; 
                     
-                     AND NOT EXISTS (SELECT 1 FROM Offers WHERE Offers.babysitterOfferID =".$_SESSION['babysitterID']." AND Offers.requestID = jobRequests.ID);"; //only requests without babysitter AND requetss i have not previously sent offers to -->
                     $result = mysqli_query($conn, $query);
 
                     if(mysqli_num_rows($result)> 0){

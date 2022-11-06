@@ -21,7 +21,7 @@ if (!$conn) {
 
 // sql to delete a record
 
-$query = "DELETE FROM offers WHERE BSoffer_Id = 1";
+$query = "DELETE FROM offers WHERE BSoffer_Id = $BSoffer_Id ";
 
 
 if (mysqli_query($conn, $query)) {

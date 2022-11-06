@@ -152,36 +152,34 @@ input{
        Define("Password", "");
        Define("db", "BabyCare");
        
-       echo "12";
-       echo "ws";
+  //     echo "12";
+  //     echo "ws";
 
-       $conn= mysql_connect("localhost", "root" , "", "BabyCare");
-       echo "yarb";
-       echo "23";
+ //$conn= mysql_connect("localhost", "root" ,'', "BabyCare");
+  //     echo "yarb";
+   //    echo "23";
+
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "BabyCare";
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 
       if(!$conn) {
       die();
     } 
    
-    
-     
-      echo "12";
-
-      echo "34567";
-
-      echo "34";
-
-
-                   
-                    echo "56";
                     
                
                     $query = "SELECT * FROM Request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND status = 'NULL' "; 
                     
                     $result = mysqli_query($conn, $query);
 
-                    if(mysqli_num_rows($result)> 0){
+                    if($result -> num_rows > 0){
                       
               while($row = mysqli_fetch_array($result)){
                 if(time() > $row['To_Time']){

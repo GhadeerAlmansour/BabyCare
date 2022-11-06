@@ -259,7 +259,7 @@ if($result2){
 $Request_Id = $row['Request_Id']; 
 echo('--  '.$Request_Id.' --') ;
 
-$query3 = "SELECT * FROM offers WHERE BSoffer_Id = $Request_Id ;";
+$query3 = "SELECT * FROM offers WHERE Request_Id = $Request_Id ;";
 $result3 = mysqli_query($con,$query3);
 echo($result3 -> num_rows);
 while($row2 = mysqli_fetch_array($result3)){  

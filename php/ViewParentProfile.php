@@ -4,7 +4,7 @@
 
 
 //$email_singIn = $_SESSION['email_singIn'];
-$email_singIn = "Nouf@gmail.com";
+$email_singIn = "gg@gmail.com";
 
 
 //------------------------------------------------------
@@ -116,12 +116,54 @@ input{
 margin-bottom: 5px;
 }
 
-.card .button{
+ .card {
+	background-color:#ffe3e3;
+	color: rgb(104, 104, 104);
+    height: 600px;
+   
+}
+
+.button{
 	background-color:#ffe3e3;
 	color: rgb(104, 104, 104);;
     width:25%;
     margin:1px;
+    border: 0;
+  width: 170px;
+  padding: 10px;
+
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+           border-radius: 5px; 
+  display: block;
+  text-decoration: none;
+   text-align: center;
+  font-family:'Courier New', monospace;; 
+  font-size: 1.2em;
+
 }
+
+.button1{
+	background-color:#ffe3e3;
+	color: rgb(104, 104, 104);;
+    width:25%;
+    margin:1px;
+    border: 0;
+  width: 170px;
+  padding: 10px;
+  
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+           border-radius: 5px; 
+  display: block;
+  text-decoration: none;
+   text-align: center;
+  font-family:'Courier New', monospace;; 
+  font-size: 1.2em;
+
+}
+
+
 h5{
 	border-radius: 30px;
   padding: 9px 22px;
@@ -145,7 +187,7 @@ margin-top: -42px;
 <ul>
     <li><a href="HomeParent.html">Home</a></li>
     <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
-    <li style="text-decoration:underline ;"><a href ="ViewParentProfile.html"> My Profile</a></li>
+    <li style="text-decoration:underline ;"><a href ="ViewParentProfile.php"> My Profile</a></li>
 
 </ul>
 <div class="dropdown">
@@ -180,23 +222,23 @@ margin-top: -42px;
         <br>
             <img src="../images/userIcon.png" style="width:100px ; height: 100px; padding-left: 340px;">
 
-            <form id="sign-up-form-parent" class="parent" style="padding-left:100px ;" action="../php/updateParentProfile.php" method="post">
+            <form id="sign-up-form-parent" class="parent" style="padding-left:100px; " action="../php/updateParentProfile.php" method="post">
                
                   
                     <input type="text" id="firstName"  name="firstName" value="<?php echo $firstName?>" style="background-color:#fbf6ff;"readonly required />
                     <input type="text" id="lastName"  name="lastName" value="<?php echo $Last_Name?>" style="background-color:#fbf6ff;" readonly required/>
                     <input type="email" id="email"   name="email" value="<?php echo $Email?>" style="background-color:#fbf6ff;" readonly required/>
                     <input type="password" id="password"  name="password" value="<?php echo $Password?>" style="background-color:#fbf6ff;" readonly required/>
-                    <input type="text" id="city"  name="city" value="<?php echo $City?>" style="background-color:#fbf6ff;"  readonly required/> <br>
+                    <input type="text" id="city"  name="city" value="<?php echo $City?>" style="background-color:#fbf6ff;"  readonly required/> 
                     <input type="text" id="Neighborhood"  name="Neighborhood" value="<?php echo $Neighborhood?>" style="background-color:#fbf6ff;" readonly required/>
                     <input type="text" id="street" name="street" value="<?php echo $street?>" style="background-color:#fbf6ff;"readonly required/> <br>
 
                     
             
-                    
+                    <br><br>
 
                     <div style="text-align: center; display:flex; justify-content:center;">
-                        <button id="submit_button"class="button" type="submit" style="color:rgb(104, 104, 104); display:none;">save</button>
+                        <button id="submit_button" class="button" type="submit" style="color:rgb(104, 104, 104); display:none;">save</button>
                         
                         <div class="button"  onclick="unlock()" href="#" style="color:rgb(104, 104, 104);" >Edit</div>
                         
@@ -206,14 +248,14 @@ margin-top: -42px;
                    
                     
             
-               <br><br><br>            
+                         
 
               </form >
 
               <form class="deleteForm" action="../php/deleteParentAccount.php" method="post" >
                             <input type="hidden" name="deleted_email" value='<?php echo $Email ?>'>
                             <input type="hidden" name='confirm_Delete' id="confirmDelete" value="false">
-                            <button class="button"   type="submit" style="color:#ff5b5b;" onclick='checkDelete()'>Delete Account!</button>
+                            <button class="button"   type="submit" style="color:#ff5b5b;" onclick='checkDelete()'>Delete Account!</button><br>
             </form> 
              <!--<p style="text-align: center;">
                 <a class="button" href="#" style="color:rgb(104, 104, 104);" >save</a> 

@@ -4,7 +4,7 @@
 
 
 //$email_singIn = $_SESSION['email_singIn'];
-$email_singIn = "NorahX@outlook.com";
+$email_singIn = "nouf@gmail.com";
 
 
 //------------------------------------------------------
@@ -118,12 +118,33 @@ input{
 margin-bottom: 5px;
 }
 
-.card .button{
+.card {
+	background-color:#ffe3e3;
+	color: rgb(104, 104, 104);
+  height: 850px;
+
+}
+.button{
 	background-color:#ffe3e3;
 	color: rgb(104, 104, 104);;
-width:25%;
-margin:1px;
+    width:25%;
+    margin:1px;
+    border: 0;
+  width: 170px;
+  padding: 10px;
+
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+           border-radius: 5px; 
+  display: block;
+  text-decoration: none;
+   text-align: center;
+  font-family:'Courier New', monospace;; 
+  font-size: 1.2em;
+
 }
+
+
 h5{
 	border-radius: 30px;
   padding: 9px 22px;
@@ -147,7 +168,7 @@ margin-top: -42px;
 <ul>
     <li><a href="HomeBabySitter.html">Home</a></li>
     <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
-    <li style="text-decoration:underline ;"><a href ="ViewBabysitterProfile.html"> My Profile</a></li>
+    <li style="text-decoration:underline ;"><a href ="ViewBabysitterProfile.php"> My Profile</a></li>
 </ul>
 <div class="dropdown">
     <image src="../images/userIcon.png" class="image">
@@ -205,9 +226,9 @@ margin-top: -42px;
                  
 
                     <div style="text-align: center; display:flex;">
-                        <button id="submit_button"class="button" type="submit" style="color:rgb(104, 104, 104); display:none;">save</button>
+                        <button id="submit_button"class="button" type="submit" style="color:rgb(104, 104, 104); display:none; margin-left: 120px;">save</button>
                         
-                        <div class="button"  onclick="unlock()" href="#" style="color:rgb(104, 104, 104);" >Edit</div>
+                        <div class="button"  onclick="unlock()" href="#" style="color:rgb(104, 104, 104); margin-right: 120px; " >Edit</div>
                         
                        
                       
@@ -215,14 +236,14 @@ margin-top: -42px;
                    
                     
             
-               <br><br><br>            
+                       
 
               </form >
 
               <form class="" action="../php/deleteBabysitterAccount.php" method="post" >
                             <input type="hidden" name="deleted_email" value='<?php echo $Email ?>'>
                             <input type="hidden" name='confirm_Delete' id="confirmDelete" value="false">
-                            <button class="button"   type="submit" style="color:#ff5b5b;" onclick='checkDelete()'>Delete Account!</button>
+                            <button class="button"   type="submit" style="color:#ff5b5b; margin-left: 300px;" onclick='checkDelete()'>Delete Account!</button>
             </form> 
              <!--<p style="text-align: center;">
                 <a class="button" href="#" style="color:rgb(104, 104, 104);" >save</a> 

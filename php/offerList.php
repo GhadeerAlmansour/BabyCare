@@ -242,19 +242,24 @@ require_once("Connection.php");
 if(!$con)
    die();
 
-$time_now=date("Y-m-d H:i:s");
+
+      $offset = 2 * 60 * 60; // saudi time
+   $time_now=date('Y-m-d H:i:s ', time() + $offset); //Time Now
+
    $queryX = "SELECT * FROM offers WHERE 1";
    $resultX = mysqli_query($con,$queryX);
+
    while($rowX = mysqli_fetch_array($resultX)){  
 
     $BSoffer_Id = $rowX['BSoffer_Id'];
     $Create_Time = $rowX['Create_Time'];
     $date = $Create_Time;
-    $new_time = date ('Y-m-d H:i:s', strtotime($date .'+1 hours') ) ;
-   echo($new_time);
+    $new_time = date ('Y-m-d H:i:s', strtotime($date .'+1 hours') ) ; // The Expiration time of the offer
+   //echo($new_time);
   
-    if($time_now > $new_time){
-      $queryX = "DELETE FROM offers WHERE BSoffer_Id = $BSoffer_Id ";
+    if($time_now > $new_time){ // check if it is expired
+           $queryY = " DELETE FROM `offers` WHERE `BSoffer_Id` = '$BSoffer_Id' ";
+           mysqli_query($con, $queryY);
     }
 
    }
@@ -270,13 +275,15 @@ $result2 = mysqli_query($con,$query2);
 if($result2){  
   if($result2 -> num_rows > 0){    
 
- while($row = mysqli_fetch_array($result2)){ 
+ while($row = mysqli_fetch_array($result2)){  // for each request that was sent from THIS parent
 
 $Request_Id = $row['Request_Id']; 
 
 $query3 = "SELECT * FROM offers WHERE Request_Id = $Request_Id AND Status LIKE 'pending'; ;";
 $result3 = mysqli_query($con,$query3);
-while($row2 = mysqli_fetch_array($result3)){  
+
+while($row2 = mysqli_fetch_array($result3)){    //for each offer sent to THIS request 
+
 $BSoffer_Id = $row2['BSoffer_Id'];
 $Create_Time = $row2['Create_Time'];
 $babysitter = $row2['Email'];
@@ -287,7 +294,7 @@ $start = $row['From_Time'];
 $end = $row['To_Time'];
 
 
-$query1 = "SELECT * FROM `Baby_Sitter` WHERE `Email` = '$babysitter' ;"; 
+$query1 = "SELECT * FROM `Baby_Sitter` WHERE `Email` = '$babysitter' ;";  //to get the babysitter's Info
 $result1 = mysqli_query($con,$query1);
 $row1 = mysqli_fetch_array($result1);
 $image = $row1['image'];
@@ -300,6 +307,12 @@ $new_time = date ('Y-m-d H:i:s', strtotime($date .'+1 hours') ) ;
 print( '<div class="cardOL">');
 print('<a href ="babysitterProfile1.html"> <image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;" ></image></a>');
 print('<h5>'.$firstName.' '.$lastName.'</h5>');
+print('<form class="" action="BabySitterProfileViewForParent.php" method="post" >'. //BABYSITTER PROFILE
+'<input type="hidden" name="babysitter" value='.$babysitter.'><br>'.
+'<button class="button"   type="submit" style="color:black; margin-left:0px; width: 170px; margin-top:-20px; font-family: Courier New, monospace;  	font-size: 15px;" >'."View Profile".'</button>'.
+' </form> '
+
+);
 print(
   '<p class="price">'.
   '<strong>'. $price  .'SR</strong> <i class="fa fa-money" style="font-size:24px"></i> <small> per hr</small>
@@ -319,15 +332,15 @@ print( '<div class="praOL">
 
 print(
               '<form class="" action="rejectOffer.php" method="post" >'.
-                            '<input type="hidden" name="rejectedOffer" value='.$BSoffer_Id.'><br>'.
-                            '<button class="button"   type="submit" style="color:black; margin-left: 460px; width: 170px; margin-bottom:-10px; font-family: Courier New, monospace;" >'."Reject Offer".'</button>'.
+                            '<input type="hidden" name="rejectedOffer" value='.$BSoffer_Id.'>'.
+                            '<button class="button"   type="submit" style="color:black; margin-left: 775px; width: 150px; margin-top:-55px; font-family: Courier New, monospace; font-size: 15px;" >'."Reject Offer".'</button>'.
              ' </form> '
 );
 
 print(
   '<form class="" action="acceptOffer.php" method="post" >'.
                 '<input type="hidden" name="acceptOffer" value='.$BSoffer_Id.'>'.
-                '<button class="button"   type="submit" style="color:black; margin-left: 280px; margin-top:-50px;	width: 170px; font-family: Courier New, monospace;">'."Accept Offer".'</button>'.
+                '<button class="button"   type="submit" style="color:black; margin-left: 775; margin-bottom:-55px;	width: 150px; font-family: Courier New, monospace; font-size: 15px;">'."Accept Offer".'</button>'.
  ' </form> '
 );
 

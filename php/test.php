@@ -13,7 +13,7 @@ $First_Name = $_POST['First_Name_P'];
 
 $conn=  mysqli_connect('localhost','root','','BabyCare');
 if($conn) {
-	echo "success"; 
+	//echo "success"; 
 } 
 else {
 	die("Fail to connect to database". mysqli_connect_error()); 

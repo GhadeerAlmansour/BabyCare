@@ -169,7 +169,7 @@ die();
 $babysitter = 'NorahX@outlook.com'; //change to session 
 
 //date("Y-m-d")
-$queryR = "SELECT * FROM `request` WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  Status = 'pending' "; 
+$queryR = "SELECT * FROM `request` WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  Status = 'PINDING' "; 
 
 $result = mysqli_query($conn,$queryR);
 
@@ -211,8 +211,8 @@ if($result){
       print('<p style="font-size: 15px; font-family: Courier New"> <br><strong>send offer: </strong></p><br>');
       print( '<form class="" method="post" action="sendOffer.php">'.
        '<input  type="text"  placeholder="     Price in SR/hour" name="priceoffer" style="border: 1px; height:20px; color: #555; border-style:solid ">'.
-      '<input type="hidden" value= '.$rowR['Request_Id'].' name="rowval">'.
-      '<button class="button"  type="submit" value="Send Offer" style=" font-size: 15px; font-family: Courier New ;color:dark grey; margin-left: 250px; width: 150px;height:30px; margin-bottom:-10px; margin-top:190px;" >'."Send Offer".'</button>'.
+      '<input type="hidden" value= '.$Request_Id .' name="sendOffer">'.
+      '<button class="button"  type="submit"  style=" font-size: 15px; font-family: Courier New ;color:dark grey; margin-left: 250px; width: 150px;height:30px; margin-bottom:-10px; margin-top:190px;" >'."Send Offer".'</button>'.
      '</form>' );
 
 

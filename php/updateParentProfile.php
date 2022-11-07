@@ -1,6 +1,6 @@
 <?php 
 
-
+session_start();
 
 
 $servername = "localhost";
@@ -25,7 +25,7 @@ if (!$conn) {
   }
   
 
-$query_parent = "UPDATE parent SET First_Name='$first_Name', Last_Name='$last_Name', password='$user_password',
+$query_parent = "UPDATE parent SET First_Name='$first_Name', Last_Name='$last_Name', passwordd='$user_password',
  city='$city' , Neighborhood='$Neighborhood' , street='$street' WHERE Email= '$eamil' ";
 
 if (mysqli_query($conn, $query_parent)) {

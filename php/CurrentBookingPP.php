@@ -4,7 +4,7 @@
 session_start();
 
 //$email_singIn = $_SESSION['email_singIn'];
-$email_singIn = "saraW@outlook.com";
+$email_singIn = "Saud_Alx@gmail.com";
 
 
 //------------------------------------------------------
@@ -20,12 +20,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
   
- //$now = date_create()->format('Y-m-d');
- //AND  (request.Datee>$now)
+ 
+ 
   $query_Parent = "SELECT * FROM 
   request INNER JOIN parent ON request.Email = parent.Email
   INNER JOIN offers ON request.Request_Id = offers.Request_Id
-  AND request.Email= '$email_singIn'";
+  AND request.Email= '$email_singIn' AND  (CAST(CURRENT_TIMESTAMP AS DATE) < request.datee)";
 
   $result_Parent = mysqli_query($conn,$query_Parent);
  
@@ -35,7 +35,7 @@ if (!$conn) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result_Parent)) {
      // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-        
+        $price= $row["Price"];
         $Request_Id = $row["Request_Id"];
         $Bsoffer_Id = $row["BSoffer_Id"];
         $Email = $row["Email"];
@@ -78,6 +78,8 @@ if (!$conn) {
 
 <lable> Type of Service: 
 <input name="service" type="text" size="12" maxlength="20" value=' .$Service. ' readonly >
+<lable> Price: 
+<input name="service" type="text" size="12" maxlength="20" value=' .$price. ' readonly >
 
 <br><br>
 <lable> Time:

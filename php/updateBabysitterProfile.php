@@ -20,6 +20,7 @@ $dbname = "babycare";
     $gender = $_POST['gender'];
     $city = $_POST['city'];
     $bio = $_POST['Bio'];
+    $imagee=$_POST['imagee'];
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -30,7 +31,7 @@ if (!$conn) {
   echo "Connected successfully";
 
 $query_Babysitter = "UPDATE baby_sitter SET First_Name='$first_Name', Last_Name='$last_Name', Passwordd='$user_Password',
- ID_B='$id' , Age='$age' , phone_Number='$phone_Number' , Gender='$gender', City='$city' , Bio='$bio'
+ ID_B='$id' , Age='$age' , phone_Number='$phone_Number' , Gender='$gender', City='$city' , Bio='$bio',imagee='$imagee'
  WHERE Email= '$eamil' ";
 
 if (mysqli_query($conn, $query_Babysitter)) {

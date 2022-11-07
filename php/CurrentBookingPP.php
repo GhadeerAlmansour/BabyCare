@@ -35,7 +35,7 @@ if (!$conn) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result_Parent)) {
      // echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
-        
+        $price= $row["Price"];
         $Request_Id = $row["Request_Id"];
         $Bsoffer_Id = $row["BSoffer_Id"];
         $Email = $row["Email"];
@@ -78,6 +78,8 @@ if (!$conn) {
 
 <lable> Type of Service: 
 <input name="service" type="text" size="12" maxlength="20" value=' .$Service. ' readonly >
+<lable> Price: 
+<input name="service" type="text" size="12" maxlength="20" value=' .$price. ' readonly >
 
 <br><br>
 <lable> Time:

@@ -169,7 +169,7 @@ die();
 $babysitter = 'NorahX@outlook.com'; //change to session 
 
 //date("Y-m-d")
-$queryR = "SELECT * FROM `request` WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  Status = 'PINDING' "; 
+$queryR = "SELECT * FROM `request` WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  Status = 'pending' "; 
 
 $result = mysqli_query($conn,$queryR);
 
@@ -178,7 +178,7 @@ if($result){
     while($rowR = mysqli_fetch_array($result)){ 
       //if(time() > $rowR['To_Time']){
 
-    
+    echo date(' H:i:s ', time());
         
     $PEmail = $rowR['Email'];
     $queryP = " SELECT   First_Name , Last_Name , Email , imagee FROM `Parent` WHERE Email= '$PEmail'"; 
@@ -218,7 +218,8 @@ if($result){
 
     
     print('</div>');
-    print('</div>');
+    print('</div>'); 
+     print('</div>');
     
     }
      //}// if time

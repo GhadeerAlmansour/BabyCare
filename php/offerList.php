@@ -247,7 +247,7 @@ if(!$con)
    $time_now=date('Y-m-d H:i:s ', time() + $offset); //Time Now
 
    $queryX = "SELECT * FROM offers WHERE 1";
-   $resultX = mysqli_query($con,$queryX);
+   $resultX = mysqli_query($con , $queryX);
 
    while($rowX = mysqli_fetch_array($resultX)){  
 

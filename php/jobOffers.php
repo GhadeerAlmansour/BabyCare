@@ -181,8 +181,9 @@ if($result){
     
         
     $PEmail = $rowR['Email'];
-    $queryP = " SELECT   First_Name , Last_Name , Email , imagee FROM Parent WHERE Email= '$PEmail'"; 
-    $resultP = mysqli_query($conn,$queryP);
+    $queryP = " SELECT   First_Name , Last_Name , Email , imagee FROM `Parent` WHERE Email= '$PEmail'"; 
+    $resultP = mysqli_query($conn , $queryP);
+    
     while($rowP = mysqli_fetch_array($resultP)){  
 
     $Request_Id = $rowR['Request_Id']; 

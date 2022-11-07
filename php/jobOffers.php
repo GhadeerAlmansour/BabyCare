@@ -143,21 +143,15 @@ input{
        Jobs you received:    
        </p>
   
-       <div class = "req" id="here">
-        <?php
-       
-       error_reporting(E_ERROR | E_WARNING | E_PARSE);
-       Define("host","localhost");
-       Define("Username", "root");
-       Define("Password", "");
-       Define("db", "BabyCare");
-       
-  //     echo "12";
-  //     echo "ws";
+ <?php
 
- //$conn= mysql_connect("localhost", "root" ,'', "BabyCare");
-  //     echo "yarb";
-   //    echo "23";
+error_reporting(E_ERROR | E_WARNING | E_PARSE);
+Define("host","localhost");
+Define("Username", "root");
+Define("Password", "");
+Define("db", "BabyCare");
+
+
 
 
 $servername = "localhost";
@@ -169,60 +163,71 @@ $dbname = "BabyCare";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 
-      if(!$conn) {
-      die();
-    } 
-   
-                    
+if(!$conn) {
+die();
+} 
+$babysitter = 'NorahX@outlook.com'; //change to session 
 
-                    $query = "SELECT * FROM request WHERE /*CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND */ status = 'NULL' "; 
-                         echo "yarb";
+//date("Y-m-d")
+$queryR = "SELECT * FROM request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND  status = 'PENDING' "; 
 
-                    $result = mysqli_query($conn, $query);
+$result = mysqli_query($conn,$queryR);
 
-                    if($result -> num_rows > 0){
-                      
-              while($row = mysqli_fetch_array($result)){
-                if(time() > $row['To_Time']){
-                $query = "SELECT  Email, First_Name, Last_Name, imagee FROM 'Parent' WHERE Email=".$row['Email'].";"; 
-                $a = mysqli_fetch_array(mysqli_query($conn, $query));
-                echo "<article id='".$row['ID']."'> <img class='requestPicture' src=".$a['imagee']." alt='Profile Picture'>
-                <div class='information'>
-                <h4 class='requestName'><strong>Parent's name: </strong>".$a['First_Name']." ".$a['Last_Name']."</h4>
-                <p><strong>Kid's names: </strong>".$row['Child1_name']."<br>
-                <strong>Type of service: </strong>".$row['Service']."<br>
-                <strong> Start date - End date: </strong>".$row['datee']."<br>
-                <strong>Duration: </strong>".$row['From_Time']." - ".$row['To_Time']." <br>
-                <a class='btn btn-outline-secondary' href='#' role='button' id='show".$row['ID']."' style='width: 190px;'>Send an Offer</a>
-                <div id='hide".$row['ID']."' style='display: none;'>
+if($result){
+   if($result -> num_rows > 0){
+         
+    while($rowR = mysqli_fetch_array($result)){ 
+      if(time() > $rowR['To_Time']){
+    
+    $PEmail = $rowR['Email'];
+    $queryP = "SELECT   First_Name , Last_Name , Email , imagee FROM Parent WHERE Email=."$PEmail""; 
+    $resultP = mysqli_query($con,$queryP);
+    while($rowP = mysqli_fetch_array($resultP)){  
 
-                <form method='post' action='PHP/sendOffer.php'>
-                    <input type='text'  placeholder='Price in SR/hour' name='priceoffer' style='border: 1px; color: #555; border-style:solid;'>
-                    <input type='hidden' value='".$row['ID']."' name='rowval'>
-                    <input type ='submit' value='Send Offer' class='btn btn-outline-secondary'>
-                  </form>
-                </div>
-                </div>
-            </article>
-            
-            <script>
-            $(document).ready(function() {
-                  $('#show".$row['ID']."').click(function() {
-                    $('#hide".$row['ID']."').fadeIn('slow');
-                    $('#show".$row['ID']."').fadeOut();
-                  });
-                });
-          </script>";
-              }
-              }
-             }
-             else {
-              echo "<p style='color: grey; text-align: center;'>No Current Requests...</p>
-              <img style='position: static; margin-left: 30%; width: 400px; margin-bottom: 5%;' src='css/images/undraw_searching_re_3ra9.svg'>";
-             } 
-           ?>
-           </div>
+    $Request_Id = $rowR['Request_Id']; 
+    $ChildsNames = $rowR['ChildsNames'];
+    $ChildsAges = $rowR['ChildsAges'];
+    $Service = $rowR['Service'];
+    $date = $rowR['datee'];
+    $From_time=$rowR['From_time'];
+    $To_time=$rowR['To_time'];
+    $PFirst_Name = $rowP['First_Name'];
+    $PLast_Name = $rowP['Last_Name'];
+    $image= $rowP['imagee'];
+ 
 
+    
+    print( '<div class="cardOL">');
+    print('<a href ="babysitterProfile1.html"> <image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;" ></image></a>');
+    print('<h5> Parent Name: ' .$PFirst_Name.' '.$PLast_Name.'</h5>');
+    print('<h2>you received a job</h2>');
+
+  
+    print( '<div class="praOL"> <p style="font-size: 17px"> <strong>Childs Names: </strong> '.$ChildsNames.'<br> <strong>Childs Ages: </strong> '.$ChildsAges.'<br>
+    <strong>Type of service: </strong> '.$Service.'<br> <strong>Date: </strong> '.$date.' <strong>Time: </strong> '.$From_time.' - ' .$To_Time.'<br></p>'
+       );
+    
+      print('<p> send offer: </p>')
+      print( '<form class="" method="post" action="PHP/sendOffer.php">'.
+       '<input type="text"  placeholder="Price in SR/hour" name="priceoffer" style="border: 1px; color: #555; border-style:solid;">'.
+      '<input type="hidden" value= '.$rowR['Request_Id'].' name="rowval">'.
+      '<button class="button"  type="submit" value="Send Offer" style="color:#ff5b5b; margin-left: 440px; width: 150px; margin-bottom:-10px;" >'."Send Offer".'</button>'.
+     '</form>' );
+
+    
+    print('</div>');
+    print('</div>');
+    
+    }}
+      }//end while
+    }//if (rows)
+    
+      else
+      echo('no job requests ');
+    }
+    
+    $connection -> close();
+    ?>
 
 
 
@@ -308,11 +313,13 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
   
   
       
-    </div>  -   
+    </div> -->   
+
+
     <footer>
       <p>Copyright &copy; 2022 BabyCare </p>
       <p><a href="mailto:BabyCareInfo.sa@gmail.com" style="font-size:10px ; color:rgb(255, 255, 255); text-decoration:none;">Contact Us</a></p>
-            -->
+            
         <!------------  BACK TO TOP   ----------->
     <a href="#" class="to-top">
       <image src="..\images\to top.png" class="ToTop" alt="toTop"></image>

@@ -208,7 +208,7 @@ if($result){
     <strong>Type of service: </strong> '.$Service.'<br> <strong>Date: </strong> '.$date.' <strong>Time: </strong> '.$From_time.' - ' .$To_Time.'<br></p>'
        );
     
-      print('<p> send offer: </p>')
+      print('<p> send offer: </p>');
       print( '<form class="" method="post" action="PHP/sendOffer.php">'.
        '<input type="text"  placeholder="Price in SR/hour" name="priceoffer" style="border: 1px; color: #555; border-style:solid;">'.
       '<input type="hidden" value= '.$rowR['Request_Id'].' name="rowval">'.

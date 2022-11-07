@@ -4,7 +4,7 @@
 session_start();
 
 //$email_singIn = $_SESSION['email_singIn'];
-$email_singIn = "Saud_Alx@gmail.com";
+$email_singIn = "s@gmail.com";
 
 
 //------------------------------------------------------
@@ -39,7 +39,7 @@ if (!$conn) {
         
         $City = $row["city"];
         $street = $row["street"];
-        
+        $imagee = $row["imagee"];
 
         $error_message="";
 
@@ -220,9 +220,8 @@ margin-top: -42px;
           <h5>My Profile:</h5> <label style="color:red;"><?php echo $error_message?></label>
           <div class="pra" style="  font-family: 'Courier New', monospace;">
         <br>
-            <img src="../images/userIcon.png" style="width:100px ; height: 100px; padding-left: 340px;">
-
-            <form id="sign-up-form-parent" class="parent" style="padding-left:100px; " action="../php/updateParentProfile.php" method="post">
+        <img src="data:image/jpeg;base64,<?php echo base64_encode( $imagee ); ?>"  id = "imagee" name="imagee"style="width:100px ; height: 100px; padding-left: 340px;">
+            <form form enctype='multipart/form-data' id="sign-up-form-parent" class="parent" style="padding-left:100px; " action="../php/updateParentProfile.php" method="post">
                
                   
                     <input type="text" id="firstName"  name="firstName" value="<?php echo $firstName?>" style="background-color:#fbf6ff;"readonly required />
@@ -233,7 +232,8 @@ margin-top: -42px;
                     <input type="text" id="Neighborhood"  name="Neighborhood" value="<?php echo $Neighborhood?>" style="background-color:#fbf6ff;" readonly required/>
                     <input type="text" id="street" name="street" value="<?php echo $street?>" style="background-color:#fbf6ff;"readonly required/> <br>
 
-                    
+                    <input type="file" id="image"  name="image"  style="background-color:#fbf6ff;"  accept="image/*"  disabled /> <br>
+                   
             
                     <br><br>
 

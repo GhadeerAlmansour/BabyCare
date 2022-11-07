@@ -20,7 +20,9 @@ $dbname = "babycare";
     $gender = $_POST['gender'];
     $city = $_POST['city'];
     $bio = $_POST['Bio'];
-    $imagee=$_POST['imagee'];
+    
+
+   
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -28,11 +30,28 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
-  echo "Connected successfully";
+ // echo "Connected successfully";
 
-$query_Babysitter = "UPDATE baby_sitter SET First_Name='$first_Name', Last_Name='$last_Name', Passwordd='$user_Password',
- ID_B='$id' , Age='$age' , phone_Number='$phone_Number' , Gender='$gender', City='$city' , Bio='$bio',imagee='$imagee'
- WHERE Email= '$eamil' ";
+ 
+
+ if($_FILES['image']['tmp_name'] != "" ){
+
+  $profilePhoto = mysqli_real_escape_string($conn, (file_get_contents($_FILES['image']['tmp_name'])));
+
+  $query_Babysitter = "UPDATE baby_sitter SET First_Name='$first_Name', Last_Name='$last_Name', Passwordd='$user_Password',
+  ID_B='$id' , Age='$age' , phone_Number='$phone_Number' , Gender='$gender', City='$city' , Bio='$bio',imagee='$profilePhoto'
+  WHERE Email= '$eamil' ";
+
+ }else{
+  $query_Babysitter = "UPDATE baby_sitter SET First_Name='$first_Name', Last_Name='$last_Name', Passwordd='$user_Password',
+  ID_B='$id' , Age='$age' , phone_Number='$phone_Number' , Gender='$gender', City='$city' , Bio='$bio'
+  WHERE Email= '$eamil' ";
+
+ }
+ 
+
+ 
+
 
 if (mysqli_query($conn, $query_Babysitter)) {
   echo "Record updated successfully";

@@ -180,8 +180,9 @@ if($result){
       if(time() > $rowR['To_Time']){
     
     $PEmail = $rowR['Email'];
-    $queryP = "SELECT   First_Name , Last_Name , Email , imagee FROM Parent WHERE Email=."$PEmail""; 
-    $resultP = mysqli_query($con,$queryP);
+    $queryP = "SELECT   First_Name , Last_Name , Email , imagee FROM Parent WHERE Email= $PEmail "; 
+    $resultP = mysqli_query($conn,$queryP);
+
     while($rowP = mysqli_fetch_array($resultP)){  
 
     $Request_Id = $rowR['Request_Id']; 
@@ -207,7 +208,7 @@ if($result){
     <strong>Type of service: </strong> '.$Service.'<br> <strong>Date: </strong> '.$date.' <strong>Time: </strong> '.$From_time.' - ' .$To_Time.'<br></p>'
        );
     
-      print('<p> send offer: </p>')
+      print('<p> send offer: </p>');
       print( '<form class="" method="post" action="PHP/sendOffer.php">'.
        '<input type="text"  placeholder="Price in SR/hour" name="priceoffer" style="border: 1px; color: #555; border-style:solid;">'.
       '<input type="hidden" value= '.$rowR['Request_Id'].' name="rowval">'.

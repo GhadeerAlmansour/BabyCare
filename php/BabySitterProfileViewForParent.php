@@ -28,9 +28,7 @@ if (!$conn) {
   $Gender = $row["Gender"];
   $City = $row["City"];
   $Bio = $row["Bio"];
-
-
-
+  $imagee = $row["imagee"];
 ?>
 
 <html>
@@ -159,11 +157,10 @@ if (!$conn) {
       <p style="background-color: white; color:  rgb(87, 86, 86); font-weight:bolder; font-size: 40px ; margin-left: 50px; font-family: 'Courier New', monospace; margin-top: -10px; text-align: center;">
        Personal Profile:    
        </p>
-
+       
     <div class="cardPP" >
-
     <div>
-      <image src="../images/userIcon.png" class="imageiBig" style= "margin-left:60px ; height:160px ; width:160px ; margin-top: 40px; hover:none"></image >
+      <image src= "<?php echo $imagee ?>"class="imageiBig" style= "margin-left:60px ; height:160px ; width:160px ; margin-top: 40px; hover:none" alt="Profile Image"></image >
 
     </div>
 

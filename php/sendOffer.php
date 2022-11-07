@@ -5,7 +5,7 @@ session_start();
 Define("host","localhost");
 Define("Username", "root");
 Define("Password", "");
-Define("db", "BabyCare");
+Define("db", "babyare");
          
 $connection = mysqli_connect(host, Username, Password, db);
          
@@ -13,10 +13,10 @@ $connection = mysqli_connect(host, Username, Password, db);
           die();
                       if(isset($_POST['rowval']))
                        $id = $_POST['rowval']; //job request ID that i am sending offer to
-                       if(isset($_POST['price']))
-                       $price = $_POST['price'];
-                       //$babysitterid = $_SESSION['babysitterID'];
-                       $sql = "INSERT INTO Offers (price, requestID, babysitterOfferID, createdAt) VALUES ('$price', '$id', '$babysitterid', now())";
+                       if(isset($_POST['Price']))
+                       $price = $_POST['Price'];
+                       $babysitterEmail = $_SESSION['Email'];
+                       $sql = "INSERT INTO Offers (Price, Request_ID, Email, Create_At , status) VALUES ('$price', '$id', '$babysitterEmail', now() ,'pending')";
                        
                        mysqli_query($connection, $sql);
                        if($sql)

@@ -62,7 +62,7 @@ $babysitterName = "Norah"; //$_SESSION['First_Name'];
 
  $pending="pending";
 
-$query = "INSERT INTO 'offers' (Price, Create_At , Request_Id, Email, , status ,BabySitter_Name) VALUES ('$price', now() ,'$Request_Id ', '$babysitterEmail' , '$pending' , '$babysitterName')";
+$query = "INSERT INTO 'offers' (Price, Create_At , Request_Id, Email,  status ,BabySitter_Name) VALUES ('$price', now() ,'$Request_Id ', '$babysitterEmail' , '$pending' , '$babysitterName')";
 
 
 if (mysqli_query($conn, $query)) {

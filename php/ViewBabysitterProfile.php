@@ -1,6 +1,6 @@
 <?php 
 
-
+session_start();
 
 
 //$email_singIn = $_SESSION['email_singIn'];

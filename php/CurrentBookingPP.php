@@ -1,10 +1,10 @@
 <?php 
 
 
-
+session_start();
 
 //$email_singIn = $_SESSION['email_singIn'];
-$email_singIn = "NorahX@outlook.com";
+$email_singIn = "saraW@outlook.com";
 
 
 //------------------------------------------------------
@@ -20,11 +20,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
   
- $now = date_create()->format('Y-m-d');
+ //$now = date_create()->format('Y-m-d');
+ //AND  (request.Datee>$now)
   $query_Parent = "SELECT * FROM 
   request INNER JOIN parent ON request.Email = parent.Email
   INNER JOIN offers ON request.Request_Id = offers.Request_Id
-  AND request.Email= '$email_singIn' AND  (request.Datee>$now)";
+  AND request.Email= '$email_singIn'";
 
   $result_Parent = mysqli_query($conn,$query_Parent);
  
@@ -40,7 +41,7 @@ if (!$conn) {
         $Email = $row["Email"];
         $Create_Time = $row["Create_Time"];
         $status = $row["status"];
-        $From_Time = $row["From_Time"]
+        $From_Time = $row["From_Time"];
         //$To_Time = $row["To_Time"]
 
         $firstName = $row["First_Name"];
@@ -79,28 +80,28 @@ if (!$conn) {
 <lable> Kid Name:
   <input name="name" type="text" size="12" maxlength="20" value='.$Child_name1.' readonly >
   <lable> Age:
-  <input name="age" type="text" size="3" maxlength="40" value='.$Age1.'readonly >
+  <input name="age" type="text" size="3" maxlength="40" value='.$Age1.' readonly >
 <br>
 
 <lable> Kid Name:
 <input name="name" type="text" size="12" maxlength="20" value='.$Child_name2.' readonly >
 <lable> Age:
-<input name="age" type="text" size="3" maxlength="40" value='.$Age2.'readonly >
+<input name="age" type="text" size="3" maxlength="40" value='.$Age2.' readonly >
 <br>  
 
 <lable> Kid  Name: 
 <input name="name" type="text" size="12" maxlength="20" value='.$Child_name3.' readonly >
 <lable> Age:
-<input name="age" type="text" size="3" maxlength="40" value='.$Age3.'readonly >
+<input name="age" type="text" size="3" maxlength="40" value='.$Age3.' readonly >
 <br><br>
 
 <lable> Type of Service: 
-<input name="service" type="text" size="12" maxlength="20" value='.$Service.' readonly >
+<input name="service" type="text" size="12" maxlength="20" value=' .$Service. ' readonly >
 
 <br><br>
 <lable> Time:
 <input name="day" type="text" size="12" maxlength="20" value="Friday" readonly >
-<input name="Date" type="text" size="12" maxlength="20" value="20/10/2023" readonly >
+<input name="Date" type="text" size="12" maxlength="20" value='. $Datee .' readonly >
 <input name="time" type="text" size="15" maxlength="20" value="8:00pm - 10:30pm" readonly >
 
 <br><br>

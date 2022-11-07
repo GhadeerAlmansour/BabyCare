@@ -2,7 +2,7 @@
 
 
 
-
+session_start();
 //$email_singIn = $_SESSION['email_singIn'];
 $email_singIn = "NorahX@outlook.com";
 

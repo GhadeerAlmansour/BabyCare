@@ -3,9 +3,9 @@
 
 
 
-
+session_start();
 //$email_singIn = $_SESSION['email_singIn'];
-$email_singIn = "saraW@outlook.com";
+$email_singIn = "Saud_Alx@gmail.com";
 
 
 //------------------------------------------------------
@@ -21,11 +21,12 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
   
-  $now = date_create()->format('Y-m-d');
+ // $now = date_create()->format('Y-m-d');
+  //AND  (request.Datee<$now)
   $query_Parent = "SELECT * FROM 
   request INNER JOIN parent ON request.Email = parent.Email
   INNER JOIN offers ON request.Request_Id = offers.Request_Id
-  AND request.Email= '$email_singIn' AND  (request.Datee<$now)";
+  AND request.Email= '$email_singIn' ";
 
   $result_Parent = mysqli_query($conn,$query_Parent);
   
@@ -41,8 +42,8 @@ if (!$conn) {
         $Email = $row["Email"];
         $Create_Time = $row["Create_Time"];
         $status = $row["status"];
-        $From_Time = $row["From_Time"]
-        //$To_Time = $row["To_Time"]
+        $From_Time = $row["From_Time"];
+        $To_Time = $row["To_Time"];
 
         $firstName = $row["First_Name"];
         $LastName = $row["Last_Name"];
@@ -53,16 +54,16 @@ if (!$conn) {
         $Service = $row["Service"];
         $Datee = $row["Datee"];
 
-        $Child_name1 = $row["Child_name1"];
-        $Age1 = $row["Age1"];
+        $ChildsNames = $row["ChildsNames"];
+        $ChildsAges = $row["ChildsAges"];
         
 
-        $Child_name2 = $row["Child_name2"];
-        $Age2 = $row["Age2"];
+       // $Child_name2 = $row["Child_name2"];
+       // $Age2 = $row["Age2"];
        
 
-        $Child_name3 = $row["Child_name3"];
-        $Age3 = $row["Age3"];
+       // $Child_name3 = $row["Child_name3"];
+       // $Age3 = $row["Age3"];
         
 
 
@@ -78,21 +79,12 @@ if (!$conn) {
   <input name="name" type="text" size="12" maxlength="20" value='.$BabySitter_name.' readonly>
 <br><br>
 <lable> Kid Name:
-  <input name="name" type="text" size="12" maxlength="20" value='.$Child_name1.' readonly >
+  <input name="name" type="text" size="12" maxlength="20" value='.$ChildsNames.' readonly >
   <lable> Age:
-  <input name="age" type="text" size="3" maxlength="40" value='.$Age1.'readonly >
+  <input name="age" type="text" size="3" maxlength="40" value='.$ChildsAges.' readonly >
 <br>
 
-<lable> Kid Name:
-<input name="name" type="text" size="12" maxlength="20" value='.$Child_name2.' readonly >
-<lable> Age:
-<input name="age" type="text" size="3" maxlength="40" value='.$Age2.'readonly >
-<br>  
 
-<lable> Kid  Name: 
-<input name="name" type="text" size="12" maxlength="20" value='.$Child_name3.' readonly >
-<lable> Age:
-<input name="age" type="text" size="3" maxlength="40" value='.$Age3.'readonly >
 <br><br>
 
 <lable> Type of Service: 
@@ -102,7 +94,8 @@ if (!$conn) {
 <lable> Duration:
 <input name="day" type="text" size="12" maxlength="20" value='. date('Y/m/d', strtotime($Datee)) .' readonly >
 
-<input name="time" type="text" size="15" maxlength="20" value='.$From_Time.' readonly >
+<input name="time" type="text" size="15" maxlength="20" value='.$From_Time.'  readonly >
+<input name="time" type="text" size="15" maxlength="20" value='.$To_Time.'readonly >
 
 <br><br>
 

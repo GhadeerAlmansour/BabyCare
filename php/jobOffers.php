@@ -191,8 +191,8 @@ if($result){
     $ChildsAges = $rowR['ChildsAges'];
     $Service = $rowR['Service'];
     $date = $rowR['datee'];
-    $From_time=$rowR['From_time'];
-    $To_time=$rowR['To_time'];
+    $From_time=$rowR['From_Time'];
+    $To_time=$rowR['To_Time'];
     $PFirst_Name = $rowP['First_Name'];
     $PLast_Name = $rowP['Last_Name'];
     $image= $rowP['imagee'];
@@ -205,7 +205,7 @@ if($result){
 
   
     print( '<div class="praOL"> <p style="font-size: 17px"> <strong>Child Name/s: </strong> '.$ChildsNames.'<br> <strong>Childs Age/s: </strong> '.$ChildsAges.'<br>
-    <strong>Type of service: </strong> '.$Service.'<br> <strong>Date: </strong> '.$date.' <strong>Time: </strong> '.$From_time.' - ' .$To_Time.'<br></p>'
+    <strong>Type of service: </strong> '.$Service.'<br> <strong>Date: </strong> '.$date.' <strong>Time: </strong> '.$From_time.' - '.$To_time.'<br></p>'
        );
     
       print('<p style="font-size: 15px; font-family: Courier New"> <br><strong>send offer: </strong></p><br>');

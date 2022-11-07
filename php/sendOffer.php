@@ -52,19 +52,17 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
 $price = $_POST['priceoffer'];
-$babysitterEmail =  "saraX@outlook.com"; //$_SESSION['Email'];
+$babysitterEmail =  "NorahX@outlook.com"; //$_SESSION['Email'];
+$babysitterName = "Norah"; //$_SESSION['First_Name'];
 
- $query1 = "SELECT * FROM `Baby_Sitter` WHERE `Email` = '$babysitter' ;";  //to get the babysitter's Info
- $result1 = mysqli_query($connection,$query1);
- $row1 = mysqli_fetch_array($result1);
- $firstName = $row1['First_Name'];
+ //$query1 = "SELECT * FROM `Baby_Sitter` WHERE `Email` = '$babysitter' ;";  //to get the babysitter's Info
+ //$result1 = mysqli_query($connection,$query1);
+ //$row1 = mysqli_fetch_array($result1);
+ //$firstName = $row1['First_Name'];
+
  $pending="pending";
 
-
-
-
-
-$query = "INSERT INTO 'offers' (Price, Create_At , Request_Id, Email, , status ,BabySitter_Name) VALUES ('$price', now() ,'$id', '$babysitterEmail' , '$pending' , '$firstName')";
+$query = "INSERT INTO 'offers' (Price, Create_At , Request_Id, Email, , status ,BabySitter_Name) VALUES ('$price', now() ,'$Request_Id ', '$babysitterEmail' , '$pending' , '$babysitterName')";
 
 
 if (mysqli_query($conn, $query)) {

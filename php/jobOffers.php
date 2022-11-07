@@ -227,7 +227,7 @@ if($result){
       echo('no job requests ');
     }
     
-    $connection -> close();
+    $conn -> close();
     ?>
 
 

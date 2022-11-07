@@ -260,6 +260,7 @@ if(!$con)
 
       $offset = 2 * 60 * 60; // saudi time
    $time_now=date('Y-m-d H:i:s ', time() + $offset); //Time Now
+   $time_now=date('H:i:s ', time() + $offset); //Time Now
 
    $queryX = "SELECT * FROM offers WHERE status LIKE 'pending';";
    $resultX = mysqli_query($con , $queryX);
@@ -270,9 +271,11 @@ if(!$con)
     $Create_Time = $rowX['Create_Time'];
     $date = $Create_Time;
     $new_time = date ('Y-m-d H:i:s', strtotime($date .'+1 hours') ) ; // The Expiration time of the offer
+    $new_time2 = strtotime($Create_Time .'+1 hours')  ; // The Expiration time of the offer
+//$time_now = now() ;
    //echo($new_time);
   
-    if($time_now > $new_time){ // check if it is expired
+    if(  $time_now > $new_time2 ){ // check if it is expired
            $queryY = " DELETE FROM `offers` WHERE `BSoffer_Id` = '$BSoffer_Id' ";
            mysqli_query($con, $queryY);
     }

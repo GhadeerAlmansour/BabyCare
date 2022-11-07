@@ -219,6 +219,7 @@ if($result){
     
     print('</div>');
     print('</div>');
+    print('</div>');
     
     }
      //}// if time

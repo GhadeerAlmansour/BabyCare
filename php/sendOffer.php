@@ -5,7 +5,7 @@ session_start();
 Define("host","localhost");
 Define("Username", "root");
 Define("Password", "");
-Define("db", "babyare");
+Define("db", "babycare");
          
 $connection = mysqli_connect(host, Username, Password, db);
          

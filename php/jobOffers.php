@@ -149,7 +149,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 Define("host","localhost");
 Define("Username", "root");
 Define("Password", "");
-Define("db", "BabyCare");
+Define("db", "babycare");
 
 
 
@@ -157,7 +157,7 @@ Define("db", "BabyCare");
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "BabyCare";
+$dbname = "babycare";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -169,7 +169,7 @@ die();
 $babysitter = 'NorahX@outlook.com'; //change to session 
 
 //date("Y-m-d")
-$queryR = "SELECT * FROM request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND  status = 'PENDING' "; 
+$queryR = "SELECT * FROM request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  status = 'pending'"; 
 
 $result = mysqli_query($conn,$queryR);
 
@@ -179,10 +179,16 @@ if($result){
     while($rowR = mysqli_fetch_array($result)){ 
       if(time() > $rowR['To_Time']){
     
+        
     $PEmail = $rowR['Email'];
+<<<<<<< HEAD
     $queryP = "SELECT   First_Name , Last_Name , Email , imagee FROM Parent WHERE Email= $PEmail "; 
     $resultP = mysqli_query($conn,$queryP);
 
+=======
+    $queryP = " SELECT   First_Name , Last_Name , Email , imagee FROM Parent WHERE Email=".$PEmail.""; 
+    $resultP = mysqli_query($conn,$queryP);
+>>>>>>> 592468483d018604d295bfb61b2d25b759570364
     while($rowP = mysqli_fetch_array($resultP)){  
 
     $Request_Id = $rowR['Request_Id']; 
@@ -227,7 +233,7 @@ if($result){
       echo('no job requests ');
     }
     
-    $connection -> close();
+    $conn -> close();
     ?>
 
 
@@ -300,6 +306,7 @@ if($result){
               <a class="button" href="#">send offer </a>
             </p>
 
+            
           
             <p style="font-family: 'Courier New', Courier, monospace; width: 300px; margin-left: 10px; margin-bottom: 400px; margin-top: -30px; font-size: larger;"class="price">   
               <lable style="color:rgb(93, 91, 91)"><strong>Price:</strong>

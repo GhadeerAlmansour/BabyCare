@@ -21,7 +21,7 @@ if (!$conn) {
   }
   
 
-  $query_Babysitter = "SELECT * FROM Baby_Sitter WHERE Email= '$email_singIn'";
+  $query_Babysitter = "SELECT * FROM baby_Sitter WHERE Email= '$email_singIn'";
 
   $result_Babysitter = mysqli_query($conn,$query_Babysitter);
 
@@ -33,7 +33,7 @@ if (!$conn) {
         $firstName = $row["First_Name"];
         $Last_Name = $row["Last_Name"];
         $Email = $row["Email"];
-        $Password = $row["Password"];
+        $Passwordd = $row["Passwordd"];
         $ID_B = $row["ID_B"];
         $Age = $row["Age"];
         $Gender = $row["Gender"];
@@ -48,7 +48,7 @@ if (!$conn) {
         $firstName = "";
         $Last_Name = "";
         $Email = "";
-        $Password = "";
+        $Passwordd = "";
         $ID_B = "";
         $Age = "";
         $Gender = "";
@@ -207,7 +207,7 @@ margin-top: -42px;
                     <input type="text" id="firstName"  name="firstName" value="<?php echo $firstName?>" style="background-color:#fbf6ff;"readonly required />
                     <input type="text" id="lastName"  name="lastName" value="<?php echo $Last_Name?>" style="background-color:#fbf6ff;" readonly required/>
                     <input type="email" id="email"   name="email" value="<?php echo $Email?>" style="background-color:#fbf6ff;" readonly required/>
-                    <input type="password" id="password"  name="password" value="<?php echo $Password?>" style="background-color:#fbf6ff;" readonly required/>
+                    <input type="password" id="password"  name="password" value="<?php echo $Passwordd?>" style="background-color:#fbf6ff;" readonly required/>
                     
                     <input type="text" id="id"  name="id" value="<?php echo $ID_B?>" style="background-color:#fbf6ff;" readonly required/>
                     <input type="number" id="age"  name="age" value="<?php echo $Age?>" style="background-color:#fbf6ff;" readonly required/>

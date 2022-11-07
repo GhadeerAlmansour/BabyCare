@@ -267,7 +267,7 @@ if(!$con)
 
 $parent = 'Saud_Alx@gmail.com'; //change to session 
 
-$query2 = "SELECT * FROM request WHERE Email LIKE '$parent' AND Status LIKE 'PINDING';";
+$query2 = "SELECT * FROM request WHERE Email LIKE '$parent' AND Status LIKE 'pending';";
 $result2 = mysqli_query($con,$query2);
 
 //$query = "SELECT * FROM offers WHERE Email LIKE 'NorahX@outlook.com' ;";
@@ -350,7 +350,7 @@ print('</div>');
   }}
 
   else
-  echo('NO OFFERS YET');
+  echo(' <h2 style="font-family: Courier New, monospace; margin-left:55px; " >     No Offers Yet ... </h2>');
 }
 
 

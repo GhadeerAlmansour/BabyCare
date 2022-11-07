@@ -70,11 +70,12 @@ if (mysqli_num_rows($BabySitter_result)>0)
 
 
 if($img == null)
-$sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Passwordd	, ID_B	, Age	, Gender, 	Cit, Bio)	
-values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , '$Bio')";
-else{
-  $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Passwordd	, ID_B	, Age	, Gender, 	City	, imagee	, Bio)	
-           values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $img' , '$Bio')";
+$sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Passwordd	, ID_B	, Age	, Gender, 	City, Bio , phone)	
+values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , '$Bio' , $phone)";
+
+else{ 
+  $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Passwordd	, ID_B	, Age	, Gender, 	City	, imagee	, Bio , phone) 	
+           values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $img' , '$Bio' , '$phone')";
 }
 
 if (mysqli_query($con, $query)) {

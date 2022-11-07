@@ -20,19 +20,14 @@
   $city = $_POST['city'];  
   $Neighborhood = $_POST['Neighborhood'];  
   $street = $_POST['street']; 
-/*
+
   if($_FILES['img']['size'] > 0){
     $img = $_FILES['img']['tmp_name'];
     $img = addslashes(file_get_contents($img));
   }
   else{
     $img = null;
-   } */
-
-   $imageprofile=$_FILES['ProfileImage']['name'];
-   $imageprofile_tem_loc=$_FILES['ProfileImage']['tmp_name'];
-   $PDF_store='Contentttt/';
-   $MOVE2=move_uploaded_file($imageprofile_tem_loc, $PDF_store.$imageprofile);
+   } 
 
   
    $validateEmail = preg_match("/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix", $Email);

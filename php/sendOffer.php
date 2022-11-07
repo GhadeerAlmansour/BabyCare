@@ -16,7 +16,6 @@ $connection = mysqli_connect(host, Username, Password, db);
                        $id = $_POST['rowval']; //job request ID that i am sending offer to
                        if(isset($_POST['Price']))
                        $price = $_POST['Price'];
-
                        $babysitterEmail =  "saraX@outlook.com"; //$_SESSION['Email'];
                       //السطرين احتمال خطا 
                       $query1 = "SELECT * FROM `Baby_Sitter` WHERE `Email` = '$babysitter' ;";  //to get the babysitter's Info
@@ -24,9 +23,9 @@ $connection = mysqli_connect(host, Username, Password, db);
                       $row1 = mysqli_fetch_array($result1);
                       
                       $firstName = $row1['First_Name'];
-                      $pending="pending";
+                    
                       //
-                       $sql = "INSERT INTO `offers` ( Price , Create_At , Request_Id, Email,  status , BabySitter_Name) VALUES ('$price', now() ,'$id', '$babysitterEmail' , '$pending' , '$firstName')";
+                       $sql = "INSERT INTO `offers` ( Price , Create_At , Request_Id, Email,  status , BabySitter_Name) VALUES ('$price', now() ,'$id', '$babysitterEmail' , 'pending' , '$firstName')";
                        
                        mysqli_query($connection, $sql);
                        if($sql)

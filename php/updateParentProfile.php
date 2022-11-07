@@ -24,9 +24,19 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
   
+  if($_FILES['image']['tmp_name'] != "" ){
+
+    $profilePhoto = mysqli_real_escape_string($conn, (file_get_contents($_FILES['image']['tmp_name'])));
 
 $query_parent = "UPDATE parent SET First_Name='$first_Name', Last_Name='$last_Name', passwordd='$user_password',
- city='$city' , Neighborhood='$Neighborhood' , street='$street' WHERE Email= '$eamil' ";
+ city='$city' , Neighborhood='$Neighborhood' , street='$street',imagee='$profilePhoto' WHERE Email= '$eamil' ";
+}else{
+
+  $query_parent = "UPDATE parent SET First_Name='$first_Name', Last_Name='$last_Name', passwordd='$user_password',
+  city='$city' , Neighborhood='$Neighborhood' , street='$street' WHERE Email= '$eamil' ";
+}
+
+
 
 if (mysqli_query($conn, $query_parent)) {
   

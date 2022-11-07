@@ -16,7 +16,11 @@ $connection = mysqli_connect(host, Username, Password, db);
                        if(isset($_POST['Price']))
                        $price = $_POST['Price'];
                        $babysitterEmail = $_SESSION['Email'];
-                       $sql = "INSERT INTO Offers (Price, Request_ID, Email, Create_At , status) VALUES ('$price', '$id', '$babysitterEmail', now() ,'pending')";
+                      //السطرين احتمال خطا 
+                       $queryN = " SELECT   First_Name , FROM `baby_sitter` WHERE Email= '$babysitterEmail'"; 
+                       $resultN = mysqli_query($connection , $queryN);
+                      //
+                       $sql = "INSERT INTO 'offers' (Price, Create_At , Request_Id, Email, , status , BabySitter_Name) VALUES ('$price', now() ,'$id', '$babysitterEmail' ,'pending' , '$resultN')";
                        
                        mysqli_query($connection, $sql);
                        if($sql)

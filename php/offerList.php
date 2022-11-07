@@ -233,7 +233,6 @@ var x = setInterval(function() {
 
 
 <?php
-echo "hi";
 
 include '../php/test.php'; 
 require_once("Connection.php");
@@ -243,6 +242,24 @@ require_once("Connection.php");
 if(!$con)
    die();
 
+$time_now=date("Y-m-d H:i:s");
+   $queryX = "SELECT * FROM offers WHERE 1";
+   $resultX = mysqli_query($con,$queryX);
+   while($rowX = mysqli_fetch_array($resultX)){  
+
+    $BSoffer_Id = $rowX['BSoffer_Id'];
+    $Create_Time = $rowX['Create_Time'];
+    $date = $Create_Time;
+    $new_time = date ('Y-m-d H:i:s', strtotime($date .'+1 hours') ) ;
+   echo($new_time);
+  
+    if($time_now > $new_time){
+      $queryX = "DELETE FROM offers WHERE BSoffer_Id = $BSoffer_Id ";
+    }
+
+   }
+
+
 $parent = 'Saud_Alx@gmail.com'; //change to session 
 
 $query2 = "SELECT * FROM request WHERE Email LIKE '$parent' AND Status LIKE 'PINDING';";
@@ -250,20 +267,18 @@ $result2 = mysqli_query($con,$query2);
 
 //$query = "SELECT * FROM offers WHERE Email LIKE 'NorahX@outlook.com' ;";
 //$result = mysqli_query($con,$query);
-echo($result2 -> num_rows);
 if($result2){  
   if($result2 -> num_rows > 0){    
 
  while($row = mysqli_fetch_array($result2)){ 
 
 $Request_Id = $row['Request_Id']; 
-echo('--  '.$Request_Id.' --') ;
 
-$query3 = "SELECT * FROM offers WHERE Request_Id = $Request_Id ;";
+$query3 = "SELECT * FROM offers WHERE Request_Id = $Request_Id AND Status LIKE 'pending'; ;";
 $result3 = mysqli_query($con,$query3);
-echo($result3 -> num_rows);
 while($row2 = mysqli_fetch_array($result3)){  
 $BSoffer_Id = $row2['BSoffer_Id'];
+$Create_Time = $row2['Create_Time'];
 $babysitter = $row2['Email'];
 $parent = $row['Email'];
 $price=$row2['Price'];
@@ -278,6 +293,8 @@ $row1 = mysqli_fetch_array($result1);
 $image = $row1['image'];
 $firstName = $row1['First_Name'];
 $lastName = $row1['Last_Name'];
+$date = $Create_Time;
+$new_time = date ('Y-m-d H:i:s', strtotime($date .'+1 hours') ) ;
 
 
 print( '<div class="cardOL">');
@@ -289,22 +306,32 @@ print(
 </p>');
 print( '<div class="praOL">
 <p style="font-size: 17px">i am available '.$start.' - '.$end.'<br>looking forward to take care of your kids!
-  <p style="font-size: 15px">the offer is valid for 1 hour.</p>
+  <p style="font-size: 15px">the offer is valid for 1 hour.  It Will End At : '.($new_time).'</p>
   <p id="demo1"></p>
 </p>');
-print(
+
+/*print(
   '<p style="text-align: right;">
       <a style="color: #6bbd5c;" class="button" href="#">accept </a>
      <!-- <a style="color: #ff5b5b;"class="button" href="#">reject</a>-->
   </p>
-</div>');
+</div>');*/
 
 print(
               '<form class="" action="rejectOffer.php" method="post" >'.
                             '<input type="hidden" name="rejectedOffer" value='.$BSoffer_Id.'>'.
-                            '<button class="button"   type="submit" style="color:#ff5b5b; margin-left: 300px;" >'."Reject Offer".'</button>'.
+                            '<button class="button"   type="submit" style="color:#ff5b5b; margin-left: 440px; width: 150px; margin-bottom:-10px;" >'."Reject Offer".'</button>'.
              ' </form> '
 );
+
+print(
+  '<form class="" action="acceptOffer.php" method="post" >'.
+                '<input type="hidden" name="acceptOffer" value='.$BSoffer_Id.'>'.
+                '<button class="button"   type="submit" style="color:#ff5b5b; margin-left: 280px; margin-top:-50px;	width: 150px;  ">'."Accept Offer".'</button>'.
+ ' </form> '
+);
+
+print('</div>');
 print('</div>');
 
 }

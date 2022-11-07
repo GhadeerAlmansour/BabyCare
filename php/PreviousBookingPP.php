@@ -104,17 +104,30 @@ if (!$conn) {
 <br><br>
 
 </form>
-<p style="text-align: center;">
-<a class="button" href="#" style="color: #f7f7f7;;" ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <span class="fa fa-star checked" ></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span></a>
-</p>
+
+<div class="stars" style="align: center;">
+
+<input type="radio" name="stars" id="a" />
+<label for="a"></label>
+
+<input type="radio" name="stars" id="b" />
+<label for="b"></label>
+
+<input type="radio" name="stars" id="c" />
+<label for="c"></label>
+
+<input type="radio" name="stars" id="d" />
+<label for="d"></label>
+
+<input type="radio" name="stars" id="e" />
+<label for="e"></label>
+</div>
+
+
+
 
 <p style="text-align: below;">
-    <textarea id="w3review" name="w3review" rows="4" cols="50"  style="text-align:left ; resize:none; " resize="none" >the kids LOVED HER!!!!!!</textarea></p>
+    <textarea id="w3review" name="w3review" rows="4" cols="50"  style="text-align:left ; resize:none; " resize="none" ></textarea></p>
   
    <p style="text-align: below;">
    <a class="button" href="#" style="color:#9a0000;" >Post</a> 
@@ -139,8 +152,47 @@ if (!$conn) {
   <title> Previous Booking</title>
   <link rel = "stylesheet" href ="../css/home.css">
 
+
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    
   <style>
 
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  direction: rtl;
+  margin-right : 287px;
+
+}
+.stars input[type="radio"] {
+  display: none;
+}
+
+.stars label::before {
+  content: "\f005";
+  font-family: "FontAwesome";
+  font-size: 30px;
+  color: #bbb;
+  cursor: pointer;
+  transition: color 0.4s ease-in-out;
+}
+.stars label:hover::before {
+  color: orange;
+}
+
+.stars input[type="radio"]:checked ~ label::before {
+  color: orange;
+  transition: color 0.4s ease-in-out;
+}
+
+
+/*--------------------*/
 .backicon{
 margin-left : 30px;
   width:40px;

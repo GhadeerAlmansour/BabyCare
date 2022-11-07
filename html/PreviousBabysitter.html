@@ -6,6 +6,42 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <style>
 
+
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  direction: rtl;
+  margin-right : 290px;
+  
+
+}
+.stars input[type="radio"] {
+  display: none;
+}
+
+.stars label::before {
+  content: "\f005";
+  font-family: "FontAwesome";
+  font-size: 20px;
+  color: #bbb;
+  color: orange;
+  cursor: pointer;
+  transition: color 0.4s ease-in-out;
+}
+.stars label:hover::before {
+  color: orange;
+}
+
+.stars input[type="radio"]:checked ~ label::before {
+  color: orange;
+  transition: color 0.4s ease-in-out;
+}
+
+
+
+
+/*-----------------------------------*/
 body{
 
 background-color: rgb(255, 247, 237);
@@ -101,7 +137,7 @@ a1:hover + div1 {
         
         <h5>Reema Alx</h5>
           <p class="price">
-        <p style="margin-left: 680px; ">
+        <p style="margin-left: 600px; ">
           450 SR<i class="fa fa-money"  style="font-size:24px"></i> <small> per hr</small>
          </p>
 
@@ -116,16 +152,29 @@ a1:hover + div1 {
              </p>
              
           </div>
-        <p style="text-align:center;">
-          <a class="button" href="#" style="color: #f7f7f7;; border-radius: 60px; padding: 4px;" ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span></a>
-        </p> 
+
+
+          <div class="stars" style="align: center;">
+
+            <input type="radio" name="stars" id="a" />
+            <label for="a"></label>
+            
+            <input type="radio" name="stars" id="b" />
+            <label for="b"></label>
+            
+            <input type="radio" name="stars" id="c" />
+            <label for="c"></label>
+            
+            <input type="radio" name="stars" id="d" />
+            <label for="d"></label>
+            
+            <input type="radio" name="stars" id="e" />
+            <label for="e"></label>
+            </div>
+
+
         <p style="text-align: below;" readonly> 
-            <textarea id="w3review" name="w3review" rows="4" cols="50"  style="text-align:left; resize:none; " readonly>the kids LOVED HER!!!!!!</textarea></p>
+            <textarea id="w3review" name="w3review" rows="4" cols="50"    style= margin-left:260px ; text-align:left; resize:none; " readonly>the kids LOVED HER!!!!!!</textarea></p>
   
           
           </p>
@@ -145,7 +194,7 @@ a1:hover + div1 {
       <h5>Saud Alx</h5>
         <p class="price">
         
-          <p style="margin-left: 680px; ">
+          <p style="margin-left: 600px; ">
             500 SR<i class="fa fa-money"  style="font-size:24px"></i> <small> per hr</small>
            </p>
         
@@ -161,16 +210,27 @@ a1:hover + div1 {
            
         </div>
 
-        <p style="text-align: center;">
-            <a class="button" href="#" style="color: #f7f7f7;border-radius: 60px; padding: 4px;;" ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star"></span>
-              <span class="fa fa-star"></span></a>
+         <div class="stars" style="align: center;">
+
+            <input type="radio" name="stars" id="a" />
+            <label for="a"></label>
+            
+            <input type="radio" name="stars" id="b" />
+            <label for="b"></label>
+            
+            <input type="radio" name="stars" id="c" />
+            <label for="c"></label>
+            
+            <input type="radio" name="stars" id="d" />
+            <label for="d"></label>
+            
+            <input type="radio" name="stars" id="e" />
+            <label for="e"></label>
+            </div>
+
         </p>
         <p style="text-align: below;" readonly>
-            <textarea id="w3review" name="review" rows="4" cols="50"  style="text-align:left; resize:none;" resize="none" readonly> She was an absolutely amazing Babysiter.</textarea></p>
+            <textarea id="w3review" name="review" rows="4" cols="50"  style= margin-left:260px ; text-align:left; resize:none;" resize="none" readonly> She was an absolutely amazing Babysiter.</textarea></p>
 
         </p>
     </div>

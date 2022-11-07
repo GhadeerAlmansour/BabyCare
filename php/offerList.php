@@ -261,7 +261,7 @@ if(!$con)
       $offset = 2 * 60 * 60; // saudi time
    $time_now=date('Y-m-d H:i:s ', time() + $offset); //Time Now
 
-   $queryX = "SELECT * FROM offers WHERE 1";
+   $queryX = "SELECT * FROM offers WHERE status LIKE 'pending';";
    $resultX = mysqli_query($con , $queryX);
 
    while($rowX = mysqli_fetch_array($resultX)){  
@@ -362,12 +362,14 @@ print('</div>');
 print('</div>');
 
 }
-  }}
-
-  else
+  }
+}
+  else{
   echo(' <h2 style="font-family: Courier New, monospace; margin-left:55px; " >     No Offers Yet ... </h2>');
 }
-
+}
+else
+echo(' <h2 style="font-family: Courier New, monospace; margin-left:55px; " >     No Offers Yet ... </h2>');
 
 
 

@@ -23,7 +23,6 @@ if (!$conn) {
   $firstName = $row["First_Name"];
   $Last_Name = $row["Last_Name"];
   $Email = $row["Email"];
-  $Password = $row["Password"];
   $ID_B = $row["ID_B"];
   $Age = $row["Age"];
   $Gender = $row["Gender"];

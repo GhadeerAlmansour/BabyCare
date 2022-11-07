@@ -149,7 +149,7 @@ error_reporting(E_ERROR | E_WARNING | E_PARSE);
 Define("host","localhost");
 Define("Username", "root");
 Define("Password", "");
-Define("db", "BabyCare");
+Define("db", "babycare");
 
 
 
@@ -157,7 +157,7 @@ Define("db", "BabyCare");
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "BabyCare";
+$dbname = "babycare";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);

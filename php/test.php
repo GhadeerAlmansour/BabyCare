@@ -11,7 +11,7 @@ $First_Name = $_POST['First_Name_P'];
  	$image = $_POST['Image_P'];  
 */
 
-$conn=  mysqli_connect('localhost','root','','BabyCare');
+$conn=  mysqli_connect('localhost','root','','babycare');
 if($conn) {
 	//echo "success"; 
 } 

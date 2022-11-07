@@ -2,5 +2,5 @@
 Define("host","localhost");
 Define("Username", "root");
 Define("Password", "");
-Define("db", "BabyCare");
+Define("db", "babycare");
 ?>

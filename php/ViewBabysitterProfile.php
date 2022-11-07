@@ -40,8 +40,9 @@ if (!$conn) {
         $City = $row["City"];
         $Bio = $row["Bio"];
         $phone_number = $row["phone_number"];
-
+      $imagee = $row["imagee"];
         $error_message="";
+
 
     }
   } else {
@@ -199,7 +200,7 @@ margin-top: -42px;
           <h5>My Profile:</h5> <label style="color:red;"><?php echo $error_message?></label>
           <div class="pra" style="  font-family: 'Courier New', monospace;">
         <br>
-            <img src="../images/userIcon.png" style="width:100px ; height: 100px; padding-left: 340px;">
+            <img src="<?php echo $imagee?>"  id = "imagee" name="imagee"style="width:100px ; height: 100px; padding-left: 340px;">
 
             <form id="sign-up-form-parent" class="parent" style="padding-left:100px ;" action="../php/updateBabysitterProfile.php" method="post">
                

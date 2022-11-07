@@ -300,6 +300,7 @@ if($result){
               <a class="button" href="#">send offer </a>
             </p>
 
+            
           
             <p style="font-family: 'Courier New', Courier, monospace; width: 300px; margin-left: 10px; margin-bottom: 400px; margin-top: -30px; font-size: larger;"class="price">   
               <lable style="color:rgb(93, 91, 91)"><strong>Price:</strong>

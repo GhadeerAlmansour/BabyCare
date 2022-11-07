@@ -1,5 +1,6 @@
-<?php
 
+<?php
+/*
 session_start();
  
 Define("host","localhost");
@@ -27,5 +28,41 @@ $connection = mysqli_connect(host, Username, Password, db);
                         print(1);
                        $connection -> close();
                        header("Location: ../jobOffers.php?success=1");
+*/
+
+
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "babycare";
+
+$Request_Id = $_POST['sendOffer'];
+
+// Create connection
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// Check connection
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+
+$query = "INSERT INTO 'offers' (Price, Create_At , Request_Id, Email, , status ) VALUES ('$price', now() ,'$id', '$babysitterEmail' ,'pending')";
+
+
+if (mysqli_query($conn, $query)) {
+    echo "offer sent successfully";
+    header("Location: jobOffers.php?1");
+  } else {
+    echo "Error sending offer: " . mysqli_error($conn);
+    header("Location: jobOffers.php?2");
+  }
+
+
+
+
+
+
+
 
            ?>

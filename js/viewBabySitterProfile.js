@@ -12,6 +12,8 @@ function unlock(){
     document.getElementById("phoneNumber").removeAttribute('readonly');
     document.getElementById("gender").removeAttribute('disabled');
     document.getElementById("city").removeAttribute('readonly');
+    document.getElementById("image").removeAttribute('disabled');
+
     document.getElementById("bio").removeAttribute('readonly');
 
     document.getElementById("submit_button").style.display="block";

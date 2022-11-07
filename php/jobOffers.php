@@ -178,7 +178,7 @@ if($result){
     while($rowR = mysqli_fetch_array($result)){ 
       //if(time() > $rowR['To_Time']){
 
-    echo date(' H:i:s ', time());
+    //echo date(' H:i:s ', time());
         
     $PEmail = $rowR['Email'];
     $queryP = " SELECT   First_Name , Last_Name , Email , imagee FROM `Parent` WHERE Email= '$PEmail'"; 
@@ -219,7 +219,7 @@ if($result){
     
     print('</div>');
     print('</div>'); 
-     print('</div>');
+
     
     }
      //}// if time
@@ -229,6 +229,8 @@ if($result){
       else
       echo('no job requests');
     }
+    print('</div>');
+
     
     $conn -> close();
     ?>

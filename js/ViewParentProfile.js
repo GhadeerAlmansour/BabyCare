@@ -6,12 +6,15 @@ function unlock(){
     document.getElementById("password").removeAttribute('readonly');
     var ps = document.getElementById("password");
     ps.setAttribute("type","text");
-    
-    
+   
+    document.getElementById("image").removeAttribute('disabled');    
 
     document.getElementById("city").removeAttribute('readonly');
     document.getElementById("Neighborhood").removeAttribute('readonly');
     document.getElementById("street").removeAttribute('readonly');
+
+    
+    
 
     document.getElementById("submit_button").style.display="block";
 

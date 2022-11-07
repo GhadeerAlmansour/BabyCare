@@ -181,7 +181,7 @@ if($result){
     
         
     $PEmail = $rowR['Email'];
-    $queryP = "SELECT   First_Name , Last_Name , Email , imagee FROM Parent WHERE Email=".$PEmail""; 
+    $queryP = "SELECT   First_Name , Last_Name , Email , imagee FROM Parent WHERE Email=".$PEmail.""; 
     $resultP = mysqli_query($con,$queryP);
     while($rowP = mysqli_fetch_array($resultP)){  
 

@@ -71,7 +71,7 @@ a1:hover + div1 {
 </style>
 
 
- <script>
+ <script>/*
 var start = new Date().getTime();
 
 // Update the count down every 1 second
@@ -135,7 +135,7 @@ var x = setInterval(function() {
         clearInterval(x);
         document.getElementById("demo1").innerHTML = "00:00:00";
     }
-}, 1000);
+}, 1000);*/
  </script>
 
 
@@ -173,7 +173,7 @@ var x = setInterval(function() {
       <p style="background-color: white; color:  rgb(87, 86, 86); font-weight:bolder; font-size: 40px ; margin-left: 50px; font-family: 'Courier New', monospace; margin-top: -10px;">
        Offers List:    
        </p>
-
+<!--
     <div class="cardOL">
       <a href ="babysitterProfile1.html"> <image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;" ></image></a>
         
@@ -227,7 +227,7 @@ var x = setInterval(function() {
                 <a style="color: #ff5b5b;"class="button" href="#">reject</a>
             </p>
         </div>
-    </div>
+    </div>-->
   
   
 
@@ -319,15 +319,15 @@ print( '<div class="praOL">
 
 print(
               '<form class="" action="rejectOffer.php" method="post" >'.
-                            '<input type="hidden" name="rejectedOffer" value='.$BSoffer_Id.'>'.
-                            '<button class="button"   type="submit" style="color:#ff5b5b; margin-left: 440px; width: 150px; margin-bottom:-10px;" >'."Reject Offer".'</button>'.
+                            '<input type="hidden" name="rejectedOffer" value='.$BSoffer_Id.'><br>'.
+                            '<button class="button"   type="submit" style="color:black; margin-left: 460px; width: 170px; margin-bottom:-10px; font-family: Courier New, monospace;" >'."Reject Offer".'</button>'.
              ' </form> '
 );
 
 print(
   '<form class="" action="acceptOffer.php" method="post" >'.
                 '<input type="hidden" name="acceptOffer" value='.$BSoffer_Id.'>'.
-                '<button class="button"   type="submit" style="color:#ff5b5b; margin-left: 280px; margin-top:-50px;	width: 150px;  ">'."Accept Offer".'</button>'.
+                '<button class="button"   type="submit" style="color:black; margin-left: 280px; margin-top:-50px;	width: 170px; font-family: Courier New, monospace;">'."Accept Offer".'</button>'.
  ' </form> '
 );
 

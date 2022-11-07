@@ -4,14 +4,14 @@
 
 
 //$email_singIn = $_SESSION['email_singIn'];
-$email_singIn = "gg@gmail.com";
+$email_singIn = "saraW@outlook.com";
 
 
 //------------------------------------------------------
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "381 project";
+$dbname = "babycare";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password,$dbname);

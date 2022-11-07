@@ -267,7 +267,7 @@ if(!$con)
 
 $parent = 'Saud_Alx@gmail.com'; //change to session 
 
-$query2 = "SELECT * FROM request WHERE Email LIKE '$parent' AND Status LIKE 'PINDING';";
+$query2 = "SELECT * FROM request WHERE Email LIKE '$parent' AND Status LIKE 'pending';";
 $result2 = mysqli_query($con,$query2);
 
 //$query = "SELECT * FROM offers WHERE Email LIKE 'NorahX@outlook.com' ;";
@@ -297,7 +297,7 @@ $end = $row['To_Time'];
 $query1 = "SELECT * FROM `Baby_Sitter` WHERE `Email` = '$babysitter' ;";  //to get the babysitter's Info
 $result1 = mysqli_query($con,$query1);
 $row1 = mysqli_fetch_array($result1);
-$image = $row1['image'];
+$image = $row1['imagee'];
 $firstName = $row1['First_Name'];
 $lastName = $row1['Last_Name'];
 $date = $Create_Time;
@@ -305,13 +305,12 @@ $new_time = date ('Y-m-d H:i:s', strtotime($date .'+1 hours') ) ;
 
 
 print( '<div class="cardOL">');
-print('<a href ="babysitterProfile1.html"> <image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;" ></image></a>');
+print('<image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;" ></image>');
 print('<h5>'.$firstName.' '.$lastName.'</h5>');
 print('<form class="" action="BabySitterProfileViewForParent.php" method="post" >'. //BABYSITTER PROFILE
 '<input type="hidden" name="babysitter" value='.$babysitter.'><br>'.
 '<button class="button"   type="submit" style="color:black; margin-left:0px; width: 170px; margin-top:-20px; font-family: Courier New, monospace;  	font-size: 15px;" >'."View Profile".'</button>'.
 ' </form> '
-
 );
 print(
   '<p class="price">'.
@@ -351,7 +350,7 @@ print('</div>');
   }}
 
   else
-  echo('NO OFFERS YET');
+  echo(' <h2 style="font-family: Courier New, monospace; margin-left:55px; " >     No Offers Yet ... </h2>');
 }
 
 

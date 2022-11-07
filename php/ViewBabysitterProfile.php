@@ -40,7 +40,10 @@ if (!$conn) {
         $City = $row["City"];
         $Bio = $row["Bio"];
         $phone_number = $row["phone_number"];
-      $imagee = $row["imagee"];
+       $imagee = $row["imagee"];
+
+       
+
         $error_message="";
 
 
@@ -200,9 +203,9 @@ margin-top: -42px;
           <h5>My Profile:</h5> <label style="color:red;"><?php echo $error_message?></label>
           <div class="pra" style="  font-family: 'Courier New', monospace;">
         <br>
-            <img src="<?php echo $imagee?>"  id = "imagee" name="imagee"style="width:100px ; height: 100px; padding-left: 340px;">
+            <img src="data:image/jpeg;base64,<?php echo base64_encode( $imagee ); ?>"  id = "imagee" name="imagee"style="width:100px ; height: 100px; padding-left: 340px;">
 
-            <form id="sign-up-form-parent" class="parent" style="padding-left:100px ;" action="../php/updateBabysitterProfile.php" method="post">
+            <form enctype='multipart/form-data' id="sign-up-form-parent" class="parent" style="padding-left:100px ;" action="../php/updateBabysitterProfile.php" method="post">
                
                   
                     <input type="text" id="firstName"  name="firstName" value="<?php echo $firstName?>" style="background-color:#fbf6ff;"readonly required />
@@ -220,6 +223,8 @@ margin-top: -42px;
                     </select>
             
                     <input type="text" id="city"  name="city" value="<?php echo $City?>" style="background-color:#fbf6ff;"  readonly required/> <br>
+                   
+                    <input type="file" id="image"  name="image"  style="background-color:#fbf6ff;"  accept="image/*" disabled /> <br>
                    
            
             

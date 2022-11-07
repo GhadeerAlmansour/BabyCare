@@ -22,6 +22,6 @@ $connection = mysqli_connect(host, Username, Password, db);
                        if($sql)
                         print(1);
                        $connection -> close();
-                       header("Location: ../ jobOffers.php?success=1");
+                       header("Location: ../jobOffers.php?success=1");
 
            ?>

@@ -169,15 +169,15 @@ die();
 $babysitter = 'NorahX@outlook.com'; //change to session 
 
 //date("Y-m-d")
-$queryR = "SELECT * FROM `request` WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  Status = 'pending' "; 
+$queryR = "SELECT * FROM `request` WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  Status = 'PINDING' "; 
 
 $result = mysqli_query($conn,$queryR);
 
-if($result){ echo "hi";
+if($result){ 
    if($result -> num_rows > 0){
-         
     while($rowR = mysqli_fetch_array($result)){ 
-      if(time() > $rowR['To_Time']){
+      //if(time() > $rowR['To_Time']){
+
     
         
     $PEmail = $rowR['Email'];
@@ -201,26 +201,27 @@ if($result){ echo "hi";
     
     print( '<div class="cardOL">');
     print('<a href ="babysitterProfile1.html"> <image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;" ></image></a>');
-    print('<h5> Parent Name: ' .$PFirst_Name.' '.$PLast_Name.'</h5>');
-    print('<h2>you received a job</h2>');
+    print('<h5> Parent Name: ' .$PFirst_Name.' '.$PLast_Name.'</h5><br>');
 
   
-    print( '<div class="praOL"> <p style="font-size: 17px"> <strong>Childs Names: </strong> '.$ChildsNames.'<br> <strong>Childs Ages: </strong> '.$ChildsAges.'<br>
+    print( '<div class="praOL"> <p style="font-size: 17px"> <strong>Child Name/s: </strong> '.$ChildsNames.'<br> <strong>Childs Age/s: </strong> '.$ChildsAges.'<br>
     <strong>Type of service: </strong> '.$Service.'<br> <strong>Date: </strong> '.$date.' <strong>Time: </strong> '.$From_time.' - ' .$To_Time.'<br></p>'
        );
     
-      print('<p> send offer: </p>');
-      print( '<form class="" method="post" action="PHP/sendOffer.php">'.
-       '<input type="text"  placeholder="Price in SR/hour" name="priceoffer" style="border: 1px; color: #555; border-style:solid;">'.
+      print('<p style="font-size: 15px; font-family: Courier New"> <br><strong>send offer: </strong></p><br>');
+      print( '<form class="" method="post" action="sendOffer.php">'.
+       '<input  type="text"  placeholder="     Price in SR/hour" name="priceoffer" style="border: 1px; height:20px; color: #555; border-style:solid ">'.
       '<input type="hidden" value= '.$rowR['Request_Id'].' name="rowval">'.
-      '<button class="button"  type="submit" value="Send Offer" style="color:#ff5b5b; margin-left: 440px; width: 150px; margin-bottom:-10px;" >'."Send Offer".'</button>'.
+      '<button class="button"  type="submit" value="Send Offer" style=" font-size: 15px; font-family: Courier New ;color:dark grey; margin-left: 250px; width: 150px;height:30px; margin-bottom:-10px; margin-top:190px;" >'."Send Offer".'</button>'.
      '</form>' );
+
 
     
     print('</div>');
     print('</div>');
     
-    }}
+    }
+     //}// if time
       }//end while /////
     }//if (rows)
     

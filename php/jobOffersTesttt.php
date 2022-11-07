@@ -166,10 +166,11 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 if(!$conn) {
 die();
 } 
+
 $babysitter = 'NorahX@outlook.com'; //change to session 
 
 //date("Y-m-d")
-$queryR = "SELECT * FROM `request` WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  Status = 'PINDING' "; 
+$queryR = "SELECT * FROM `request` WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  Status = 'pending' "; 
 
 $result = mysqli_query($conn,$queryR);
 
@@ -177,15 +178,14 @@ if($result){
    if($result -> num_rows > 0){
     while($rowR = mysqli_fetch_array($result)){ 
       //if(time() > $rowR['To_Time']){
-
-    
+  
         
     $PEmail = $rowR['Email'];
     $queryP = " SELECT   First_Name , Last_Name , Email , imagee FROM `Parent` WHERE Email= '$PEmail'"; 
     $resultP = mysqli_query($conn , $queryP);
     
-    while($rowP = mysqli_fetch_array($resultP)){  
-
+    while($rowP = mysqli_fetch_array($resultP)){ 
+      echo "hiiiii";
     $Request_Id = $rowR['Request_Id']; 
     $ChildsNames = $rowR['ChildsNames'];
     $ChildsAges = $rowR['ChildsAges'];
@@ -226,7 +226,7 @@ if($result){
     print('</div>');
     
     }
-     //}// if time
+     //}// if time 
       }//end while /////
     }//if (rows)
     

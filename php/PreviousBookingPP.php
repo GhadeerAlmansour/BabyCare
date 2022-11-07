@@ -21,12 +21,14 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
   
- // $now = date_create()->format('Y-m-d');
-  //AND  (request.Datee<$now)
+  
+  
+
+  
   $query_Parent = "SELECT * FROM 
   request INNER JOIN parent ON request.Email = parent.Email
   INNER JOIN offers ON request.Request_Id = offers.Request_Id
-  AND request.Email= '$email_singIn' ";
+  AND request.Email= '$email_singIn' AND (CAST(CURRENT_TIMESTAMP AS DATE) > request.datee)";
 
   $result_Parent = mysqli_query($conn,$query_Parent);
   
@@ -95,7 +97,7 @@ if (!$conn) {
 <input name="day" type="text" size="12" maxlength="20" value='. date('Y/m/d', strtotime($Datee)) .' readonly >
 
 <input name="time" type="text" size="15" maxlength="20" value='.$From_Time.'  readonly >
-<input name="time" type="text" size="15" maxlength="20" value='.$To_Time.'readonly >
+<input name="time" type="text" size="15" maxlength="20" value='.$To_Time.'  readonly >
 
 <br><br>
 

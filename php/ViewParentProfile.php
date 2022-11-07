@@ -4,7 +4,7 @@
 session_start();
 
 //$email_singIn = $_SESSION['email_singIn'];
-$email_singIn = "saraW@outlook.com";
+$email_singIn = "Saud_Alx@gmail.com";
 
 
 //------------------------------------------------------
@@ -33,7 +33,7 @@ if (!$conn) {
         $firstName = $row["First_Name"];
         $Last_Name = $row["Last_Name"];
         $Email = $row["Email"];
-        $Password = $row["password"];
+        $Passwordd = $row["passwordd"];
         
         $Neighborhood = $row["Neighborhood"];
         
@@ -48,7 +48,7 @@ if (!$conn) {
         $firstName = "";
         $Last_Name = "";
         $Email = "";
-        $Password = "";
+        $Passwordd = "";
         
         $Neighborhood = "";
         $City = "";
@@ -228,7 +228,7 @@ margin-top: -42px;
                     <input type="text" id="firstName"  name="firstName" value="<?php echo $firstName?>" style="background-color:#fbf6ff;"readonly required />
                     <input type="text" id="lastName"  name="lastName" value="<?php echo $Last_Name?>" style="background-color:#fbf6ff;" readonly required/>
                     <input type="email" id="email"   name="email" value="<?php echo $Email?>" style="background-color:#fbf6ff;" readonly required/>
-                    <input type="password" id="password"  name="password" value="<?php echo $Password?>" style="background-color:#fbf6ff;" readonly required/>
+                    <input type="password" id="password"  name="password" value="<?php echo $Passwordd?>" style="background-color:#fbf6ff;" readonly required/>
                     <input type="text" id="city"  name="city" value="<?php echo $City?>" style="background-color:#fbf6ff;"  readonly required/> 
                     <input type="text" id="Neighborhood"  name="Neighborhood" value="<?php echo $Neighborhood?>" style="background-color:#fbf6ff;" readonly required/>
                     <input type="text" id="street" name="street" value="<?php echo $street?>" style="background-color:#fbf6ff;"readonly required/> <br>

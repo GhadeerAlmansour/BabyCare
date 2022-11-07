@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "BabyCare";
+$dbname = "babycare";
 echo"HELLLLLO";
 
 $BSoffer_Id = $_POST['rejectedOffer'];

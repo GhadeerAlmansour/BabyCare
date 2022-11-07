@@ -4,7 +4,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "BabyCare";
+$dbname = "babycare";
 
 $BSoffer_Id = $_POST['acceptOffer'];
 

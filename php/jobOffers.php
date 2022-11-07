@@ -168,8 +168,8 @@ die();
 } 
 $babysitter = 'NorahX@outlook.com'; //change to session 
 
-
-$queryR = "SELECT * FROM request WHERE  date("Y-m-d") <= datee AND  status = 'PENDING' "; 
+//date("Y-m-d")
+$queryR = "SELECT * FROM request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= datee AND  status = 'PENDING' "; 
 
 $result = mysqli_query($conn,$queryR);
 

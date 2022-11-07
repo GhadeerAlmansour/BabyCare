@@ -169,11 +169,11 @@ die();
 $babysitter = 'NorahX@outlook.com'; //change to session 
 
 //date("Y-m-d")
-$queryR = "SELECT * FROM request WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  Statuss = 'pending'"; 
+$queryR = "SELECT * FROM `request` WHERE CAST(CURRENT_TIMESTAMP AS DATE) <= request.datee AND  Status = 'pending' "; 
 
 $result = mysqli_query($conn,$queryR);
 
-if($result){
+if($result){ echo "hi";
    if($result -> num_rows > 0){
          
     while($rowR = mysqli_fetch_array($result)){ 

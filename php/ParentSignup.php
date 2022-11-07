@@ -20,13 +20,22 @@
   $city = $_POST['city'];  
   $Neighborhood = $_POST['Neighborhood'];  
   $street = $_POST['street']; 
-
+/*
   if($_FILES['img']['size'] > 0){
     $img = $_FILES['img']['tmp_name'];
     $img = addslashes(file_get_contents($img));
   }
   else{
     $img = null;
+   } */
+
+   $profilePhoto = $_FILES['img']['name'];
+                      
+                        
+   if(empty($profilePhoto))
+   $profilePhoto = '../images/userIcon.png';
+   else{
+     $profilePhoto = '../images/'.$profilePhoto;
    } 
 
   
@@ -69,10 +78,10 @@
         }
         
         
-        if($img == null)
+ /*       if($img == null)
   $query = "INSERT INTO `Parent` (First_Name, Last_Name, Email, passwordd, city , Neighborhood ,street ) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$Neighborhood' ,'$street')";
-        else
-        $sql = "INSERT INTO `Parent` (First_Name, Last_Name, Email, passwordd, city , Neighborhood ,street , imagee) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$Neighborhood' ,'$street' , '$img' )";
+        else*/
+        $query = "INSERT INTO `Parent` (First_Name, Last_Name, Email, passwordd, city , Neighborhood ,street , imagee) values('$First_Name', '$Last_Name', '$Email', '$password', '$city', '$Neighborhood' ,'$street' , '$profilePhoto' )";
         if (mysqli_query($con, $query)) {
             echo "New record created successfully !";
             $_SESSION['email'] = $Email ; //!sure if email

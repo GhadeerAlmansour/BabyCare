@@ -20,13 +20,14 @@
  $Age = $_POST['Age'];
  $gender = $_POST['gender'];
  $Bio = $_POST['Bio']; 
- if($_FILES['img']['size'] > 0){
-  $img = $_FILES['img']['tmp_name'];
-  $img = addslashes(file_get_contents($img));
-}
-else{
-  $img = null;
- }
+
+ $profilePhoto = $_FILES['img']['name'];
+                                           
+ if(empty($profilePhoto))
+ $profilePhoto = '../images/userIcon.png';
+ else{
+   $profilePhoto = '../images/'.$profilePhoto;
+ } 
 
 
 
@@ -57,7 +58,7 @@ if( !$specialChars ) {
 
 
 //check if the email exits 
-$query = "SELECT * FROM Parent WHERE Email = '$Email' ";
+$query = "SELECT * FROM  baby_sitter WHERE Email = '$Email' ";
 $BabySitter_result = mysqli_query($con,$query);
 
 if (mysqli_num_rows($BabySitter_result)>0)
@@ -68,15 +69,15 @@ if (mysqli_num_rows($BabySitter_result)>0)
     exit;
 }
 
-
+/*
 if($img == null)
 $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Passwordd	, ID_B	, Age	, Gender, 	City, Bio , phone)	
 values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , '$Bio' , $phone)";
 
-else{ 
-  $sql = "INSERT INTO 'Baby_Sitter' (First_Name ,	Last_Name	, Email	, Passwordd	, ID_B	, Age	, Gender, 	City	, imagee	, Bio , phone) 	
-           values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $img' , '$Bio' , '$phone')";
-}
+else */
+  $query = "INSERT INTO `baby_sitter` ( First_Name ,	Last_Name	, Email	, Passwordd	, ID_B	, Age	, Gender, 	City	, imagee	, Bio , phone_number) 	
+           values ('$First_Name', '$Last_Name', '$Email', '$password', '$ID' , '$Age' , '$gender' , '$city' , ' $profilePhoto' , '$Bio' , '$phone')";
+
 
 if (mysqli_query($con, $query)) {
     echo "New record created successfully !";

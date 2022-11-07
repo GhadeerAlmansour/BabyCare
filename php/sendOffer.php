@@ -20,7 +20,7 @@ $connection = mysqli_connect(host, Username, Password, db);
                        $queryN = " SELECT   First_Name , FROM `baby_sitter` WHERE Email= '$babysitterEmail'"; 
                        $resultN = mysqli_query($connection , $queryN);
                       //
-                       $sql = "INSERT INTO Offers (Price, Create_At , Request_Id, Email, , status , BabySitter_Name) VALUES ('$price', now() ,'$id', '$babysitterEmail' ,'pending' , '$resultN')";
+                       $sql = "INSERT INTO 'offers' (Price, Create_At , Request_Id, Email, , status , BabySitter_Name) VALUES ('$price', now() ,'$id', '$babysitterEmail' ,'pending' , '$resultN')";
                        
                        mysqli_query($connection, $sql);
                        if($sql)

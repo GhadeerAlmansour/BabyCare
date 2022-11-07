@@ -22,6 +22,7 @@
                        if($sql)
                         print(1);
                        $connection -> close();
+                       
                        header("Location: ../jobOffersTesttt.php?success=1");
 
            ?>

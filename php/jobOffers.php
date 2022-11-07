@@ -221,7 +221,7 @@ if($result){
     print('</div>');
     
     }}
-      }//end while
+      }//end while /////
     }//if (rows)
     
       else

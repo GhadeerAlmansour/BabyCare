@@ -47,12 +47,12 @@ if (!$conn) {
 
         $firstName = $row["First_Name"];
         $LastName = $row["Last_Name"];
-        $Age = $row["Age"];
+       
 
-                 $BabySitter_name = $row["BabySitter_name"];
+                 $BabySitter_name = $row["BabySitter_Name"];
 
         $Service = $row["Service"];
-        $Datee = $row["Datee"];
+        $Datee = $row["datee"];
 
         $ChildsNames = $row["ChildsNames"];
         $ChildsAges = $row["ChildsAges"];

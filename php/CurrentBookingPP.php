@@ -42,29 +42,19 @@ if (!$conn) {
         $Create_Time = $row["Create_Time"];
         $status = $row["status"];
         $From_Time = $row["From_Time"];
-        //$To_Time = $row["To_Time"]
+        $To_Time = $row["To_Time"];
 
         $firstName = $row["First_Name"];
         $LastName = $row["Last_Name"];
         
 
-                 $BabySitter_name = $row["BabySitter_name"];
+                 $BabySitter_name = $row["BabySitter_Name"];
 
         $Service = $row["Service"];
-        $Datee = $row["Datee"];
+        $Datee = $row["datee"];
 
-        $Child_name1 = $row["Child_name1"];
-        $Age1 = $row["Age1"];
-        
-
-        $Child_name2 = $row["Child_name2"];
-        $Age2 = $row["Age2"];
-       
-
-        $Child_name3 = $row["Child_name3"];
-        $Age3 = $row["Age3"];
-        
-
+        $ChildsNames = $row["ChildsNames"];
+        $ChildsAges = $row["ChildsAges"];
 
         $error_message="";
         
@@ -78,21 +68,12 @@ if (!$conn) {
 <br>
 <br>
 <lable> Kid Name:
-  <input name="name" type="text" size="12" maxlength="20" value='.$Child_name1.' readonly >
+  <input name="name" type="text" size="12" maxlength="20" value='.$ChildsNames.' readonly >
   <lable> Age:
-  <input name="age" type="text" size="3" maxlength="40" value='.$Age1.' readonly >
+  <input name="age" type="text" size="3" maxlength="40" value='.$ChildsAges.' readonly >
 <br>
 
-<lable> Kid Name:
-<input name="name" type="text" size="12" maxlength="20" value='.$Child_name2.' readonly >
-<lable> Age:
-<input name="age" type="text" size="3" maxlength="40" value='.$Age2.' readonly >
-<br>  
 
-<lable> Kid  Name: 
-<input name="name" type="text" size="12" maxlength="20" value='.$Child_name3.' readonly >
-<lable> Age:
-<input name="age" type="text" size="3" maxlength="40" value='.$Age3.' readonly >
 <br><br>
 
 <lable> Type of Service: 
@@ -100,9 +81,10 @@ if (!$conn) {
 
 <br><br>
 <lable> Time:
-<input name="day" type="text" size="12" maxlength="20" value="Friday" readonly >
-<input name="Date" type="text" size="12" maxlength="20" value='. $Datee .' readonly >
-<input name="time" type="text" size="15" maxlength="20" value="8:00pm - 10:30pm" readonly >
+<input name="day" type="text" size="12" maxlength="20" value='. date('Y/m/d', strtotime($Datee)) .' readonly >
+
+<input name="time" type="text" size="15" maxlength="20" value='.$From_Time.'  readonly >
+<input name="time" type="text" size="15" maxlength="20" value='.$To_Time.'  readonly >
 
 <br><br>
 

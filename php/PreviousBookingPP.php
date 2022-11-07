@@ -92,7 +92,7 @@ if (!$conn) {
 <lable> Type of Service: 
 <input name="service" type="text" size="12" maxlength="20" value='.$Service.' readonly >
 <lable> Price: 
-<input name="service" type="text" size="12" maxlength="20" value=' .$price. ' readonly >
+<input name="service" type="text" size="12" maxlength="20" value=' .$Price. ' readonly >
 
 <br><br>
 <lable> Duration:

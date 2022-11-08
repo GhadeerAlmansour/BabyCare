@@ -186,12 +186,12 @@ margin-top: -42px;
   <div class="header" >
     <image src="../images/webLogo.jpeg" class="logo">
 <ul>
-  <li ><a href="../html/HomeParent.php">Home</a></li>
-  <li ><a href="../html/jobRequest.php">Job Request</a></li>
-  <li><a href="../html/postJobReq.php">New Request</a></li>
-  <li><a href="../html/offerList.php">Offer List</a></li>
-  <li><a href="../html/PreviousBookingPP.php">Previous Booking</a></li>
-  <li style="text-decoration:underline ;" ><a href="../html/CurrentBookingPP.php">Current Booking</a></li>
+  <li ><a href="../php/HomeParent.php">Home</a></li>
+  <li ><a href="../php/viewjobreq.php">Job Request</a></li>
+  <li><a href="../php/postJobReq.php">New Request</a></li>
+  <li><a href="../php/offerList.php">Offer List</a></li>
+  <li><a href="../php/PreviousBookingPP.php">Previous Booking</a></li>
+  <li style="text-decoration:underline ;" ><a href="../php/CurrentBookingPP.php">Current Booking</a></li>
 
 </ul>
   
@@ -217,7 +217,9 @@ margin-top: -42px;
 
       <div class=box style="	display: block;">
  
-
+  <p style="background-color: white; color:  rgb(87, 86, 86); font-weight:bolder; font-size: 40px ; margin-left: 50px; font-family: Courier New, monospace; margin-top: -10px;">
+ Current Bookings:    
+ </p> 
   <!--------- Card 1 ------
 
         <div class="card" style="padding-top: 70px; text-align:left;"  >

@@ -85,7 +85,7 @@
         if (mysqli_query($con, $query)) {
             echo "New record created successfully !";
             $_SESSION['email'] = $Email ; //!sure if email
-            header("Location: ../html/HomeParent.html");
+            header("Location: ../php/HomeParent.php");
             $con -> close();
             exit;
         } else {

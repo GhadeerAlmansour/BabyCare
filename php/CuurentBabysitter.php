@@ -52,7 +52,7 @@ $ChildsNames = $row["ChildsNames"];
         $error_message="";
         
         $cards .=  "
-        <div class='cardOL1'>
+        <div class='cardOL1' style='width:1000px;' >
         <image src='../images/userIcon.png' class='imagei' alt='userIcon'></image>
           
          
@@ -156,11 +156,11 @@ a1:hover + div1 {
     <div class="header" >
       <image src="../images/webLogo.jpeg" class="logo">
        <ul>
-        <li><a href="..\html\HomeBabySitter.php">Home</a></li>
-        <li><a href="..\html\jobOffers.php">Job offers</a></li>
-        <li><a href="..\html\jobStatus.php">Job status</a></li>
-        <li style="text-decoration:underline ;"><a href="..\html\CuurentBabysitter.php">Current job</a></li>
-        <li><a href="..\html\PreviousBabysitter.php">Previous job</a></li>
+        <li><a href="..\php\HomeBabySitter.php">Home</a></li>
+        <li><a href="..\php\jobOffers.php">Job offers</a></li>
+        <li><a href="..\html\jobStatus.html">Job status</a></li>
+        <li style="text-decoration:underline ;"><a href="..\php\CuurentBabysitter.php">Current job</a></li>
+        <li><a href="..\php\PreviousBabysitter.php">Previous job</a></li>
        </ul>
    
 

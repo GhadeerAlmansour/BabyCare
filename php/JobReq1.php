@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 
 //if($_SERVER["REQUEST_METHOD"] == "post") {
   /*include '../php/test.php';   
@@ -32,16 +32,16 @@ $conn = mysqli_connect($servername, $username, $password, $dbname);
 
 //index 
 
-$parent = "Saud_Alx@gmail.com"; //change to session
+$parent = $_SESSION['email_singIn']; //change to session
 
-$query1 = "SELECT * FROM `Parent` WHERE `Email` = ' $parent' ;";  
+$query1 = "SELECT * FROM `Parent` WHERE `Email` = $parent ;";  
 
 $result1 = mysqli_query($conn,$query1);
 if($row1 = mysqli_fetch_array($result1)){
 $firstName = $row1['First_Name'];
 $lastName = $row1['Last_Name'];
  }
-require("./test.php");
+//require("./test.php");
 
 
 
@@ -58,7 +58,7 @@ require("./test.php");
 
 
 $sql = "INSERT INTO `request`( `Email`, `ChildsNames`, `ChildsAges`, `Service`, `datee`, `From_Time`, `To_Time`, `Status`, `Parent_Name`) 
-      VALUES (  `$parent` , `$ChildsNames`,  $ChildsAges , `$Service`, `$datee`, `$From_Time` , ` $To_Time` , 'pending' , 'saud' )";
+      VALUES (  `$parent` , `$ChildsNames`,  $ChildsAges , `$Service`, `$datee`, `$From_Time` , ` $To_Time` , 'pending' , `$firstName` )";
 
 
 

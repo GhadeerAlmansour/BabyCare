@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 
 $servername = "localhost";
 $username = "root";
@@ -167,7 +168,7 @@ if (!$conn) {
 <div class =" divForm">
 <form style="height: 1000px"readonly >
 
-  <!--RateAndRev-->
+  <!--
   <p style="text-align: center; margin-right: -100px; " readonly>
     <a class="buttonR" href="#" style="color: #f7f7f7;;" ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <span class="fa fa-star checked"readonly></span>
@@ -178,7 +179,7 @@ if (!$conn) {
   </p>                
   <p style="text-align: below;"readonly>
     <textarea id="w3review" name="w3review" rows="4" cols="50"  style= "text-align:left; resize:none; width:300px; margin-left: 450px; background-color:#ffe3e3;"readonly>the kids LOVED HER!!!!!!</textarea></p>        
-  <!--RateAndRev Ends-->
+ -->
 
 
 

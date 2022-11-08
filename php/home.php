@@ -157,7 +157,7 @@ background-color: #ff9d9d;
       <div class="header" >
         <image src="../images/webLogo.jpeg" class="logo" alt="BabyCare Logo">
     <ul  >
-        <li style="text-decoration:underline ; text-align: left; " ><a href="../html/home.html">Home</a></li>
+        <li style="text-decoration:underline ; text-align: left; " ><a href="../php/home.php">Home</a></li>
       <li><a href="mailto:BabyCareInfo.sa@gmail.com" >Contact Us</a></li> 
         <li><a href="#sign-in">Sign-in & Sign-up</a></li>
        

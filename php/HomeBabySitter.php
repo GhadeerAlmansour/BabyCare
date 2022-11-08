@@ -1,4 +1,7 @@
+<?php
+    session_start();
 
+?>
 <html>
 
 <head>
@@ -52,11 +55,11 @@ margin-left : 0;
   <div class="header" >
     <image src="../images/webLogo.jpeg" class="logo" alt="BabyCare Logo">
 <ul>
-    <li style="text-decoration:underline ;"><a href="..\html\HomeBabySitter.html">Home</a></li>
-    <li><a href="..\html\jobOffers.html">Job offers</a></li>
+    <li style="text-decoration:underline ;"><a href="..\php\HomeBabySitter.php">Home</a></li>
+    <li><a href="..\php\jobOffers.php">Job offers</a></li>
     <li><a href="..\html\jobStatus.html">Job status</a></li>
-    <li><a href="..\html\CuurentBabysitter.html">Current job</a></li>
-    <li><a href="..\html\PreviousBabysitter.html">Previous job</a></li>
+    <li><a href="..\php\CuurentBabysitter.php">Current job</a></li>
+    <li><a href="..\php\PreviousBabysitter.php">Previous job</a></li>
 
 </ul>
 
@@ -75,7 +78,6 @@ margin-left : 0;
   </div> 
   <div class="container2" style=" height: 1350px;"> 
    <div class="option">
-
     <div class="title">
         <h2>Your Baby Is In Safe Hands </h2>
     </div>
@@ -89,8 +91,8 @@ margin-left : 0;
                 <p>view the new offers and see the status of it</p>
 
                 <p style="text-align: center;" >
-                    <a class="button" href="jobOffers.html" >view</a>
-                    <a class="button" href="jobStatus.html" >status</a>
+                    <a class="button" href="jobOffers.php" >view</a>
+                    <a class="button" href="../html/jobStatus.html" >status</a>
 
                 </p>
             </div>
@@ -105,8 +107,8 @@ margin-left : 0;
                 <p>view current and previous jobs</p>
 
                 <p style="text-align: center;">
-                    <a class="button" href="CuurentBabysitter.html" >current </a>
-                    <a class="button" href="PreviousBabysitter.html">previous</a>
+                    <a class="button" href="CuurentBabysitter.php" >current </a>
+                    <a class="button" href="PreviousBabysitter.php">previous</a>
 
                 </p>
             </div>

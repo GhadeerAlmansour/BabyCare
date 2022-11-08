@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <html>
 
 <head>
@@ -57,12 +61,12 @@ margin-left : 0;
   <div class="header" >
     <image src="../images/webLogo.jpeg" class="logo" alt="BabyCare Logo">
 <ul>
-    <li style="text-decoration:underline ;"><a href="../html/HomeParent.html">Home</a></li>
-    <li><a href="../html/jobRequest.html">Job Request</a></li>
-    <li><a href="../html/postJobReq.html">New Request</a></li>
-    <li><a href="../html/offerList.html">Offer List</a></li>
-    <li><a href="../html/PreviousBookingPP.html">Previous Booking</a></li>
-    <li><a href="../html/CurrentBookingPP.html">Current Booking</a></li>
+    <li style="text-decoration:underline ;"><a href="../php/HomeParent.php">Home</a></li>
+    <li><a href="../php/viewJobReq.php">Job Request</a></li>
+    <li><a href="../php/postJobReq.php">New Request</a></li>
+    <li><a href="../php/offerList.php">Offer List</a></li>
+    <li><a href="../php/PreviousBookingPP.php">Previous Booking</a></li>
+    <li><a href="../php/CurrentBookingPP.php">Current Booking</a></li>
 
 </ul>
 
@@ -95,8 +99,8 @@ margin-left : 0;
                 <p>Request a babysitter for your child </p>
 
                 <p style="text-align: center;" >
-                    <a class="button" href="jobRequest.html" >Previous</a>
-                    <a class="button" href="postJobReq.html" >New</a>
+                    <a class="button" href="viewjobReq.php" >Previous</a>
+                    <a class="button" href="postJobReq.php" >New</a>
 
                 </p>
             </div>
@@ -112,7 +116,7 @@ margin-left : 0;
                 <p>select a babysitter</p>
 
                 <p style="text-align: center;"> <br>
-                    <a class="button" href="offerList.html" >Go!</a>
+                    <a class="button" href="offerList.php" >Go!</a>
                 </p>
             </div>
         </div>
@@ -126,8 +130,8 @@ margin-left : 0;
                 <p>view current and previous bookings</p>
 
                 <p style="text-align: center;">
-                    <a class="button" href="CurrentBookingPP.html" >current </a>
-                    <a class="button" href="PreviousBookingPP.html">previous</a>
+                    <a class="button" href="CurrentBookingPP.php" >current </a>
+                    <a class="button" href="PreviousBookingPP.php">previous</a>
 
                 </p>
             </div>

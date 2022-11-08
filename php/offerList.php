@@ -283,7 +283,7 @@ if(!$con)
    }
 
 
-$parent = 'Saud_Alx@gmail.com'; //change to session 
+$parent = $_SESSION['email_singIn']; //change to session 
 
 $query2 = "SELECT * FROM request WHERE Email LIKE '$parent' AND Status LIKE 'pending';";
 $result2 = mysqli_query($con,$query2);

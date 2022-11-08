@@ -2,7 +2,7 @@
 
 
 session_start();
-$parent = "Saud_Alx@gmail.com";
+$parent = $_SESSION['email_singIn'];
 
 
 /*
@@ -152,12 +152,12 @@ margin-top: -42px;
   <div class="header" >
     <image src="../images/webLogo.jpeg" class="logo" alt="BABYCARE Logo">
       <ul>
-        <li ><a href="../html/HomeParent.html">Home</a></li>
-        <li  style="text-decoration:underline ;" ><a href="../html/jobRequest.html">Job Request</a></li>
-        <li><a href="../html/postJobReq.html">New Request</a></li>
-        <li><a href="../html/offerList.html">Offer List</a></li>
-        <li><a href="../html/PreviousBookingPP.html">Previous Booking</a></li>
-        <li><a href="../html/CurrentBookingPP.html">Current Booking</a></li>
+        <li ><a href="HomeParent.php">Home</a></li>
+        <li  style="text-decoration:underline ;" ><a href="../php/viewjobreq.php">Job Request</a></li>
+        <li><a href="../php/postJobReq.php">New Request</a></li>
+        <li><a href="../php/offerList.php">Offer List</a></li>
+        <li><a href="../php/PreviousBookingPP.php">Previous Booking</a></li>
+        <li><a href="../php/CurrentBookingPP.php">Current Booking</a></li>
     
     </ul>
 
@@ -278,7 +278,7 @@ margin-top: -42px;
 
             <?php
 
-$parent = "Saud_alx@gmail.com";
+$parent = $_SESSION['email_singIn'];
 
 $servername = "localhost";
 $username = "root";
@@ -367,7 +367,7 @@ print( '</div></div>');
 <!---
     <h5 style=" padding-top: 70px; text-align: left; font-size: 35px; border: none; margin-right: 50px; margin-left: -20px; background: none;">
       Post A New Babysitting Request</h5>   --> <br><br>
-      <a class="button" href="JobReq.php" style="color: rgb(104, 104, 104); background-color: transparent;
+      <a class="button" href="postjobreq.php" style="color: rgb(104, 104, 104); background-color: transparent;
        margin-top: 100px; font-size: 33px;   font-family: 'Courier New', monospace; font-weight: 700; margin-left: -12px;" >Post A New Babysitting Request</a>
 
     <div class="pra">

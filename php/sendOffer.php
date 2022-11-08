@@ -1,5 +1,5 @@
 
-<?php
+<?php session_start();
 /*
 session_start();
  
@@ -51,8 +51,8 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
   }
 $price = $_POST['priceoffer'];
-$babysitterEmail =  "NorahX@outlook.com"; //$_SESSION['Email'];
-$babysitterName = "Norah"; //$_SESSION['First_Name'];
+$babysitterEmail =  $_SESSION['email_singIn']; //$_SESSION['Email'];
+$babysitterName = $_POST['parentname'];
 
  //$query1 = "SELECT * FROM `Baby_Sitter` WHERE `Email` = '$babysitter' ;";  //to get the babysitter's Info
  //$result1 = mysqli_query($connection,$query1);

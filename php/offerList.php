@@ -161,12 +161,12 @@ var x = setInterval(function() {
     <div class="header" >
       <image src="../images/webLogo.jpeg" class="logo">
         <ul>
-          <li ><a href="../html/HomeParent.html">Home</a></li>
-          <li><a href="../html/jobRequest.html">Job Request</a></li>
-          <li><a href="../html/postJobReq.html">New Request</a></li>
-          <li style="text-decoration:underline ;" ><a href="../html/offerList.html">Offer List</a></li>
-          <li><a href="../html/PreviousBookingPP.html">Previous Booking</a></li>
-          <li><a href="../html/CurrentBookingPP.html">Current Booking</a></li>
+          <li ><a href="../php/HomeParent.php">Home</a></li>
+          <li><a href="../php/viewjobReq.php">Job Request</a></li>
+          <li><a href="../php/postJobReq.php">New Request</a></li>
+          <li style="text-decoration:underline ;" ><a href="../php/offerList.php">Offer List</a></li>
+          <li><a href="../php/PreviousBookingPP.php">Previous Booking</a></li>
+          <li><a href="../php/CurrentBookingPP.php">Current Booking</a></li>
       </ul>
 
        <div class="dropdown">

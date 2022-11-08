@@ -1,4 +1,5 @@
 
+
 function unlock(){
     document.getElementById("firstName").removeAttribute('readonly');
     document.getElementById("lastName").removeAttribute('readonly');
@@ -12,9 +13,6 @@ function unlock(){
     document.getElementById("city").removeAttribute('readonly');
     document.getElementById("Neighborhood").removeAttribute('readonly');
     document.getElementById("street").removeAttribute('readonly');
-
-    
-    
 
     document.getElementById("submit_button").style.display="block";
 

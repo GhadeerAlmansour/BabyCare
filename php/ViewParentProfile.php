@@ -185,7 +185,7 @@ margin-top: -42px;
     <div class="header" >
     <image src="../images/webLogo.jpeg" class="logo">
 <ul>
-    <li><a href="HomeParent.html">Home</a></li>
+    <li><a href="HomeParent.php">Home</a></li>
     <li><a href="mailto:BabyCareInfo.sa@gmail.com">Contact Us</a></li>
     <li style="text-decoration:underline ;"><a href ="ViewParentProfile.php"> My Profile</a></li>
 

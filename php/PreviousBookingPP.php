@@ -110,14 +110,22 @@ $rating= $row["rating"];
 <br><br>
 
 </form>
-<p style="text-align: center;">
-<a class="button" href="#" style="color: #f7f7f7;;" ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <span class="fa fa-star checked" ></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span>
-  <span class="fa fa-star checked"></span></a>
-</p>
+<div class="stars">
+      <input type="radio" name="stars" id="a" />
+      <label for="a"></label>
+
+      <input type="radio" name="stars" id="b" />
+      <label for="b"></label>
+
+      <input type="radio" name="stars" id="c" />
+      <label for="c"></label>
+
+      <input type="radio" name="stars" id="d" />
+      <label for="d"></label>
+
+      <input type="radio" name="stars" id="e" />
+      <label for="e"></label>
+    </div>
 
 <form  " action="../php/PostReviews.php" method="post">
 <p style="text-align: below;">
@@ -151,6 +159,16 @@ $rating= $row["rating"];
   <link rel = "stylesheet" href ="../css/home.css">
   <script src="../js/postButton.js"></script>
 
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Static Template</title>
+
   <style>
 
 .stars {
@@ -158,7 +176,7 @@ $rating= $row["rating"];
   align-items: center;
   gap: 0px;
   direction: rtl;
-  margin-right : 287px;
+  margin-right : 300px;
 
 }
 .stars input[type="radio"] {
@@ -247,12 +265,12 @@ margin-top: -42px;
   <div class="header" >
     <image src="../images/webLogo.jpeg" class="logo">
 <ul>
-  <li ><a href="../html/HomeParent.html">Home</a></li>
-  <li ><a href="../html/jobRequest.html">Job Request</a></li>
-  <li><a href="../html/postJobReq.html">New Request</a></li>
-  <li><a href="../html/offerList.html">Offer List</a></li>
-  <li style="text-decoration:underline ;" ><a href="../html/PreviousBookingPP.html">Previous Booking</a></li>
-  <li><a href="../html/CurrentBookingPP.html">Current Booking</a></li>
+  <li ><a href="../html/HomeParent.php">Home</a></li>
+  <li ><a href="../html/jobRequest.php">Job Request</a></li>
+  <li><a href="../html/postJobReq.php">New Request</a></li>
+  <li><a href="../html/offerList.php">Offer List</a></li>
+  <li style="text-decoration:underline ;" ><a href="../html/PreviousBookingPP.php">Previous Booking</a></li>
+  <li><a href="../html/CurrentBookingPP.php">Current Booking</a></li>
 
     
 </ul>

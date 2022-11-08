@@ -15,8 +15,6 @@ $dbname = "babycare";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-
- $parent = "Saud_Alx@gmail.com"; //change to session
  //$query2 = "SELECT * FROM `request` WHERE Email LIKE '$parent' AND Status LIKE 'pending'; ";
  //$result2 = mysqli_query ($conn, $query2);
 
@@ -46,6 +44,8 @@ $lastName = $row1['Last_Name'];
 require("./test.php");
 
 
+
+
   $ChildsNames = $_POST['name'];
   $ChildsAges = $_POST['age'];
   $Service = $_POST['CareType'];
@@ -60,11 +60,20 @@ require("./test.php");
 $sql = "INSERT INTO `request`( `Email`, `ChildsNames`, `ChildsAges`, `Service`, `datee`, `From_Time`, `To_Time`, `Status`, `Parent_Name`) 
       VALUES (  `$parent` , `$ChildsNames`,  $ChildsAges , `$Service`, `$datee`, `$From_Time` , ` $To_Time` , 'pending' , 'saud' )";
 
-$sql = "INSERT INTO `request`( `Email`, `ChildsNames`, `ChildsAges`, `Service`, `datee`, `From_Time`, `To_Time`, `Status`, `Parent_Name`)  
-VALUES (  'saud' , 'khalid',  `12` , 'day', '2022-12-12', '05:00:00' , '06:00:00'  , 'pending' , 'saud' );";
+
 
 $result = mysqli_query($conn,$sql); 
 
+
+if ($result) {
+    echo "offer sent successfully";
+    header("Location: postJobReq.php?1");
+  } else {
+    echo "Error sending offer: " . mysqli_error($conn);
+    header("Location: postJobReq.php?2");
+  }
+
+/*
 if ($conn->query ($sql) === TRUE) {
     header ("Location: postJobReq.php");        
     }
@@ -73,7 +82,7 @@ if ($conn->query ($sql) === TRUE) {
        // header ("Location: postJobReq.php?Error"); 
       "Error:" . $sql . "<br>" . $conn->error;
     }
-
+*/
  //}
 //}
 

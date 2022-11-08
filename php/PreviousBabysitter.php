@@ -174,11 +174,11 @@ a1:hover + div1 {
     <div class="header" >
       <image src="../images/webLogo.jpeg" class="logo">
        <ul>
-        <li><a href="..\html\HomeBabySitter.html">Home</a></li>
-        <li><a href="..\html\jobOffers.html">Job offers</a></li>
-        <li ><a href="..\html\jobStatus.html">Job status</a></li>
-        <li><a href="..\html\CuurentBabysitter.html">Current job</a></li>
-        <li  style="text-decoration:underline ;"><a href="..\html\PreviousBabysitter.html">Previous job</a></li>
+        <li><a href="..\html\HomeBabySitter.php">Home</a></li>
+        <li><a href="..\html\jobOffers.php">Job offers</a></li>
+        <li ><a href="..\html\jobStatus.php">Job status</a></li>
+        <li><a href="..\html\CuurentBabysitter.php">Current job</a></li>
+        <li  style="text-decoration:underline ;"><a href="..\html\PreviousBabysitter.php">Previous job</a></li>
        </ul>
    
 

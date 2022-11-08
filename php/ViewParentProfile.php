@@ -3,8 +3,8 @@
 
 session_start();
 
-//$email_singIn = $_SESSION['email_singIn'];
-$email_singIn = "s@gmail.com";
+$email_singIn = $_SESSION['email_singIn'];
+//$email_singIn = "s@gmail.com";
 
 
 //------------------------------------------------------

@@ -24,7 +24,7 @@ if (!$conn) {
   $query_Babysitter = "SELECT * FROM 
   offers INNER JOIN baby_sitter ON offers.Email = baby_sitter.Email
   INNER JOIN request ON offers.Request_Id = request.Request_Id
-  AND offers.Email= '$email_singIn' AND (offers.status = 'Accepted' OR offers.status = 'Pending')";
+  AND offers.Email= '$email_singIn' AND (offers.status = 'accepted' OR offers.status = 'pending')";
 
   $result_Babysitter = mysqli_query($conn,$query_Babysitter);
 

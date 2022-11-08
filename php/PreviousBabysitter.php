@@ -83,13 +83,22 @@ if (!$conn) {
              </p>
              
           </div>
-        <p style="text-align:center;">
-          <a class="button" href="#" style="color: #f7f7f7;; border-radius: 60px; padding: 4px;" ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span></a>
+          <div class="stars">
+          <input type="radio" name="stars" id="a" />
+          <label for="a"></label>
+    
+          <input type="radio" name="stars" id="b" />
+          <label for="b"></label>
+    
+          <input type="radio" name="stars" id="c" />
+          <label for="c"></label>
+    
+          <input type="radio" name="stars" id="d" />
+          <label for="d"></label>
+    
+          <input type="radio" name="stars" id="e" />
+          <label for="e"></label>
+        </div>
         </p> 
         <p style="text-align: below;" readonly> 
             <textarea id="w3review" name="w3review" rows="4" cols="50"  style="text-align:left; resize:none; " readonly>'.$review.'</textarea></p>
@@ -120,8 +129,52 @@ if (!$conn) {
   <title>Previous jobs</title>
   <link rel = "stylesheet" href ="../css/home.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Static Template</title>
+
   <style>
 
+.stars {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  direction: rtl;
+  margin-right : 300px;
+
+}
+.stars input[type="radio"] {
+  display: none;
+}
+
+.stars label::before {
+  content: "\f005";
+  font-family: "FontAwesome";
+  font-size: 30px;
+  color: #bbb;
+  color: orange;
+  cursor: pointer;
+  transition: color 0.4s ease-in-out;
+}
+.stars label:hover::before {
+  color: orange;
+}
+
+.stars input[type="radio"]:checked ~ label::before {
+  color: orange;
+  transition: color 0.4s ease-in-out;
+}
+
+
+/*---------------*/
 body{
 
 background-color: rgb(255, 247, 237);

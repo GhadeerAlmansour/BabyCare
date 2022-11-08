@@ -110,7 +110,6 @@ $rating= $row["rating"];
 <br><br>
 
 </form>
-<<<<<<< HEAD
 <p style="text-align: center;">
 <a class="button" href="#" style="color: #f7f7f7;;" ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <span class="fa fa-star checked" ></span>
@@ -119,38 +118,12 @@ $rating= $row["rating"];
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span></a>
 </p>
+
 <form  " action="../php/PostReviews.php" method="post">
 <p style="text-align: below;">
     <textarea id="review" name="review" rows="4" cols="50"  style="text-align:left ; resize:none; " resize="none" >' .$reviews. '</textarea></p>
     <input type="hidden" name="ParentRequestId" value='.$Request_Id.'>
     <input type="hidden" name="BabySitterBsoffer_Id" value='.$Bsoffer_Id.'>
-=======
-
-<div class="stars" style="align: center;">
-
-<input type="radio" name="stars" id="a" />
-<label for="a"></label>
-
-<input type="radio" name="stars" id="b" />
-<label for="b"></label>
-
-<input type="radio" name="stars" id="c" />
-<label for="c"></label>
-
-<input type="radio" name="stars" id="d" />
-<label for="d"></label>
-
-<input type="radio" name="stars" id="e" />
-<label for="e"></label>
-</div>
-
-
-
-
-<p style="text-align: below;">
-    <textarea id="w3review" name="w3review" rows="4" cols="50"  style="text-align:left ; resize:none; " resize="none" ></textarea></p>
-  
->>>>>>> 4677747c053aa2630f0dbd6a5587e4c223ac840a
    <p style="text-align: below;">
    <button id="submit_button"class="button" type="submit" onclick="Post()" style="color:rgb(104, 104, 104); '.(( $reviews == "" )?"display:block":"display:none").'; margin-left: 120px;"> Post </button>
                          
@@ -176,19 +149,8 @@ $rating= $row["rating"];
 <head>
   <title> Previous Booking</title>
   <link rel = "stylesheet" href ="../css/home.css">
-<<<<<<< HEAD
   <script src="../js/postButton.js"></script>
-=======
 
-
-  <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    
->>>>>>> 4677747c053aa2630f0dbd6a5587e4c223ac840a
   <style>
 
 .stars {

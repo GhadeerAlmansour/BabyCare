@@ -197,8 +197,19 @@ if($result){
     $PLast_Name = $rowP['Last_Name'];
     $image= $rowP['imagee'];
  
+    /* $startDate = "'".$row['startDate']."'";
+    $endDate = "'".$row['endDate']."'";
+    $startTime = "'".$row['From_Time']."'";
+    $endTime = "'".$row['To_Time']."'";
+     $timeConflict = "SELECT status , Request_Id , Email FROM 'offers' WHERE offers.Email = ".$_SESSION['Email']." AND  ( ( ($startDate BETWEEN startDate and endDate) AND (($startTime between startTime and endTime)OR($endTime between startTime and endTime)) ) OR ( ($endDate BETWEEN startDate and endDate) AND (($startTime between startTime and endTime)OR($endTime between startTime and endTime)) ) )";
+  $timeConflictQuery = mysqli_query($conn, $timeConflict);
+  if(mysqli_num_rows($timeConflictQuery) == 0){ //if no time conflicts with the request finally print it */
 
-    
+
+
+
+
+
     print( '<div class="cardOL">');
     print('<a href ="babysitterProfile1.html"> <image src="../images/userIcon.png" class="imagei" alt="userIcon" style="border-radius:20px;" ></image></a>');
     print('<h5> Parent Name: ' .$PFirst_Name.' '.$PLast_Name.'</h5><br>');

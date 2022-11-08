@@ -43,9 +43,10 @@ if (!$conn) {
 
         $firstName = $row["First_Name"];
         $LastName = $row["Last_Name"];
-        $Age = $row["Age"];
+        $ChildsAges= $row["ChildsAges"];
+$ChildsNames = $row["ChildsNames"];
 
-        $Parent_name = $row["Parent_name"];
+        $Parent_name = $row["Parent_Name"];
         $Service = $row["Service"];
 
         $error_message="";
@@ -65,7 +66,7 @@ if (!$conn) {
           
              <div class='praOL'>
                  <p><strong>details:</strong><br>
-                    <strong>Name:</strong>".$Parent_name."<strong>  Age: </strong>". $Age ." <br>
+                    <strong>Name:</strong>".$ChildsNames."<strong>  Age: </strong>". $ChildsAges ." <br>
                     <strong>Type of Service:</strong> ".$Service." <br>
                     <strong>Time: </strong> ". date('g:i A', strtotime($Create_Time)) ."
                  </p>
@@ -81,10 +82,10 @@ if (!$conn) {
     $Email = "";
     $Create_Time = "";
     $status = "";
-
+    $ChildsNames="";
     $firstName = "";
     $LastName = "";
-    $Age = "";
+    $ChildsAges= "";
 
 
         $error_message = "system go wrong";

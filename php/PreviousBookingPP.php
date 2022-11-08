@@ -27,8 +27,9 @@ if (!$conn) {
   
   $query_Parent = "SELECT * FROM 
   request INNER JOIN parent ON request.Email = parent.Email
-  INNER JOIN offers ON request.Request_Id = offers.Request_Id
-  AND request.Email= '$email_singIn' AND (CAST(CURRENT_TIMESTAMP AS DATE) > request.datee)";
+  INNER JOIN offers ON request.Request_Id = offers.Request_Id 
+  LEFT JOIN reviews ON request.Request_Id = reviews.Parent_Request_Id
+  WHERE request.Email= '$email_singIn' AND (CAST(CURRENT_TIMESTAMP AS DATE) > request.datee)";
 
   $result_Parent = mysqli_query($conn,$query_Parent);
   
@@ -50,8 +51,13 @@ if (!$conn) {
         $firstName = $row["First_Name"];
         $LastName = $row["Last_Name"];
        
-
+$reviews = $row["review"];
+$rating= $row["rating"];
                  $BabySitter_name = $row["BabySitter_Name"];
+
+
+                 //$ParentEmail = $row["parent.Email"];
+                 //$BabySitterEmail = $row["offers.Email"];
 
         $Service = $row["Service"];
         $Datee = $row["datee"];
@@ -112,13 +118,16 @@ if (!$conn) {
   <span class="fa fa-star checked"></span>
   <span class="fa fa-star checked"></span></a>
 </p>
-
+<form  " action="../php/PostReviews.php" method="post">
 <p style="text-align: below;">
-    <textarea id="w3review" name="w3review" rows="4" cols="50"  style="text-align:left ; resize:none; " resize="none" >the kids LOVED HER!!!!!!</textarea></p>
-  
+    <textarea id="review" name="review" rows="4" cols="50"  style="text-align:left ; resize:none; " resize="none" >' .$reviews. '</textarea></p>
+    <input type="hidden" name="ParentRequestId" value='.$Request_Id.'>
+    <input type="hidden" name="BabySitterBsoffer_Id" value='.$Bsoffer_Id.'>
    <p style="text-align: below;">
-   <a class="button" href="#" style="color:#9a0000;" >Post</a> 
+   <button id="submit_button"class="button" type="submit" onclick="Post()" style="color:rgb(104, 104, 104); '.(( $reviews == "" )?"display:block":"display:none").'; margin-left: 120px;"> Post </button>
+                         
    </p>
+   </form>
           </div> 
           </div>
         </div>';
@@ -130,6 +139,7 @@ if (!$conn) {
    // echo "0 results";
   }
 
+
 ?>
 
 
@@ -138,7 +148,7 @@ if (!$conn) {
 <head>
   <title> Previous Booking</title>
   <link rel = "stylesheet" href ="../css/home.css">
-
+  <script src="../js/postButton.js"></script>
   <style>
 
 .backicon{

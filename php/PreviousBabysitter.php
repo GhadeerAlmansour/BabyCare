@@ -25,6 +25,7 @@ if (!$conn) {
   $query_Babysitter = "SELECT * FROM 
   offers INNER JOIN baby_sitter ON offers.Email = baby_sitter.Email
   INNER JOIN request ON offers.Request_Id = request.Request_Id
+  INNER JOIN reviews ON offers.BSoffer_Id = reviews.Baby_Sitter_offer_Id
   AND offers.Email= '$email_singIn' AND (offers.status != 'Accepted' AND offers.status != 'Pending')";
 
   $result_Babysitter = mysqli_query($conn,$query_Babysitter);
@@ -42,25 +43,21 @@ if (!$conn) {
         $Create_Time = $row["Create_Time"];
         $status = $row["status"];
 
+        $review = $row["review"];
+
         $firstName = $row["First_Name"];
         $LastName = $row["Last_Name"];
-        $Age = $row["Age"];
-
-        $Parent_name = $row["Parent_name"];
-
-        $Service = $row["Service"];
-        $Datee = $row["Datee"];
-
-        $Child_name1 = $row["Child_name1"];
-        $Age1 = $row["Age1"];
         
 
-        $Child_name2 = $row["Child_name2"];
-        $Age2 = $row["Age2"];
-       
+        $Parent_name = $row["Parent_Name"];
 
-        $Child_name3 = $row["Child_name3"];
-        $Age3 = $row["Age3"];
+        $Service = $row["Service"];
+        $Datee = $row["datee"];
+
+        $ChildsNames = $row["ChildsNames"];
+        $ChildsAges = $row["ChildsAges"];
+        
+
         
 
 
@@ -79,9 +76,8 @@ if (!$conn) {
 
         <div class="praOL">
             <p><strong>details:</strong><br>
-                <strong>Name:</strong>'. $Child_name1 .' <strong>  Age: </strong> '.$Age1.' <br>
-                <strong>Name:</strong>'. $Child_name2 .'  <strong>Age:</strong> '.$Age2.'  <br>
-                <strong>Name:</strong>'. $Child_name3 .'  <strong>Age:</strong> '.$Age3.' <br>
+                <strong>Name:</strong>'. $ChildsNames .' <strong>  Age: </strong> '.$ChildsAges.' <br>
+               
                 <strong>Type of Service:</strong> '.$Service.' <br>
                 <strong>Date: </strong> '. date('Y/m/d', strtotime($Datee)) .' 
              </p>
@@ -96,7 +92,7 @@ if (!$conn) {
             <span class="fa fa-star checked"></span></a>
         </p> 
         <p style="text-align: below;" readonly> 
-            <textarea id="w3review" name="w3review" rows="4" cols="50"  style="text-align:left; resize:none; " readonly>the kids LOVED HER!!!!!!</textarea></p>
+            <textarea id="w3review" name="w3review" rows="4" cols="50"  style="text-align:left; resize:none; " readonly>'.$review.'</textarea></p>
   
           
           </p>
